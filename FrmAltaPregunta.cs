@@ -10,17 +10,11 @@ using System.Windows.Forms;
 
 namespace TrabajoFinal_
 {
-    public partial class FrmBancoDePreguntas : Form
+    public partial class FrmAltaPregunta : Form
     {
-        public FrmBancoDePreguntas()
+        public FrmAltaPregunta()
         {
             InitializeComponent();
-        }
-
-        private void btnAlta_Click(object sender, EventArgs e)
-        {
-            FrmAltaPregunta ventana = new FrmAltaPregunta();
-            ventana.Visible = true;
         }
     }
 }
