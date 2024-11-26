@@ -22,5 +22,17 @@ namespace TrabajoFinal_
             FrmAltaPregunta ventana = new FrmAltaPregunta();
             ventana.Visible = true;
         }
+
+        private void btnBaja_Click(object sender, EventArgs e)
+        {
+            FrmBajaPregunta ventana = new FrmBajaPregunta();
+            ventana.Visible = true;
+        }
+
+        private void btnModificar_Click(object sender, EventArgs e)
+        {
+            FrmModificarPregunta ventana = new FrmModificarPregunta();
+            ventana.Visible = true;
+        }
     }
 }

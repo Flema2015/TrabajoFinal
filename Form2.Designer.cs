@@ -51,6 +51,7 @@
             btnBaja.TabIndex = 1;
             btnBaja.Text = "Baja";
             btnBaja.UseVisualStyleBackColor = true;
+            btnBaja.Click += btnBaja_Click;
             // 
             // btnModificar
             // 
@@ -60,6 +61,7 @@
             btnModificar.TabIndex = 2;
             btnModificar.Text = "Modificar";
             btnModificar.UseVisualStyleBackColor = true;
+            btnModificar.Click += btnModificar_Click;
             // 
             // FrmBancoDePreguntas
             // 

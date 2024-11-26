@@ -10,7 +10,7 @@ namespace TrabajoFinal_
     {
         string PreguntaId { get; set; }
         string TxtPregunta { get; set; }
-        string ListaDeRespuestas { get; set; }
+        List <string> ListaDeRespuestas { get; set; }
         string RespuestaCorreta { get; set; }
         string Asignatura { get; set; }
         string Unidad { get; set; }
