@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace TrabajoFinal_
 {
-    public partial class Form5 : Form
+    public partial class FrmCorreccionEx : Form
     {
-        public Form5()
+        public FrmCorreccionEx()
         {
             InitializeComponent();
         }

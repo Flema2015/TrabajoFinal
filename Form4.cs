@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace TrabajoFinal_
 {
-    public partial class Form4 : Form
+    public partial class FrmGeneracionExm : Form
     {
-        public Form4()
+        public FrmGeneracionExm()
         {
             InitializeComponent();
         }

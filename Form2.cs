@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace TrabajoFinal_
 {
-    public partial class Form2 : Form
+    public partial class FrmBancoDePreguntas : Form
     {
-        public Form2()
+        public FrmBancoDePreguntas()
         {
             InitializeComponent();
         }

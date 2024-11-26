@@ -1,6 +1,6 @@
 ﻿namespace TrabajoFinal_
 {
-    partial class Form1
+    partial class FrmPrincipal
     {
         /// <summary>
         ///  Required designer variable.
@@ -52,7 +52,7 @@
             btnAdminBanco.Name = "btnAdminBanco";
             btnAdminBanco.Size = new Size(159, 57);
             btnAdminBanco.TabIndex = 1;
-            btnAdminBanco.Text = "Administración del Banco de preguntas. ";
+            btnAdminBanco.Text = "Administración del Banco de preguntas";
             btnAdminBanco.UseVisualStyleBackColor = true;
             btnAdminBanco.Click += btnAdminBanco_Click;
             // 
@@ -63,7 +63,7 @@
             btnGenerarExm.Name = "btnGenerarExm";
             btnGenerarExm.Size = new Size(159, 57);
             btnGenerarExm.TabIndex = 5;
-            btnGenerarExm.Text = "Generación de Exámenes.";
+            btnGenerarExm.Text = "Generación de Exámenes";
             btnGenerarExm.UseVisualStyleBackColor = true;
             btnGenerarExm.Click += btnGenerarExm_Click;
             // 
@@ -74,7 +74,7 @@
             btnRespuestas.Name = "btnRespuestas";
             btnRespuestas.Size = new Size(159, 57);
             btnRespuestas.TabIndex = 6;
-            btnRespuestas.Text = "Respuestas Exámen.";
+            btnRespuestas.Text = "Respuestas Exámen";
             btnRespuestas.UseVisualStyleBackColor = true;
             btnRespuestas.Click += btnRespuestas_Click;
             // 
@@ -85,11 +85,11 @@
             btnCorregir.Name = "btnCorregir";
             btnCorregir.Size = new Size(159, 57);
             btnCorregir.TabIndex = 7;
-            btnCorregir.Text = "Correción Exámenes.";
+            btnCorregir.Text = "Correción Exámenes";
             btnCorregir.UseVisualStyleBackColor = true;
             btnCorregir.Click += btnCorregir_Click;
             // 
-            // Form1
+            // FrmPrincipal
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
@@ -99,8 +99,8 @@
             Controls.Add(btnGenerarExm);
             Controls.Add(btnAdminBanco);
             Controls.Add(lblSistema);
-            Name = "Form1";
-            Text = "Form1";
+            Name = "FrmPrincipal";
+            Text = "Sistema de Gestión de Exámenes";
             ResumeLayout(false);
             PerformLayout();
         }

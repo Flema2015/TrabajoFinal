@@ -1,33 +1,33 @@
 namespace TrabajoFinal_
 {
-    public partial class Form1 : Form
+    public partial class FrmPrincipal : Form
     {
-        public Form1()
+        public FrmPrincipal()
         {
             InitializeComponent();
         }
 
         private void btnAdminBanco_Click(object sender, EventArgs e)
         {
-            Form2 ventana = new Form2();
+            FrmBancoDePreguntas ventana = new FrmBancoDePreguntas();
             ventana.Visible = true;
         }
 
         private void btnRespuestas_Click(object sender, EventArgs e)
         {
-            Form3 ventana = new Form3();
+            FrmRespuestaEx ventana = new FrmRespuestaEx();
             ventana.Visible = true;
         }
 
         private void btnGenerarExm_Click(object sender, EventArgs e)
         {
-            Form4 ventana = new Form4();
+            FrmGeneracionExm ventana = new FrmGeneracionExm();
             ventana.Visible = true;
         }
 
         private void btnCorregir_Click(object sender, EventArgs e)
         {
-            Form5 ventana = new Form5();
+            FrmCorreccionEx ventana = new FrmCorreccionEx();
             ventana.Visible = true;
         }
     }
