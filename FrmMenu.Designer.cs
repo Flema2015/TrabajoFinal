@@ -31,7 +31,7 @@
             lblSistema = new Label();
             btnAdminBanco = new Button();
             btnGenerarExm = new Button();
-            btnRespuestas = new Button();
+            btnRealizarExamen = new Button();
             btnCorregir = new Button();
             SuspendLayout();
             // 
@@ -39,7 +39,7 @@
             // 
             lblSistema.AutoSize = true;
             lblSistema.Font = new Font("Segoe UI", 14.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            lblSistema.Location = new Point(230, 72);
+            lblSistema.Location = new Point(209, 79);
             lblSistema.Name = "lblSistema";
             lblSistema.Size = new Size(291, 25);
             lblSistema.TabIndex = 0;
@@ -48,7 +48,7 @@
             // btnAdminBanco
             // 
             btnAdminBanco.Font = new Font("Segoe UI", 9F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            btnAdminBanco.Location = new Point(183, 128);
+            btnAdminBanco.Location = new Point(173, 136);
             btnAdminBanco.Name = "btnAdminBanco";
             btnAdminBanco.Size = new Size(159, 57);
             btnAdminBanco.TabIndex = 1;
@@ -59,7 +59,7 @@
             // btnGenerarExm
             // 
             btnGenerarExm.Font = new Font("Segoe UI", 9.75F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            btnGenerarExm.Location = new Point(183, 219);
+            btnGenerarExm.Location = new Point(173, 227);
             btnGenerarExm.Name = "btnGenerarExm";
             btnGenerarExm.Size = new Size(159, 57);
             btnGenerarExm.TabIndex = 5;
@@ -67,21 +67,21 @@
             btnGenerarExm.UseVisualStyleBackColor = true;
             btnGenerarExm.Click += btnGenerarExm_Click;
             // 
-            // btnRespuestas
+            // btnRealizarExamen
             // 
-            btnRespuestas.Font = new Font("Segoe UI", 9.75F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            btnRespuestas.Location = new Point(395, 128);
-            btnRespuestas.Name = "btnRespuestas";
-            btnRespuestas.Size = new Size(159, 57);
-            btnRespuestas.TabIndex = 6;
-            btnRespuestas.Text = "Respuestas Exámen";
-            btnRespuestas.UseVisualStyleBackColor = true;
-            btnRespuestas.Click += btnRespuestas_Click;
+            btnRealizarExamen.Font = new Font("Segoe UI", 9.75F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            btnRealizarExamen.Location = new Point(385, 136);
+            btnRealizarExamen.Name = "btnRealizarExamen";
+            btnRealizarExamen.Size = new Size(159, 57);
+            btnRealizarExamen.TabIndex = 6;
+            btnRealizarExamen.Text = "Realizar Exámen";
+            btnRealizarExamen.UseVisualStyleBackColor = true;
+            btnRealizarExamen.Click += btnRespuestas_Click;
             // 
             // btnCorregir
             // 
             btnCorregir.Font = new Font("Segoe UI", 9.75F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            btnCorregir.Location = new Point(395, 219);
+            btnCorregir.Location = new Point(385, 227);
             btnCorregir.Name = "btnCorregir";
             btnCorregir.Size = new Size(159, 57);
             btnCorregir.TabIndex = 7;
@@ -95,11 +95,12 @@
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(739, 411);
             Controls.Add(btnCorregir);
-            Controls.Add(btnRespuestas);
+            Controls.Add(btnRealizarExamen);
             Controls.Add(btnGenerarExm);
             Controls.Add(btnAdminBanco);
             Controls.Add(lblSistema);
             Name = "FrmPrincipal";
+            StartPosition = FormStartPosition.CenterScreen;
             Text = "Sistema de Gestión de Exámenes";
             ResumeLayout(false);
             PerformLayout();
@@ -111,7 +112,7 @@
         private Button btnAdminBanco;
         private Button button4;
         private Button btnGenerarExm;
-        private Button btnRespuestas;
+        private Button btnRealizarExamen;
         private Button btnCorregir;
     }
 }

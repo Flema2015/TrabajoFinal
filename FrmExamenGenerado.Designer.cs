@@ -1,6 +1,6 @@
 ﻿namespace TrabajoFinal_
 {
-    partial class FrmRespuestaEx
+    partial class FrmExamenGenerado
     {
         /// <summary>
         /// Required designer variable.
@@ -28,18 +28,43 @@
         /// </summary>
         private void InitializeComponent()
         {
+            lstExamenGenerado = new ListBox();
+            btnContinuar = new Button();
             SuspendLayout();
             // 
-            // FrmRespuestaEx
+            // lstExamenGenerado
+            // 
+            lstExamenGenerado.FormattingEnabled = true;
+            lstExamenGenerado.ItemHeight = 15;
+            lstExamenGenerado.Location = new Point(83, 34);
+            lstExamenGenerado.Name = "lstExamenGenerado";
+            lstExamenGenerado.Size = new Size(632, 349);
+            lstExamenGenerado.TabIndex = 0;
+            // 
+            // btnContinuar
+            // 
+            btnContinuar.Location = new Point(361, 403);
+            btnContinuar.Name = "btnContinuar";
+            btnContinuar.Size = new Size(75, 23);
+            btnContinuar.TabIndex = 1;
+            btnContinuar.Text = "Continuar";
+            btnContinuar.UseVisualStyleBackColor = true;
+            // 
+            // FrmExamenRespuestasGeneradas
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(800, 450);
-            Name = "FrmRespuestaEx";
-            Text = "Respuesta Exámen";
+            Controls.Add(btnContinuar);
+            Controls.Add(lstExamenGenerado);
+            Name = "FrmExamenRespuestasGeneradas";
+            Text = "Exámen Generado";
             ResumeLayout(false);
         }
 
         #endregion
+
+        private ListBox lstExamenGenerado;
+        private Button btnContinuar;
     }
 }

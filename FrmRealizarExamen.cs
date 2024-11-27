@@ -10,11 +10,13 @@ using System.Windows.Forms;
 
 namespace TrabajoFinal_
 {
-    public partial class FrmRespuestaEx : Form
+    public partial class FrmRealizarExamen : Form
     {
-        public FrmRespuestaEx()
+        public FrmRealizarExamen()
         {
             InitializeComponent();
+            DateTime fecha = DateTime.Now.Date;
+            lblFechaResolucion.Text = fecha.ToShortDateString();
         }
     }
 }

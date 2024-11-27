@@ -19,20 +19,20 @@ namespace TrabajoFinal_
 
         private void btnAlta_Click(object sender, EventArgs e)
         {
-            FrmAltaPregunta ventana = new FrmAltaPregunta();
-            ventana.Visible = true;
+            FrmAltaPregunta frmAltaPregunta = new FrmAltaPregunta();
+            frmAltaPregunta.Visible = true;
         }
 
         private void btnBaja_Click(object sender, EventArgs e)
         {
-            FrmBajaPregunta ventana = new FrmBajaPregunta();
-            ventana.Visible = true;
+            FrmBajaPregunta frmBajaPregunta = new FrmBajaPregunta();
+            frmBajaPregunta.Visible = true;
         }
 
         private void btnModificar_Click(object sender, EventArgs e)
         {
-            FrmModificarPregunta ventana = new FrmModificarPregunta();
-            ventana.Visible = true;
+            FrmModificarPregunta frmModificarPregunta = new FrmModificarPregunta();
+            frmModificarPregunta.Visible = true;
         }
     }
 }

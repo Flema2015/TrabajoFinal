@@ -28,43 +28,43 @@
         /// </summary>
         private void InitializeComponent()
         {
-            txtPreguntaId = new TextBox();
-            lblPreguntaId = new Label();
+            txtPreguntaID = new TextBox();
+            lblPreguntaID = new Label();
             lblPregunta = new Label();
-            label2 = new Label();
-            label3 = new Label();
-            label4 = new Label();
-            label5 = new Label();
-            label6 = new Label();
-            textBox1 = new TextBox();
+            lblListaRespuestas = new Label();
+            lblRespuestaCorrecta = new Label();
+            lblAsignatura = new Label();
+            lblUnidad = new Label();
+            lblSubUnidad = new Label();
+            txtPregunta = new TextBox();
             txtRespuesta = new TextBox();
-            textBox3 = new TextBox();
-            textBox4 = new TextBox();
-            textBox5 = new TextBox();
-            textBox6 = new TextBox();
+            txtRespuestaCorrecta = new TextBox();
+            txtAsignatura = new TextBox();
+            txtUnidad = new TextBox();
+            txtSubUnidad = new TextBox();
             cmbRespuestas = new ComboBox();
-            btnCargar = new Button();
-            lblRespuesta = new Label();
+            btnCargarListaRespuestas = new Button();
+            lblRespuestas = new Label();
             btnAceptar = new Button();
             btnCancelar = new Button();
             SuspendLayout();
             // 
-            // txtPreguntaId
+            // txtPreguntaID
             // 
-            txtPreguntaId.Location = new Point(120, 60);
-            txtPreguntaId.Name = "txtPreguntaId";
-            txtPreguntaId.Size = new Size(100, 23);
-            txtPreguntaId.TabIndex = 0;
+            txtPreguntaID.Location = new Point(120, 60);
+            txtPreguntaID.Name = "txtPreguntaID";
+            txtPreguntaID.Size = new Size(100, 23);
+            txtPreguntaID.TabIndex = 0;
             // 
-            // lblPreguntaId
+            // lblPreguntaID
             // 
-            lblPreguntaId.AutoSize = true;
-            lblPreguntaId.Font = new Font("Segoe UI", 11.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            lblPreguntaId.Location = new Point(12, 59);
-            lblPreguntaId.Name = "lblPreguntaId";
-            lblPreguntaId.Size = new Size(87, 20);
-            lblPreguntaId.TabIndex = 2;
-            lblPreguntaId.Text = "PreguntaId";
+            lblPreguntaID.AutoSize = true;
+            lblPreguntaID.Font = new Font("Segoe UI", 11.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            lblPreguntaID.Location = new Point(12, 59);
+            lblPreguntaID.Name = "lblPreguntaID";
+            lblPreguntaID.Size = new Size(89, 20);
+            lblPreguntaID.TabIndex = 2;
+            lblPreguntaID.Text = "PreguntaID";
             // 
             // lblPregunta
             // 
@@ -76,62 +76,62 @@
             lblPregunta.TabIndex = 3;
             lblPregunta.Text = "Pregunta";
             // 
-            // label2
+            // lblListaRespuestas
             // 
-            label2.AutoSize = true;
-            label2.Font = new Font("Segoe UI", 11.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            label2.Location = new Point(12, 155);
-            label2.Name = "label2";
-            label2.Size = new Size(148, 20);
-            label2.TabIndex = 4;
-            label2.Text = "Lista De Respuestas";
+            lblListaRespuestas.AutoSize = true;
+            lblListaRespuestas.Font = new Font("Segoe UI", 11.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            lblListaRespuestas.Location = new Point(12, 155);
+            lblListaRespuestas.Name = "lblListaRespuestas";
+            lblListaRespuestas.Size = new Size(148, 20);
+            lblListaRespuestas.TabIndex = 4;
+            lblListaRespuestas.Text = "Lista De Respuestas";
             // 
-            // label3
+            // lblRespuestaCorrecta
             // 
-            label3.AutoSize = true;
-            label3.Font = new Font("Segoe UI", 11.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            label3.Location = new Point(10, 251);
-            label3.Name = "label3";
-            label3.Size = new Size(144, 20);
-            label3.TabIndex = 5;
-            label3.Text = "Respuesta Correcta";
+            lblRespuestaCorrecta.AutoSize = true;
+            lblRespuestaCorrecta.Font = new Font("Segoe UI", 11.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            lblRespuestaCorrecta.Location = new Point(10, 251);
+            lblRespuestaCorrecta.Name = "lblRespuestaCorrecta";
+            lblRespuestaCorrecta.Size = new Size(144, 20);
+            lblRespuestaCorrecta.TabIndex = 5;
+            lblRespuestaCorrecta.Text = "Respuesta Correcta";
             // 
-            // label4
+            // lblAsignatura
             // 
-            label4.AutoSize = true;
-            label4.Font = new Font("Segoe UI", 11.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            label4.Location = new Point(10, 292);
-            label4.Name = "label4";
-            label4.Size = new Size(86, 20);
-            label4.TabIndex = 6;
-            label4.Text = "Asignatura";
+            lblAsignatura.AutoSize = true;
+            lblAsignatura.Font = new Font("Segoe UI", 11.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            lblAsignatura.Location = new Point(10, 292);
+            lblAsignatura.Name = "lblAsignatura";
+            lblAsignatura.Size = new Size(86, 20);
+            lblAsignatura.TabIndex = 6;
+            lblAsignatura.Text = "Asignatura";
             // 
-            // label5
+            // lblUnidad
             // 
-            label5.AutoSize = true;
-            label5.Font = new Font("Segoe UI", 11.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            label5.Location = new Point(12, 337);
-            label5.Name = "label5";
-            label5.Size = new Size(59, 20);
-            label5.TabIndex = 7;
-            label5.Text = "Unidad";
+            lblUnidad.AutoSize = true;
+            lblUnidad.Font = new Font("Segoe UI", 11.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            lblUnidad.Location = new Point(12, 337);
+            lblUnidad.Name = "lblUnidad";
+            lblUnidad.Size = new Size(59, 20);
+            lblUnidad.TabIndex = 7;
+            lblUnidad.Text = "Unidad";
             // 
-            // label6
+            // lblSubUnidad
             // 
-            label6.AutoSize = true;
-            label6.Font = new Font("Segoe UI", 11.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            label6.Location = new Point(10, 374);
-            label6.Name = "label6";
-            label6.Size = new Size(89, 20);
-            label6.TabIndex = 8;
-            label6.Text = "Sub Unidad";
+            lblSubUnidad.AutoSize = true;
+            lblSubUnidad.Font = new Font("Segoe UI", 11.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            lblSubUnidad.Location = new Point(10, 374);
+            lblSubUnidad.Name = "lblSubUnidad";
+            lblSubUnidad.Size = new Size(91, 20);
+            lblSubUnidad.TabIndex = 8;
+            lblSubUnidad.Text = "Sub-Unidad";
             // 
-            // textBox1
+            // txtPregunta
             // 
-            textBox1.Location = new Point(120, 101);
-            textBox1.Name = "textBox1";
-            textBox1.Size = new Size(100, 23);
-            textBox1.TabIndex = 9;
+            txtPregunta.Location = new Point(120, 101);
+            txtPregunta.Name = "txtPregunta";
+            txtPregunta.Size = new Size(100, 23);
+            txtPregunta.TabIndex = 9;
             // 
             // txtRespuesta
             // 
@@ -140,33 +140,33 @@
             txtRespuesta.Size = new Size(100, 23);
             txtRespuesta.TabIndex = 10;
             // 
-            // textBox3
+            // txtRespuestaCorrecta
             // 
-            textBox3.Location = new Point(160, 252);
-            textBox3.Name = "textBox3";
-            textBox3.Size = new Size(100, 23);
-            textBox3.TabIndex = 11;
+            txtRespuestaCorrecta.Location = new Point(160, 252);
+            txtRespuestaCorrecta.Name = "txtRespuestaCorrecta";
+            txtRespuestaCorrecta.Size = new Size(100, 23);
+            txtRespuestaCorrecta.TabIndex = 11;
             // 
-            // textBox4
+            // txtAsignatura
             // 
-            textBox4.Location = new Point(120, 292);
-            textBox4.Name = "textBox4";
-            textBox4.Size = new Size(100, 23);
-            textBox4.TabIndex = 12;
+            txtAsignatura.Location = new Point(120, 292);
+            txtAsignatura.Name = "txtAsignatura";
+            txtAsignatura.Size = new Size(100, 23);
+            txtAsignatura.TabIndex = 12;
             // 
-            // textBox5
+            // txtUnidad
             // 
-            textBox5.Location = new Point(120, 337);
-            textBox5.Name = "textBox5";
-            textBox5.Size = new Size(100, 23);
-            textBox5.TabIndex = 13;
+            txtUnidad.Location = new Point(120, 337);
+            txtUnidad.Name = "txtUnidad";
+            txtUnidad.Size = new Size(100, 23);
+            txtUnidad.TabIndex = 13;
             // 
-            // textBox6
+            // txtSubUnidad
             // 
-            textBox6.Location = new Point(120, 375);
-            textBox6.Name = "textBox6";
-            textBox6.Size = new Size(100, 23);
-            textBox6.TabIndex = 14;
+            txtSubUnidad.Location = new Point(120, 375);
+            txtSubUnidad.Name = "txtSubUnidad";
+            txtSubUnidad.Size = new Size(100, 23);
+            txtSubUnidad.TabIndex = 14;
             // 
             // cmbRespuestas
             // 
@@ -176,24 +176,24 @@
             cmbRespuestas.Size = new Size(121, 23);
             cmbRespuestas.TabIndex = 15;
             // 
-            // btnCargar
+            // btnCargarListaRespuestas
             // 
-            btnCargar.Location = new Point(260, 182);
-            btnCargar.Name = "btnCargar";
-            btnCargar.Size = new Size(97, 41);
-            btnCargar.TabIndex = 16;
-            btnCargar.Text = "Cargar Respuestas";
-            btnCargar.UseVisualStyleBackColor = true;
+            btnCargarListaRespuestas.Location = new Point(260, 182);
+            btnCargarListaRespuestas.Name = "btnCargarListaRespuestas";
+            btnCargarListaRespuestas.Size = new Size(97, 41);
+            btnCargarListaRespuestas.TabIndex = 16;
+            btnCargarListaRespuestas.Text = "Cargar Respuestas";
+            btnCargarListaRespuestas.UseVisualStyleBackColor = true;
             // 
-            // lblRespuesta
+            // lblRespuestas
             // 
-            lblRespuesta.AutoSize = true;
-            lblRespuesta.Font = new Font("Segoe UI", 11.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            lblRespuesta.Location = new Point(12, 191);
-            lblRespuesta.Name = "lblRespuesta";
-            lblRespuesta.Size = new Size(107, 20);
-            lblRespuesta.TabIndex = 17;
-            lblRespuesta.Text = "Respuesta #1:";
+            lblRespuestas.AutoSize = true;
+            lblRespuestas.Font = new Font("Segoe UI", 11.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            lblRespuestas.Location = new Point(12, 191);
+            lblRespuestas.Name = "lblRespuestas";
+            lblRespuestas.Size = new Size(107, 20);
+            lblRespuestas.TabIndex = 17;
+            lblRespuestas.Text = "Respuesta #1:";
             // 
             // btnAceptar
             // 
@@ -220,23 +220,23 @@
             ClientSize = new Size(800, 450);
             Controls.Add(btnCancelar);
             Controls.Add(btnAceptar);
-            Controls.Add(lblRespuesta);
-            Controls.Add(btnCargar);
+            Controls.Add(lblRespuestas);
+            Controls.Add(btnCargarListaRespuestas);
             Controls.Add(cmbRespuestas);
-            Controls.Add(textBox6);
-            Controls.Add(textBox5);
-            Controls.Add(textBox4);
-            Controls.Add(textBox3);
+            Controls.Add(txtSubUnidad);
+            Controls.Add(txtUnidad);
+            Controls.Add(txtAsignatura);
+            Controls.Add(txtRespuestaCorrecta);
             Controls.Add(txtRespuesta);
-            Controls.Add(textBox1);
-            Controls.Add(label6);
-            Controls.Add(label5);
-            Controls.Add(label4);
-            Controls.Add(label3);
-            Controls.Add(label2);
+            Controls.Add(txtPregunta);
+            Controls.Add(lblSubUnidad);
+            Controls.Add(lblUnidad);
+            Controls.Add(lblAsignatura);
+            Controls.Add(lblRespuestaCorrecta);
+            Controls.Add(lblListaRespuestas);
             Controls.Add(lblPregunta);
-            Controls.Add(lblPreguntaId);
-            Controls.Add(txtPreguntaId);
+            Controls.Add(lblPreguntaID);
+            Controls.Add(txtPreguntaID);
             Name = "FrmAltaPregunta";
             Text = "FrmAltaPregunta";
             ResumeLayout(false);
@@ -245,23 +245,23 @@
 
         #endregion
 
-        private TextBox txtPreguntaId;
-        private Label lblPreguntaId;
+        private TextBox txtPreguntaID;
+        private Label lblPreguntaID;
         private Label lblPregunta;
-        private Label label2;
-        private Label label3;
-        private Label label4;
-        private Label label5;
-        private Label label6;
-        private TextBox textBox1;
+        private Label lblListaRespuestas;
+        private Label lblRespuestaCorrecta;
+        private Label lblAsignatura;
+        private Label lblUnidad;
+        private Label lblSubUnidad;
+        private TextBox txtPregunta;
         private TextBox txtRespuesta;
-        private TextBox textBox3;
-        private TextBox textBox4;
-        private TextBox textBox5;
-        private TextBox textBox6;
+        private TextBox txtRespuestaCorrecta;
+        private TextBox txtAsignatura;
+        private TextBox txtUnidad;
+        private TextBox txtSubUnidad;
         private ComboBox cmbRespuestas;
-        private Button btnCargar;
-        private Label lblRespuesta;
+        private Button btnCargarListaRespuestas;
+        private Label lblRespuestas;
         private Button btnAceptar;
         private Button btnCancelar;
     }
