@@ -21,7 +21,6 @@ namespace TrabajoFinal_
         {
             FrmRealizarExamen frmRealizarExamen = new FrmRealizarExamen();    
             frmRealizarExamen.ShowDialog();
-            //this.Dispose();
         }
     }
 }

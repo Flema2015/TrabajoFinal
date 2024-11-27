@@ -38,7 +38,7 @@
             // 
             // btnCargar
             // 
-            btnCargar.Location = new Point(268, 259);
+            btnCargar.Location = new Point(257, 253);
             btnCargar.Name = "btnCargar";
             btnCargar.Size = new Size(75, 23);
             btnCargar.TabIndex = 0;
@@ -48,7 +48,7 @@
             // 
             // btnCancelar
             // 
-            btnCancelar.Location = new Point(402, 259);
+            btnCancelar.Location = new Point(391, 253);
             btnCancelar.Name = "btnCancelar";
             btnCancelar.Size = new Size(75, 23);
             btnCancelar.TabIndex = 1;
@@ -58,7 +58,7 @@
             // lblCarrera
             // 
             lblCarrera.AutoSize = true;
-            lblCarrera.Location = new Point(262, 138);
+            lblCarrera.Location = new Point(251, 132);
             lblCarrera.Name = "lblCarrera";
             lblCarrera.Size = new Size(45, 15);
             lblCarrera.TabIndex = 4;
@@ -67,7 +67,7 @@
             // lblAsignatura
             // 
             lblAsignatura.AutoSize = true;
-            lblAsignatura.Location = new Point(262, 184);
+            lblAsignatura.Location = new Point(251, 178);
             lblAsignatura.Name = "lblAsignatura";
             lblAsignatura.Size = new Size(64, 15);
             lblAsignatura.TabIndex = 5;
@@ -76,7 +76,7 @@
             // cmbCarrera
             // 
             cmbCarrera.FormattingEnabled = true;
-            cmbCarrera.Location = new Point(388, 138);
+            cmbCarrera.Location = new Point(377, 132);
             cmbCarrera.Name = "cmbCarrera";
             cmbCarrera.Size = new Size(121, 23);
             cmbCarrera.TabIndex = 6;
@@ -84,7 +84,7 @@
             // cmbAsignatura
             // 
             cmbAsignatura.FormattingEnabled = true;
-            cmbAsignatura.Location = new Point(388, 181);
+            cmbAsignatura.Location = new Point(377, 175);
             cmbAsignatura.Name = "cmbAsignatura";
             cmbAsignatura.Size = new Size(121, 23);
             cmbAsignatura.TabIndex = 7;
@@ -93,7 +93,7 @@
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(800, 450);
+            ClientSize = new Size(739, 411);
             Controls.Add(cmbAsignatura);
             Controls.Add(cmbCarrera);
             Controls.Add(lblAsignatura);

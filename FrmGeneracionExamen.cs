@@ -15,6 +15,16 @@ namespace TrabajoFinal_
         public FrmGeneracionExm()
         {
             InitializeComponent();
+            cmbAsignatura.DataSource = Enum.GetValues(typeof(Asignaturas));
         }
+
+        public enum Asignaturas
+        {
+            ElegirMateria,
+            Programación,
+            Matemáticas
+        }
+
+
     }
 }
