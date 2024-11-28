@@ -12,9 +12,17 @@ namespace TrabajoFinal_
 {
     public partial class FrmBajaPregunta : Form
     {
+        
         public FrmBajaPregunta()
         {
             InitializeComponent();
+            
+        }
+
+        private void btnSalir_Click(object sender, EventArgs e)
+        {
+            FrmBancoDePreguntas frmBancoDePreguntas = new FrmBancoDePreguntas();
+            frmBancoDePreguntas.ShowDialog();
         }
     }
 }

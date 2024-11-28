@@ -1,16 +1,17 @@
 namespace TrabajoFinal_
 {
-    public partial class FrmPrincipal : Form
+    public partial class frmMenuPrincipal : Form
     {
-        public FrmPrincipal()
+        public frmMenuPrincipal()
         {
             InitializeComponent();
+
         }
 
         private void btnAdminBanco_Click(object sender, EventArgs e)
         {
             FrmBancoDePreguntas frmBancoPreguntas = new FrmBancoDePreguntas();
-            frmBancoPreguntas.Visible = true;
+            frmBancoPreguntas.ShowDialog();
         }
         private void btnGenerarExm_Click(object sender, EventArgs e)
         {
@@ -29,6 +30,11 @@ namespace TrabajoFinal_
         {
             FrmCorreccionEx frmCorreccionEx = new FrmCorreccionEx();
             frmCorreccionEx.Visible = true;
+        }
+
+        private void btnSalir_Click(object sender, EventArgs e)
+        {
+            Application.Exit();
         }
     }
 }

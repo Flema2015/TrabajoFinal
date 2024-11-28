@@ -1,6 +1,6 @@
 ﻿namespace TrabajoFinal_
 {
-    partial class FrmPrincipal
+    partial class frmMenuPrincipal
     {
         /// <summary>
         ///  Required designer variable.
@@ -33,6 +33,7 @@
             btnGenerarExm = new Button();
             btnRealizarExamen = new Button();
             btnCorregir = new Button();
+            btnSalir = new Button();
             SuspendLayout();
             // 
             // lblSistema
@@ -89,17 +90,29 @@
             btnCorregir.UseVisualStyleBackColor = true;
             btnCorregir.Click += btnCorregir_Click;
             // 
-            // FrmPrincipal
+            // btnSalir
+            // 
+            btnSalir.Font = new Font("Segoe UI", 9.75F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            btnSalir.Location = new Point(279, 309);
+            btnSalir.Name = "btnSalir";
+            btnSalir.Size = new Size(159, 57);
+            btnSalir.TabIndex = 8;
+            btnSalir.Text = "Salir";
+            btnSalir.UseVisualStyleBackColor = true;
+            btnSalir.Click += btnSalir_Click;
+            // 
+            // frmMenuPrincipal
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(739, 411);
+            Controls.Add(btnSalir);
             Controls.Add(btnCorregir);
             Controls.Add(btnRealizarExamen);
             Controls.Add(btnGenerarExm);
             Controls.Add(btnAdminBanco);
             Controls.Add(lblSistema);
-            Name = "FrmPrincipal";
+            Name = "frmMenuPrincipal";
             StartPosition = FormStartPosition.CenterScreen;
             Text = "Sistema de Gestión de Exámenes";
             ResumeLayout(false);
@@ -114,5 +127,6 @@
         private Button btnGenerarExm;
         private Button btnRealizarExamen;
         private Button btnCorregir;
+        private Button btnSalir;
     }
 }

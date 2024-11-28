@@ -31,11 +31,12 @@
             btnAlta = new Button();
             btnBaja = new Button();
             btnModificar = new Button();
+            btnVolverAlMenu = new Button();
             SuspendLayout();
             // 
             // btnAlta
             // 
-            btnAlta.Location = new Point(146, 133);
+            btnAlta.Location = new Point(178, 150);
             btnAlta.Name = "btnAlta";
             btnAlta.Size = new Size(90, 44);
             btnAlta.TabIndex = 0;
@@ -45,7 +46,7 @@
             // 
             // btnBaja
             // 
-            btnBaja.Location = new Point(280, 133);
+            btnBaja.Location = new Point(312, 150);
             btnBaja.Name = "btnBaja";
             btnBaja.Size = new Size(90, 44);
             btnBaja.TabIndex = 1;
@@ -55,7 +56,7 @@
             // 
             // btnModificar
             // 
-            btnModificar.Location = new Point(416, 133);
+            btnModificar.Location = new Point(448, 150);
             btnModificar.Name = "btnModificar";
             btnModificar.Size = new Size(90, 44);
             btnModificar.TabIndex = 2;
@@ -63,15 +64,27 @@
             btnModificar.UseVisualStyleBackColor = true;
             btnModificar.Click += btnModificar_Click;
             // 
+            // btnVolverAlMenu
+            // 
+            btnVolverAlMenu.Location = new Point(312, 245);
+            btnVolverAlMenu.Name = "btnVolverAlMenu";
+            btnVolverAlMenu.Size = new Size(90, 44);
+            btnVolverAlMenu.TabIndex = 3;
+            btnVolverAlMenu.Text = "Volver al menu";
+            btnVolverAlMenu.UseVisualStyleBackColor = true;
+            btnVolverAlMenu.Click += btnVolverAlMenu_Click;
+            // 
             // FrmBancoDePreguntas
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(800, 450);
+            ClientSize = new Size(739, 411);
+            Controls.Add(btnVolverAlMenu);
             Controls.Add(btnModificar);
             Controls.Add(btnBaja);
             Controls.Add(btnAlta);
             Name = "FrmBancoDePreguntas";
+            StartPosition = FormStartPosition.CenterScreen;
             Text = "Administración del banco de preguntas";
             ResumeLayout(false);
         }
@@ -81,5 +94,6 @@
         private Button btnAlta;
         private Button btnBaja;
         private Button btnModificar;
+        private Button btnVolverAlMenu;
     }
 }

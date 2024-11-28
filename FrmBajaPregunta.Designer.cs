@@ -29,7 +29,7 @@
         private void InitializeComponent()
         {
             btnAceptar = new Button();
-            btnCancelar = new Button();
+            btnSalir = new Button();
             lblBorrarPregunta = new Label();
             txtBorrarPregunta = new TextBox();
             SuspendLayout();
@@ -43,14 +43,15 @@
             btnAceptar.Text = "Aceptar";
             btnAceptar.UseVisualStyleBackColor = true;
             // 
-            // btnCancelar
+            // btnSalir
             // 
-            btnCancelar.Location = new Point(373, 291);
-            btnCancelar.Name = "btnCancelar";
-            btnCancelar.Size = new Size(75, 23);
-            btnCancelar.TabIndex = 1;
-            btnCancelar.Text = "Cancelar";
-            btnCancelar.UseVisualStyleBackColor = true;
+            btnSalir.Location = new Point(373, 291);
+            btnSalir.Name = "btnSalir";
+            btnSalir.Size = new Size(75, 23);
+            btnSalir.TabIndex = 1;
+            btnSalir.Text = "Salir";
+            btnSalir.UseVisualStyleBackColor = true;
+            btnSalir.Click += btnSalir_Click;
             // 
             // lblBorrarPregunta
             // 
@@ -72,12 +73,13 @@
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(800, 450);
+            ClientSize = new Size(739, 411);
             Controls.Add(txtBorrarPregunta);
             Controls.Add(lblBorrarPregunta);
-            Controls.Add(btnCancelar);
+            Controls.Add(btnSalir);
             Controls.Add(btnAceptar);
             Name = "FrmBajaPregunta";
+            StartPosition = FormStartPosition.CenterScreen;
             Text = "BajaPregunta";
             ResumeLayout(false);
             PerformLayout();
@@ -86,7 +88,7 @@
         #endregion
 
         private Button btnAceptar;
-        private Button btnCancelar;
+        private Button btnSalir;
         private Label lblBorrarPregunta;
         private TextBox txtBorrarPregunta;
     }

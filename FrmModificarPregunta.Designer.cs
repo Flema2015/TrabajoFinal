@@ -29,7 +29,7 @@
         private void InitializeComponent()
         {
             btnAceptar = new Button();
-            btnCancelar = new Button();
+            btnSalir = new Button();
             lblPreguntaID = new Label();
             label2 = new Label();
             label3 = new Label();
@@ -38,10 +38,15 @@
             label6 = new Label();
             label1 = new Label();
             lblSubUnidadModificar = new Label();
-            btnCargarListaRespuestas = new Button();
+            btnModificarRespuesta = new Button();
             txtIDPregunta = new TextBox();
             txtPregunta = new TextBox();
             txtSubUnidad = new TextBox();
+            txtUnidad = new TextBox();
+            txtAsignatura = new TextBox();
+            txtRespuestaCorrecta = new TextBox();
+            txtRespuesta = new TextBox();
+            cmbNumeroRespuesta = new ComboBox();
             SuspendLayout();
             // 
             // btnAceptar
@@ -53,14 +58,15 @@
             btnAceptar.Text = "Aceptar";
             btnAceptar.UseVisualStyleBackColor = true;
             // 
-            // btnCancelar
+            // btnSalir
             // 
-            btnCancelar.Location = new Point(410, 397);
-            btnCancelar.Name = "btnCancelar";
-            btnCancelar.Size = new Size(75, 23);
-            btnCancelar.TabIndex = 1;
-            btnCancelar.Text = "Cancelar";
-            btnCancelar.UseVisualStyleBackColor = true;
+            btnSalir.Location = new Point(410, 397);
+            btnSalir.Name = "btnSalir";
+            btnSalir.Size = new Size(75, 23);
+            btnSalir.TabIndex = 1;
+            btnSalir.Text = "Salir";
+            btnSalir.UseVisualStyleBackColor = true;
+            btnSalir.Click += btnSalir_Click;
             // 
             // lblPreguntaID
             // 
@@ -94,9 +100,9 @@
             label4.AutoSize = true;
             label4.Location = new Point(152, 179);
             label4.Name = "label4";
-            label4.Size = new Size(76, 15);
+            label4.Size = new Size(77, 15);
             label4.TabIndex = 5;
-            label4.Text = "Respuesta #1";
+            label4.Text = "Respuesta N°";
             // 
             // label5
             // 
@@ -134,14 +140,14 @@
             lblSubUnidadModificar.TabIndex = 9;
             lblSubUnidadModificar.Text = "Sub-Unidad";
             // 
-            // btnCargarListaRespuestas
+            // btnModificarRespuesta
             // 
-            btnCargarListaRespuestas.Location = new Point(462, 175);
-            btnCargarListaRespuestas.Name = "btnCargarListaRespuestas";
-            btnCargarListaRespuestas.Size = new Size(75, 23);
-            btnCargarListaRespuestas.TabIndex = 10;
-            btnCargarListaRespuestas.Text = "Cargar";
-            btnCargarListaRespuestas.UseVisualStyleBackColor = true;
+            btnModificarRespuesta.Location = new Point(465, 175);
+            btnModificarRespuesta.Name = "btnModificarRespuesta";
+            btnModificarRespuesta.Size = new Size(75, 23);
+            btnModificarRespuesta.TabIndex = 10;
+            btnModificarRespuesta.Text = "Modificar";
+            btnModificarRespuesta.UseVisualStyleBackColor = true;
             // 
             // txtIDPregunta
             // 
@@ -164,15 +170,56 @@
             txtSubUnidad.Size = new Size(100, 23);
             txtSubUnidad.TabIndex = 18;
             // 
+            // txtUnidad
+            // 
+            txtUnidad.Location = new Point(295, 301);
+            txtUnidad.Name = "txtUnidad";
+            txtUnidad.Size = new Size(100, 23);
+            txtUnidad.TabIndex = 19;
+            // 
+            // txtAsignatura
+            // 
+            txtAsignatura.Location = new Point(295, 260);
+            txtAsignatura.Name = "txtAsignatura";
+            txtAsignatura.Size = new Size(100, 23);
+            txtAsignatura.TabIndex = 20;
+            // 
+            // txtRespuestaCorrecta
+            // 
+            txtRespuestaCorrecta.Location = new Point(295, 218);
+            txtRespuestaCorrecta.Name = "txtRespuestaCorrecta";
+            txtRespuestaCorrecta.Size = new Size(100, 23);
+            txtRespuestaCorrecta.TabIndex = 21;
+            // 
+            // txtRespuesta
+            // 
+            txtRespuesta.Location = new Point(333, 176);
+            txtRespuesta.Name = "txtRespuesta";
+            txtRespuesta.Size = new Size(100, 23);
+            txtRespuesta.TabIndex = 23;
+            // 
+            // cmbNumeroRespuesta
+            // 
+            cmbNumeroRespuesta.FormattingEnabled = true;
+            cmbNumeroRespuesta.Location = new Point(234, 176);
+            cmbNumeroRespuesta.Name = "cmbNumeroRespuesta";
+            cmbNumeroRespuesta.Size = new Size(55, 23);
+            cmbNumeroRespuesta.TabIndex = 24;
+            // 
             // FrmModificarPregunta
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(800, 450);
+            Controls.Add(cmbNumeroRespuesta);
+            Controls.Add(txtRespuesta);
+            Controls.Add(txtRespuestaCorrecta);
+            Controls.Add(txtAsignatura);
+            Controls.Add(txtUnidad);
             Controls.Add(txtSubUnidad);
             Controls.Add(txtPregunta);
             Controls.Add(txtIDPregunta);
-            Controls.Add(btnCargarListaRespuestas);
+            Controls.Add(btnModificarRespuesta);
             Controls.Add(lblSubUnidadModificar);
             Controls.Add(label1);
             Controls.Add(label6);
@@ -181,7 +228,7 @@
             Controls.Add(label3);
             Controls.Add(label2);
             Controls.Add(lblPreguntaID);
-            Controls.Add(btnCancelar);
+            Controls.Add(btnSalir);
             Controls.Add(btnAceptar);
             Name = "FrmModificarPregunta";
             StartPosition = FormStartPosition.CenterScreen;
@@ -193,7 +240,7 @@
         #endregion
 
         private Button btnAceptar;
-        private Button btnCancelar;
+        private Button btnSalir;
         private Label lblPreguntaID;
         private Label label2;
         private Label label3;
@@ -202,14 +249,18 @@
         private Label label6;
         private Label label1;
         private Label lblSubUnidadModificar;
-        private Button btnCargarListaRespuestas;
+        private Button btnModificarRespuesta;
         private TextBox txtIDPregunta;
         private TextBox txtPregunta;
-        private TextBox textBox3;
+        private TextBox txtRespuesta;
         private TextBox textBox4;
         private TextBox textBox5;
         private TextBox textBox6;
         private TextBox textBox7;
         private TextBox txtSubUnidad;
+        private TextBox txtUnidad;
+        private TextBox txtAsignatura;
+        private TextBox txtRespuestaCorrecta;
+        private ComboBox cmbNumeroRespuesta;
     }
 }
