@@ -30,41 +30,43 @@
         {
             btnIrAExamen = new Button();
             lblAsignatura = new Label();
-            btnCancelar = new Button();
+            btnVolverAlMenu = new Button();
             cmbAsignatura = new ComboBox();
             SuspendLayout();
             // 
             // btnIrAExamen
             // 
-            btnIrAExamen.Location = new Point(251, 224);
+            btnIrAExamen.Location = new Point(227, 229);
             btnIrAExamen.Name = "btnIrAExamen";
-            btnIrAExamen.Size = new Size(98, 23);
+            btnIrAExamen.Size = new Size(107, 23);
             btnIrAExamen.TabIndex = 9;
-            btnIrAExamen.Text = "Ir a Exámen";
+            btnIrAExamen.Text = "Generar Exámen";
             btnIrAExamen.UseVisualStyleBackColor = true;
+            btnIrAExamen.Click += btnIrAExamen_Click;
             // 
             // lblAsignatura
             // 
             lblAsignatura.AutoSize = true;
-            lblAsignatura.Location = new Point(238, 142);
+            lblAsignatura.Location = new Point(214, 147);
             lblAsignatura.Name = "lblAsignatura";
             lblAsignatura.Size = new Size(64, 15);
             lblAsignatura.TabIndex = 7;
             lblAsignatura.Text = "Asignatura";
             // 
-            // btnCancelar
+            // btnVolverAlMenu
             // 
-            btnCancelar.Location = new Point(383, 224);
-            btnCancelar.Name = "btnCancelar";
-            btnCancelar.Size = new Size(75, 23);
-            btnCancelar.TabIndex = 6;
-            btnCancelar.Text = "Cancelar";
-            btnCancelar.UseVisualStyleBackColor = true;
+            btnVolverAlMenu.Location = new Point(359, 229);
+            btnVolverAlMenu.Name = "btnVolverAlMenu";
+            btnVolverAlMenu.Size = new Size(105, 23);
+            btnVolverAlMenu.TabIndex = 6;
+            btnVolverAlMenu.Text = "Volver al Menu";
+            btnVolverAlMenu.UseVisualStyleBackColor = true;
+            btnVolverAlMenu.Click += btnVolverAlMenu_Click;
             // 
             // cmbAsignatura
             // 
             cmbAsignatura.FormattingEnabled = true;
-            cmbAsignatura.Location = new Point(367, 139);
+            cmbAsignatura.Location = new Point(343, 144);
             cmbAsignatura.Name = "cmbAsignatura";
             cmbAsignatura.Size = new Size(121, 23);
             cmbAsignatura.TabIndex = 11;
@@ -77,7 +79,7 @@
             Controls.Add(cmbAsignatura);
             Controls.Add(btnIrAExamen);
             Controls.Add(lblAsignatura);
-            Controls.Add(btnCancelar);
+            Controls.Add(btnVolverAlMenu);
             Name = "FrmGeneracionExm";
             StartPosition = FormStartPosition.CenterScreen;
             Text = "Generación de Exámenes";
@@ -90,7 +92,7 @@
         private Button Aceptar;
         private Button btnIrAExamen;
         private Label lblAsignatura;
-        private Button btnCancelar;
+        private Button btnVolverAlMenu;
         private ComboBox cmbAsignatura;
     }
 }

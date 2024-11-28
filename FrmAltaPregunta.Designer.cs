@@ -28,7 +28,6 @@
         /// </summary>
         private void InitializeComponent()
         {
-            txtPreguntaID = new TextBox();
             lblPreguntaID = new Label();
             lblPregunta = new Label();
             lblListaRespuestas = new Label();
@@ -43,18 +42,12 @@
             txtUnidad = new TextBox();
             txtSubUnidad = new TextBox();
             cmbRespuestas = new ComboBox();
-            btnCargarListaRespuestas = new Button();
+            btnCargarRespuesta = new Button();
             lblRespuestas = new Label();
             btnAceptar = new Button();
             btnSalir = new Button();
+            lblIDPregunta = new Label();
             SuspendLayout();
-            // 
-            // txtPreguntaID
-            // 
-            txtPreguntaID.Location = new Point(212, 34);
-            txtPreguntaID.Name = "txtPreguntaID";
-            txtPreguntaID.Size = new Size(100, 23);
-            txtPreguntaID.TabIndex = 0;
             // 
             // lblPreguntaID
             // 
@@ -80,7 +73,7 @@
             // 
             lblListaRespuestas.AutoSize = true;
             lblListaRespuestas.Font = new Font("Segoe UI", 11.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            lblListaRespuestas.Location = new Point(104, 129);
+            lblListaRespuestas.Location = new Point(104, 114);
             lblListaRespuestas.Name = "lblListaRespuestas";
             lblListaRespuestas.Size = new Size(148, 20);
             lblListaRespuestas.TabIndex = 4;
@@ -90,7 +83,7 @@
             // 
             lblRespuestaCorrecta.AutoSize = true;
             lblRespuestaCorrecta.Font = new Font("Segoe UI", 11.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            lblRespuestaCorrecta.Location = new Point(102, 225);
+            lblRespuestaCorrecta.Location = new Point(104, 188);
             lblRespuestaCorrecta.Name = "lblRespuestaCorrecta";
             lblRespuestaCorrecta.Size = new Size(144, 20);
             lblRespuestaCorrecta.TabIndex = 5;
@@ -100,7 +93,7 @@
             // 
             lblAsignatura.AutoSize = true;
             lblAsignatura.Font = new Font("Segoe UI", 11.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            lblAsignatura.Location = new Point(102, 266);
+            lblAsignatura.Location = new Point(104, 229);
             lblAsignatura.Name = "lblAsignatura";
             lblAsignatura.Size = new Size(86, 20);
             lblAsignatura.TabIndex = 6;
@@ -110,7 +103,7 @@
             // 
             lblUnidad.AutoSize = true;
             lblUnidad.Font = new Font("Segoe UI", 11.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            lblUnidad.Location = new Point(104, 311);
+            lblUnidad.Location = new Point(104, 267);
             lblUnidad.Name = "lblUnidad";
             lblUnidad.Size = new Size(59, 20);
             lblUnidad.TabIndex = 7;
@@ -120,7 +113,7 @@
             // 
             lblSubUnidad.AutoSize = true;
             lblSubUnidad.Font = new Font("Segoe UI", 11.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            lblSubUnidad.Location = new Point(102, 348);
+            lblSubUnidad.Location = new Point(102, 304);
             lblSubUnidad.Name = "lblSubUnidad";
             lblSubUnidad.Size = new Size(91, 20);
             lblSubUnidad.TabIndex = 8;
@@ -130,40 +123,40 @@
             // 
             txtPregunta.Location = new Point(212, 75);
             txtPregunta.Name = "txtPregunta";
-            txtPregunta.Size = new Size(100, 23);
+            txtPregunta.Size = new Size(287, 23);
             txtPregunta.TabIndex = 9;
             // 
             // txtRespuesta
             // 
-            txtRespuesta.Location = new Point(226, 165);
+            txtRespuesta.Location = new Point(226, 150);
             txtRespuesta.Name = "txtRespuesta";
             txtRespuesta.Size = new Size(100, 23);
             txtRespuesta.TabIndex = 10;
             // 
             // txtRespuestaCorrecta
             // 
-            txtRespuestaCorrecta.Location = new Point(252, 226);
+            txtRespuestaCorrecta.Location = new Point(254, 189);
             txtRespuestaCorrecta.Name = "txtRespuestaCorrecta";
             txtRespuestaCorrecta.Size = new Size(100, 23);
             txtRespuestaCorrecta.TabIndex = 11;
             // 
             // txtAsignatura
             // 
-            txtAsignatura.Location = new Point(212, 266);
+            txtAsignatura.Location = new Point(214, 229);
             txtAsignatura.Name = "txtAsignatura";
             txtAsignatura.Size = new Size(100, 23);
             txtAsignatura.TabIndex = 12;
             // 
             // txtUnidad
             // 
-            txtUnidad.Location = new Point(212, 311);
+            txtUnidad.Location = new Point(212, 267);
             txtUnidad.Name = "txtUnidad";
             txtUnidad.Size = new Size(100, 23);
             txtUnidad.TabIndex = 13;
             // 
             // txtSubUnidad
             // 
-            txtSubUnidad.Location = new Point(212, 349);
+            txtSubUnidad.Location = new Point(212, 305);
             txtSubUnidad.Name = "txtSubUnidad";
             txtSubUnidad.Size = new Size(100, 23);
             txtSubUnidad.TabIndex = 14;
@@ -171,25 +164,25 @@
             // cmbRespuestas
             // 
             cmbRespuestas.FormattingEnabled = true;
-            cmbRespuestas.Location = new Point(470, 162);
+            cmbRespuestas.Location = new Point(470, 147);
             cmbRespuestas.Name = "cmbRespuestas";
             cmbRespuestas.Size = new Size(121, 23);
             cmbRespuestas.TabIndex = 15;
             // 
-            // btnCargarListaRespuestas
+            // btnCargarRespuesta
             // 
-            btnCargarListaRespuestas.Location = new Point(352, 156);
-            btnCargarListaRespuestas.Name = "btnCargarListaRespuestas";
-            btnCargarListaRespuestas.Size = new Size(97, 41);
-            btnCargarListaRespuestas.TabIndex = 16;
-            btnCargarListaRespuestas.Text = "Cargar Respuestas";
-            btnCargarListaRespuestas.UseVisualStyleBackColor = true;
+            btnCargarRespuesta.Location = new Point(352, 141);
+            btnCargarRespuesta.Name = "btnCargarRespuesta";
+            btnCargarRespuesta.Size = new Size(97, 41);
+            btnCargarRespuesta.TabIndex = 16;
+            btnCargarRespuesta.Text = "Cargar Respuesta";
+            btnCargarRespuesta.UseVisualStyleBackColor = true;
             // 
             // lblRespuestas
             // 
             lblRespuestas.AutoSize = true;
             lblRespuestas.Font = new Font("Segoe UI", 11.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            lblRespuestas.Location = new Point(104, 165);
+            lblRespuestas.Location = new Point(104, 150);
             lblRespuestas.Name = "lblRespuestas";
             lblRespuestas.Size = new Size(107, 20);
             lblRespuestas.TabIndex = 17;
@@ -197,7 +190,7 @@
             // 
             // btnAceptar
             // 
-            btnAceptar.Location = new Point(370, 348);
+            btnAceptar.Location = new Point(242, 357);
             btnAceptar.Name = "btnAceptar";
             btnAceptar.Size = new Size(97, 29);
             btnAceptar.TabIndex = 18;
@@ -206,7 +199,7 @@
             // 
             // btnSalir
             // 
-            btnSalir.Location = new Point(494, 349);
+            btnSalir.Location = new Point(366, 358);
             btnSalir.Name = "btnSalir";
             btnSalir.Size = new Size(97, 29);
             btnSalir.TabIndex = 19;
@@ -214,15 +207,25 @@
             btnSalir.UseVisualStyleBackColor = true;
             btnSalir.Click += btnCancelar_Click;
             // 
+            // lblIDPregunta
+            // 
+            lblIDPregunta.AutoSize = true;
+            lblIDPregunta.Location = new Point(212, 37);
+            lblIDPregunta.Name = "lblIDPregunta";
+            lblIDPregunta.Size = new Size(13, 15);
+            lblIDPregunta.TabIndex = 20;
+            lblIDPregunta.Text = "1";
+            // 
             // FrmAltaPregunta
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(739, 411);
+            Controls.Add(lblIDPregunta);
             Controls.Add(btnSalir);
             Controls.Add(btnAceptar);
             Controls.Add(lblRespuestas);
-            Controls.Add(btnCargarListaRespuestas);
+            Controls.Add(btnCargarRespuesta);
             Controls.Add(cmbRespuestas);
             Controls.Add(txtSubUnidad);
             Controls.Add(txtUnidad);
@@ -237,7 +240,6 @@
             Controls.Add(lblListaRespuestas);
             Controls.Add(lblPregunta);
             Controls.Add(lblPreguntaID);
-            Controls.Add(txtPreguntaID);
             Name = "FrmAltaPregunta";
             StartPosition = FormStartPosition.CenterScreen;
             Text = "FrmAltaPregunta";
@@ -262,9 +264,10 @@
         private TextBox txtUnidad;
         private TextBox txtSubUnidad;
         private ComboBox cmbRespuestas;
-        private Button btnCargarListaRespuestas;
+        private Button btnCargarRespuesta;
         private Label lblRespuestas;
         private Button btnAceptar;
         private Button btnSalir;
+        private Label lblIDPregunta;
     }
 }

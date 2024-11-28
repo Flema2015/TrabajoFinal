@@ -25,6 +25,16 @@ namespace TrabajoFinal_
             Matemáticas
         }
 
+        private void btnVolverAlMenu_Click(object sender, EventArgs e)
+        {
+            frmMenuPrincipal frmMenuPrincipal = new frmMenuPrincipal();
+            frmMenuPrincipal.ShowDialog();
+        }
 
+        private void btnIrAExamen_Click(object sender, EventArgs e)
+        {
+            FrmExamenGenerado frmExamenGenerado = new FrmExamenGenerado();
+            frmExamenGenerado.ShowDialog();
+        }
     }
 }

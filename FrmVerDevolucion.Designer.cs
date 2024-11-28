@@ -40,6 +40,7 @@
             btnSalir.TabIndex = 0;
             btnSalir.Text = "Salir";
             btnSalir.UseVisualStyleBackColor = true;
+            btnSalir.Click += btnSalir_Click;
             // 
             // lstDevolucion
             // 
@@ -58,6 +59,7 @@
             Controls.Add(lstDevolucion);
             Controls.Add(btnSalir);
             Name = "FrmVerDevolucion";
+            StartPosition = FormStartPosition.CenterScreen;
             Text = "FrmVerDevolucion";
             ResumeLayout(false);
         }

@@ -45,15 +45,17 @@
             btnBuscarRespuestas.TabIndex = 0;
             btnBuscarRespuestas.Text = "Buscar respuestas";
             btnBuscarRespuestas.UseVisualStyleBackColor = true;
+            btnBuscarRespuestas.Click += btnBuscarRespuestas_Click;
             // 
             // btnCancelar
             // 
             btnCancelar.Location = new Point(463, 244);
             btnCancelar.Name = "btnCancelar";
-            btnCancelar.Size = new Size(75, 23);
+            btnCancelar.Size = new Size(97, 23);
             btnCancelar.TabIndex = 1;
-            btnCancelar.Text = "Cancelar";
+            btnCancelar.Text = "Volver al Menu";
             btnCancelar.UseVisualStyleBackColor = true;
+            btnCancelar.Click += btnCancelar_Click;
             // 
             // lblIDExamen
             // 
@@ -95,6 +97,7 @@
             btnVerDevolucion.TabIndex = 6;
             btnVerDevolucion.Text = "Ver devolucion";
             btnVerDevolucion.UseVisualStyleBackColor = true;
+            btnVerDevolucion.Click += btnVerDevolucion_Click;
             // 
             // FrmCorreccionEx
             // 

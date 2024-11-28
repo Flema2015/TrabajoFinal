@@ -18,5 +18,11 @@ namespace TrabajoFinal_
             DateTime fecha = DateTime.Now.Date;
             lblFechaResolucion.Text = fecha.ToShortDateString();
         }
+
+        private void btnSalir_Click(object sender, EventArgs e)
+        {
+            FrmCargaDatosExamen frmCargaDatosExamen = new FrmCargaDatosExamen();
+            frmCargaDatosExamen.ShowDialog();
+        }
     }
 }

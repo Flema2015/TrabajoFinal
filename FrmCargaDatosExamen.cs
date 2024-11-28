@@ -19,8 +19,14 @@ namespace TrabajoFinal_
 
         private void btnCargar_Click(object sender, EventArgs e)
         {
-            FrmRealizarExamen frmRealizarExamen = new FrmRealizarExamen();    
+            FrmRealizarExamen frmRealizarExamen = new FrmRealizarExamen();
             frmRealizarExamen.ShowDialog();
+        }
+
+        private void btnVolverAlMenu_Click(object sender, EventArgs e)
+        {
+            frmMenuPrincipal frmMenuPrincipal = new frmMenuPrincipal();
+            frmMenuPrincipal.ShowDialog();
         }
     }
 }

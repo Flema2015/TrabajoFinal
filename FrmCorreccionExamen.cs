@@ -16,5 +16,23 @@ namespace TrabajoFinal_
         {
             InitializeComponent();
         }
+
+        private void btnBuscarRespuestas_Click(object sender, EventArgs e)
+        {
+            FrmCompararRespuestas frmCompararRespuestas = new FrmCompararRespuestas();
+            frmCompararRespuestas.ShowDialog();
+        }
+
+        private void btnVerDevolucion_Click(object sender, EventArgs e)
+        {
+            FrmVerDevolucion frmVerDevolucion = new FrmVerDevolucion();
+            frmVerDevolucion.ShowDialog();
+        }
+
+        private void btnCancelar_Click(object sender, EventArgs e)
+        {
+            frmMenuPrincipal frmMenuPrincipal = new frmMenuPrincipal();
+            frmMenuPrincipal.ShowDialog();
+        }
     }
 }

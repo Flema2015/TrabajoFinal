@@ -29,7 +29,7 @@
         private void InitializeComponent()
         {
             lstExamenGenerado = new ListBox();
-            btnContinuar = new Button();
+            btnVolver = new Button();
             SuspendLayout();
             // 
             // lstExamenGenerado
@@ -41,21 +41,22 @@
             lstExamenGenerado.Size = new Size(632, 349);
             lstExamenGenerado.TabIndex = 0;
             // 
-            // btnContinuar
+            // btnVolver
             // 
-            btnContinuar.Location = new Point(327, 376);
-            btnContinuar.Name = "btnContinuar";
-            btnContinuar.Size = new Size(75, 23);
-            btnContinuar.TabIndex = 1;
-            btnContinuar.Text = "Continuar";
-            btnContinuar.UseVisualStyleBackColor = true;
+            btnVolver.Location = new Point(327, 376);
+            btnVolver.Name = "btnVolver";
+            btnVolver.Size = new Size(75, 23);
+            btnVolver.TabIndex = 1;
+            btnVolver.Text = "Volver";
+            btnVolver.UseVisualStyleBackColor = true;
+            btnVolver.Click += btnVolver_Click;
             // 
             // FrmExamenGenerado
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(739, 411);
-            Controls.Add(btnContinuar);
+            Controls.Add(btnVolver);
             Controls.Add(lstExamenGenerado);
             Name = "FrmExamenGenerado";
             StartPosition = FormStartPosition.CenterScreen;
@@ -66,6 +67,6 @@
         #endregion
 
         private ListBox lstExamenGenerado;
-        private Button btnContinuar;
+        private Button btnVolver;
     }
 }

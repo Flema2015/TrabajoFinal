@@ -57,6 +57,7 @@
             btnSalir.TabIndex = 1;
             btnSalir.Text = "Salir";
             btnSalir.UseVisualStyleBackColor = true;
+            btnSalir.Click += btnSalir_Click;
             // 
             // lblRespuestasCorrectas
             // 
@@ -144,7 +145,9 @@
             Controls.Add(btnSalir);
             Controls.Add(btnCorregir);
             Name = "FrmCompararRespuestas";
+            StartPosition = FormStartPosition.CenterScreen;
             Text = "FrmCompararRespuestas";
+            Load += FrmCompararRespuestas_Load;
             ResumeLayout(false);
             PerformLayout();
         }

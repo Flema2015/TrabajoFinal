@@ -28,32 +28,33 @@
         /// </summary>
         private void InitializeComponent()
         {
-            btnCargar = new Button();
-            btnCancelar = new Button();
+            btnEmpezarExamen = new Button();
+            btnVolverAlMenu = new Button();
             lblCarrera = new Label();
             lblAsignatura = new Label();
             cmbCarrera = new ComboBox();
             cmbAsignatura = new ComboBox();
             SuspendLayout();
             // 
-            // btnCargar
+            // btnEmpezarExamen
             // 
-            btnCargar.Location = new Point(257, 253);
-            btnCargar.Name = "btnCargar";
-            btnCargar.Size = new Size(75, 23);
-            btnCargar.TabIndex = 0;
-            btnCargar.Text = "Cargar";
-            btnCargar.UseVisualStyleBackColor = true;
-            btnCargar.Click += btnCargar_Click;
+            btnEmpezarExamen.Location = new Point(257, 253);
+            btnEmpezarExamen.Name = "btnEmpezarExamen";
+            btnEmpezarExamen.Size = new Size(112, 23);
+            btnEmpezarExamen.TabIndex = 0;
+            btnEmpezarExamen.Text = "Empezar Examen";
+            btnEmpezarExamen.UseVisualStyleBackColor = true;
+            btnEmpezarExamen.Click += btnCargar_Click;
             // 
-            // btnCancelar
+            // btnVolverAlMenu
             // 
-            btnCancelar.Location = new Point(391, 253);
-            btnCancelar.Name = "btnCancelar";
-            btnCancelar.Size = new Size(75, 23);
-            btnCancelar.TabIndex = 1;
-            btnCancelar.Text = "Cancelar";
-            btnCancelar.UseVisualStyleBackColor = true;
+            btnVolverAlMenu.Location = new Point(391, 253);
+            btnVolverAlMenu.Name = "btnVolverAlMenu";
+            btnVolverAlMenu.Size = new Size(107, 23);
+            btnVolverAlMenu.TabIndex = 1;
+            btnVolverAlMenu.Text = "Volver al Menu";
+            btnVolverAlMenu.UseVisualStyleBackColor = true;
+            btnVolverAlMenu.Click += btnVolverAlMenu_Click;
             // 
             // lblCarrera
             // 
@@ -98,8 +99,8 @@
             Controls.Add(cmbCarrera);
             Controls.Add(lblAsignatura);
             Controls.Add(lblCarrera);
-            Controls.Add(btnCancelar);
-            Controls.Add(btnCargar);
+            Controls.Add(btnVolverAlMenu);
+            Controls.Add(btnEmpezarExamen);
             Name = "FrmCargaDatosExamen";
             StartPosition = FormStartPosition.CenterScreen;
             Text = "Cargar Carrera y Asignatura";
@@ -109,8 +110,8 @@
 
         #endregion
 
-        private Button btnCargar;
-        private Button btnCancelar;
+        private Button btnEmpezarExamen;
+        private Button btnVolverAlMenu;
         private Label lblCarrera;
         private Label lblAsignatura;
         private ComboBox cmbCarrera;

@@ -16,5 +16,16 @@ namespace TrabajoFinal_
         {
             InitializeComponent();
         }
+
+        private void btnSalir_Click(object sender, EventArgs e)
+        {
+            FrmCorreccionEx frmCorreccionEx = new FrmCorreccionEx();
+            frmCorreccionEx.ShowDialog();
+        }
+
+        private void FrmCompararRespuestas_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }
