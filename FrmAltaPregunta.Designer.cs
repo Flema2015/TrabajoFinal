@@ -180,6 +180,7 @@ namespace TrabajoFinal_
             btnCargarRespuesta.TabIndex = 16;
             btnCargarRespuesta.Text = "Cargar Respuesta";
             btnCargarRespuesta.UseVisualStyleBackColor = true;
+            btnCargarRespuesta.Click += btnCargarRespuesta_Click;
             // 
             // lblRespuestas
             // 
@@ -247,6 +248,7 @@ namespace TrabajoFinal_
             Name = "FrmAltaPregunta";
             StartPosition = FormStartPosition.CenterScreen;
             Text = "FrmAltaPregunta";
+           
             ResumeLayout(false);
             PerformLayout();
         }

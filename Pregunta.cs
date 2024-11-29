@@ -8,18 +8,18 @@ namespace TrabajoFinal_
 {
     public class Pregunta
     {
-        string PreguntaId { get; set; }
-        string TxtPregunta { get; set; }
-        List <string> ListaDeRespuestas { get; set; }
-        string RespuestaCorreta { get; set; }
-        string Asignatura { get; set; }
-        string Unidad { get; set; }
-        string SubUnidad { get; set; }
-        bool Visible { get; set; } 
+        public string PreguntaId { get; set; }
+        public string TxtPregunta { get; set; }
+        public List<string> ListaDeRespuestas { get; set; }
+        public string RespuestaCorrecta { get; set; }
+        public  string Asignatura { get; set; }
+        public string Unidad { get; set; }
+        public string SubUnidad { get; set; }
+        public bool Visible { get; set; } 
 
         public override string ToString()
         {
-            return string.Format("{0} - {1} - {2} - {3} - {4} - {5} - {6}",PreguntaId,TxtPregunta,ListaDeRespuestas,RespuestaCorreta,Asignatura,Unidad,SubUnidad);
+            return string.Format("{0} - {1} - {2} - {3} - {4} - {5} - {6}",PreguntaId,TxtPregunta,ListaDeRespuestas,RespuestaCorrecta,Asignatura,Unidad,SubUnidad);
         }
     }
     
