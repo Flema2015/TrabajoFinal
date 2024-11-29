@@ -29,7 +29,7 @@
         private void InitializeComponent()
         {
             btnAceptar = new Button();
-            btnSalir = new Button();
+            btnVolver = new Button();
             lblBorrarPregunta = new Label();
             txtBorrarPregunta = new TextBox();
             SuspendLayout();
@@ -43,15 +43,15 @@
             btnAceptar.Text = "Aceptar";
             btnAceptar.UseVisualStyleBackColor = true;
             // 
-            // btnSalir
+            // btnVolver
             // 
-            btnSalir.Location = new Point(373, 291);
-            btnSalir.Name = "btnSalir";
-            btnSalir.Size = new Size(75, 23);
-            btnSalir.TabIndex = 1;
-            btnSalir.Text = "Salir";
-            btnSalir.UseVisualStyleBackColor = true;
-            btnSalir.Click += btnSalir_Click;
+            btnVolver.Location = new Point(373, 291);
+            btnVolver.Name = "btnVolver";
+            btnVolver.Size = new Size(75, 23);
+            btnVolver.TabIndex = 1;
+            btnVolver.Text = "Volver";
+            btnVolver.UseVisualStyleBackColor = true;
+            btnVolver.Click += btnVolver_Click;
             // 
             // lblBorrarPregunta
             // 
@@ -76,7 +76,7 @@
             ClientSize = new Size(739, 411);
             Controls.Add(txtBorrarPregunta);
             Controls.Add(lblBorrarPregunta);
-            Controls.Add(btnSalir);
+            Controls.Add(btnVolver);
             Controls.Add(btnAceptar);
             Name = "FrmBajaPregunta";
             StartPosition = FormStartPosition.CenterScreen;
@@ -88,7 +88,7 @@
         #endregion
 
         private Button btnAceptar;
-        private Button btnSalir;
+        private Button btnVolver;
         private Label lblBorrarPregunta;
         private TextBox txtBorrarPregunta;
     }

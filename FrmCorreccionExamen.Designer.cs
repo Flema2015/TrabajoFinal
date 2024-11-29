@@ -29,7 +29,7 @@
         private void InitializeComponent()
         {
             btnBuscarRespuestas = new Button();
-            btnCancelar = new Button();
+            btnVolver = new Button();
             lblIDExamen = new Label();
             lblNombreAlumno = new Label();
             txtIDExamen = new TextBox();
@@ -47,15 +47,15 @@
             btnBuscarRespuestas.UseVisualStyleBackColor = true;
             btnBuscarRespuestas.Click += btnBuscarRespuestas_Click;
             // 
-            // btnCancelar
+            // btnVolver
             // 
-            btnCancelar.Location = new Point(463, 244);
-            btnCancelar.Name = "btnCancelar";
-            btnCancelar.Size = new Size(97, 23);
-            btnCancelar.TabIndex = 1;
-            btnCancelar.Text = "Volver al Menu";
-            btnCancelar.UseVisualStyleBackColor = true;
-            btnCancelar.Click += btnCancelar_Click;
+            btnVolver.Location = new Point(463, 244);
+            btnVolver.Name = "btnVolver";
+            btnVolver.Size = new Size(97, 23);
+            btnVolver.TabIndex = 1;
+            btnVolver.Text = "Volver";
+            btnVolver.UseVisualStyleBackColor = true;
+            btnVolver.Click += btnVolver_Click;
             // 
             // lblIDExamen
             // 
@@ -109,7 +109,7 @@
             Controls.Add(txtIDExamen);
             Controls.Add(lblNombreAlumno);
             Controls.Add(lblIDExamen);
-            Controls.Add(btnCancelar);
+            Controls.Add(btnVolver);
             Controls.Add(btnBuscarRespuestas);
             Name = "FrmCorreccionEx";
             StartPosition = FormStartPosition.CenterScreen;
@@ -121,7 +121,7 @@
         #endregion
 
         private Button btnBuscarRespuestas;
-        private Button btnCancelar;
+        private Button btnVolver;
         private Label lblIDExamen;
         private Label lblNombreAlumno;
         private TextBox txtIDExamen;

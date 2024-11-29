@@ -29,7 +29,7 @@
         private void InitializeComponent()
         {
             btnCorregir = new Button();
-            btnSalir = new Button();
+            btnVolver = new Button();
             lblRespuestasCorrectas = new Label();
             lblRespuestasUsuario = new Label();
             lstRespuestasCorrectas = new ListBox();
@@ -49,15 +49,15 @@
             btnCorregir.Text = "Corregir";
             btnCorregir.UseVisualStyleBackColor = true;
             // 
-            // btnSalir
+            // btnVolver
             // 
-            btnSalir.Location = new Point(410, 415);
-            btnSalir.Name = "btnSalir";
-            btnSalir.Size = new Size(75, 23);
-            btnSalir.TabIndex = 1;
-            btnSalir.Text = "Salir";
-            btnSalir.UseVisualStyleBackColor = true;
-            btnSalir.Click += btnSalir_Click;
+            btnVolver.Location = new Point(410, 415);
+            btnVolver.Name = "btnVolver";
+            btnVolver.Size = new Size(75, 23);
+            btnVolver.TabIndex = 1;
+            btnVolver.Text = "Volver";
+            btnVolver.UseVisualStyleBackColor = true;
+            btnVolver.Click += btnVolver_Click;
             // 
             // lblRespuestasCorrectas
             // 
@@ -142,12 +142,11 @@
             Controls.Add(lstRespuestasCorrectas);
             Controls.Add(lblRespuestasUsuario);
             Controls.Add(lblRespuestasCorrectas);
-            Controls.Add(btnSalir);
+            Controls.Add(btnVolver);
             Controls.Add(btnCorregir);
             Name = "FrmCompararRespuestas";
             StartPosition = FormStartPosition.CenterScreen;
             Text = "FrmCompararRespuestas";
-            Load += FrmCompararRespuestas_Load;
             ResumeLayout(false);
             PerformLayout();
         }
@@ -155,7 +154,7 @@
         #endregion
 
         private Button btnCorregir;
-        private Button btnSalir;
+        private Button btnVolver;
         private Label lblRespuestasCorrectas;
         private Label lblRespuestasUsuario;
         private ListBox lstRespuestasCorrectas;

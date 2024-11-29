@@ -29,7 +29,7 @@
         private void InitializeComponent()
         {
             btnEmpezarExamen = new Button();
-            btnVolverAlMenu = new Button();
+            btnVolver = new Button();
             lblCarrera = new Label();
             lblAsignatura = new Label();
             cmbCarrera = new ComboBox();
@@ -46,15 +46,15 @@
             btnEmpezarExamen.UseVisualStyleBackColor = true;
             btnEmpezarExamen.Click += btnCargar_Click;
             // 
-            // btnVolverAlMenu
+            // btnVolver
             // 
-            btnVolverAlMenu.Location = new Point(391, 253);
-            btnVolverAlMenu.Name = "btnVolverAlMenu";
-            btnVolverAlMenu.Size = new Size(107, 23);
-            btnVolverAlMenu.TabIndex = 1;
-            btnVolverAlMenu.Text = "Volver al Menu";
-            btnVolverAlMenu.UseVisualStyleBackColor = true;
-            btnVolverAlMenu.Click += btnVolverAlMenu_Click;
+            btnVolver.Location = new Point(391, 253);
+            btnVolver.Name = "btnVolver";
+            btnVolver.Size = new Size(107, 23);
+            btnVolver.TabIndex = 1;
+            btnVolver.Text = "Volver";
+            btnVolver.UseVisualStyleBackColor = true;
+            btnVolver.Click += btnVolver_Click;
             // 
             // lblCarrera
             // 
@@ -99,7 +99,7 @@
             Controls.Add(cmbCarrera);
             Controls.Add(lblAsignatura);
             Controls.Add(lblCarrera);
-            Controls.Add(btnVolverAlMenu);
+            Controls.Add(btnVolver);
             Controls.Add(btnEmpezarExamen);
             Name = "FrmCargaDatosExamen";
             StartPosition = FormStartPosition.CenterScreen;
@@ -111,7 +111,7 @@
         #endregion
 
         private Button btnEmpezarExamen;
-        private Button btnVolverAlMenu;
+        private Button btnVolver;
         private Label lblCarrera;
         private Label lblAsignatura;
         private ComboBox cmbCarrera;

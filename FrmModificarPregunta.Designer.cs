@@ -29,7 +29,7 @@
         private void InitializeComponent()
         {
             btnAceptar = new Button();
-            btnSalir = new Button();
+            btnVolver = new Button();
             lblPreguntaID = new Label();
             label2 = new Label();
             label3 = new Label();
@@ -58,15 +58,15 @@
             btnAceptar.Text = "Aceptar";
             btnAceptar.UseVisualStyleBackColor = true;
             // 
-            // btnSalir
+            // btnVolver
             // 
-            btnSalir.Location = new Point(410, 397);
-            btnSalir.Name = "btnSalir";
-            btnSalir.Size = new Size(75, 23);
-            btnSalir.TabIndex = 1;
-            btnSalir.Text = "Salir";
-            btnSalir.UseVisualStyleBackColor = true;
-            btnSalir.Click += btnSalir_Click;
+            btnVolver.Location = new Point(410, 397);
+            btnVolver.Name = "btnVolver";
+            btnVolver.Size = new Size(75, 23);
+            btnVolver.TabIndex = 1;
+            btnVolver.Text = "Volver";
+            btnVolver.UseVisualStyleBackColor = true;
+            btnVolver.Click += btnVolver_Click;
             // 
             // lblPreguntaID
             // 
@@ -228,7 +228,7 @@
             Controls.Add(label3);
             Controls.Add(label2);
             Controls.Add(lblPreguntaID);
-            Controls.Add(btnSalir);
+            Controls.Add(btnVolver);
             Controls.Add(btnAceptar);
             Name = "FrmModificarPregunta";
             StartPosition = FormStartPosition.CenterScreen;
@@ -240,7 +240,7 @@
         #endregion
 
         private Button btnAceptar;
-        private Button btnSalir;
+        private Button btnVolver;
         private Label lblPreguntaID;
         private Label label2;
         private Label label3;

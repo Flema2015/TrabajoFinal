@@ -31,7 +31,6 @@
             lblIDExamen = new Label();
             lblCarrera = new Label();
             btnEntregarExamen = new Button();
-            btnSalir = new Button();
             lblAsignatura = new Label();
             lblFecha = new Label();
             groupBox1 = new GroupBox();
@@ -89,22 +88,13 @@
             // 
             // btnEntregarExamen
             // 
-            btnEntregarExamen.Location = new Point(223, 398);
+            btnEntregarExamen.Location = new Point(298, 398);
             btnEntregarExamen.Name = "btnEntregarExamen";
             btnEntregarExamen.Size = new Size(75, 23);
             btnEntregarExamen.TabIndex = 6;
             btnEntregarExamen.Text = "Entregar";
             btnEntregarExamen.UseVisualStyleBackColor = true;
-            // 
-            // btnSalir
-            // 
-            btnSalir.Location = new Point(386, 398);
-            btnSalir.Name = "btnSalir";
-            btnSalir.Size = new Size(75, 23);
-            btnSalir.TabIndex = 7;
-            btnSalir.Text = "Salir";
-            btnSalir.UseVisualStyleBackColor = true;
-            btnSalir.Click += btnSalir_Click;
+            btnEntregarExamen.Click += btnEntregarExamen_Click;
             // 
             // lblAsignatura
             // 
@@ -451,7 +441,6 @@
             Controls.Add(groupBox1);
             Controls.Add(lblFecha);
             Controls.Add(lblAsignatura);
-            Controls.Add(btnSalir);
             Controls.Add(btnEntregarExamen);
             Controls.Add(lblCarrera);
             Controls.Add(lblIDExamen);
@@ -478,7 +467,6 @@
         private Label lblIDExamen;
         private Label lblCarrera;
         private Button btnEntregarExamen;
-        private Button btnSalir;
         private Label lblAsignatura;
         private Label lblFecha;
         private GroupBox groupBox1;

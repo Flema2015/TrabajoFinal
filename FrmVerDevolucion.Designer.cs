@@ -28,19 +28,19 @@
         /// </summary>
         private void InitializeComponent()
         {
-            btnSalir = new Button();
+            btnVolver = new Button();
             lstDevolucion = new ListBox();
             SuspendLayout();
             // 
-            // btnSalir
+            // btnVolver
             // 
-            btnSalir.Location = new Point(336, 377);
-            btnSalir.Name = "btnSalir";
-            btnSalir.Size = new Size(75, 23);
-            btnSalir.TabIndex = 0;
-            btnSalir.Text = "Salir";
-            btnSalir.UseVisualStyleBackColor = true;
-            btnSalir.Click += btnSalir_Click;
+            btnVolver.Location = new Point(336, 377);
+            btnVolver.Name = "btnVolver";
+            btnVolver.Size = new Size(75, 23);
+            btnVolver.TabIndex = 0;
+            btnVolver.Text = "Volver";
+            btnVolver.UseVisualStyleBackColor = true;
+            btnVolver.Click += btnVolver_Click;
             // 
             // lstDevolucion
             // 
@@ -57,7 +57,7 @@
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(800, 450);
             Controls.Add(lstDevolucion);
-            Controls.Add(btnSalir);
+            Controls.Add(btnVolver);
             Name = "FrmVerDevolucion";
             StartPosition = FormStartPosition.CenterScreen;
             Text = "FrmVerDevolucion";
@@ -66,7 +66,7 @@
 
         #endregion
 
-        private Button btnSalir;
+        private Button btnVolver;
         private ListBox lstDevolucion;
     }
 }

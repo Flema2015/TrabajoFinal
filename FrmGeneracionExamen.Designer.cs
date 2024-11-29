@@ -30,7 +30,7 @@
         {
             btnIrAExamen = new Button();
             lblAsignatura = new Label();
-            btnVolverAlMenu = new Button();
+            btnVolver = new Button();
             cmbAsignatura = new ComboBox();
             SuspendLayout();
             // 
@@ -53,15 +53,15 @@
             lblAsignatura.TabIndex = 7;
             lblAsignatura.Text = "Asignatura";
             // 
-            // btnVolverAlMenu
+            // btnVolver
             // 
-            btnVolverAlMenu.Location = new Point(359, 229);
-            btnVolverAlMenu.Name = "btnVolverAlMenu";
-            btnVolverAlMenu.Size = new Size(105, 23);
-            btnVolverAlMenu.TabIndex = 6;
-            btnVolverAlMenu.Text = "Volver al Menu";
-            btnVolverAlMenu.UseVisualStyleBackColor = true;
-            btnVolverAlMenu.Click += btnVolverAlMenu_Click;
+            btnVolver.Location = new Point(359, 229);
+            btnVolver.Name = "btnVolver";
+            btnVolver.Size = new Size(105, 23);
+            btnVolver.TabIndex = 6;
+            btnVolver.Text = "Volver";
+            btnVolver.UseVisualStyleBackColor = true;
+            btnVolver.Click += btnVolver_Click;
             // 
             // cmbAsignatura
             // 
@@ -79,7 +79,7 @@
             Controls.Add(cmbAsignatura);
             Controls.Add(btnIrAExamen);
             Controls.Add(lblAsignatura);
-            Controls.Add(btnVolverAlMenu);
+            Controls.Add(btnVolver);
             Name = "FrmGeneracionExm";
             StartPosition = FormStartPosition.CenterScreen;
             Text = "Generación de Exámenes";
@@ -92,7 +92,7 @@
         private Button Aceptar;
         private Button btnIrAExamen;
         private Label lblAsignatura;
-        private Button btnVolverAlMenu;
+        private Button btnVolver;
         private ComboBox cmbAsignatura;
     }
 }

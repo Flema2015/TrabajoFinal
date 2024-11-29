@@ -207,7 +207,7 @@
             btnVolver.TabIndex = 19;
             btnVolver.Text = "Volver";
             btnVolver.UseVisualStyleBackColor = true;
-            btnVolver.Click += this.btnVolver_Click;
+            btnVolver.Click += btnVolver_Click;
             // 
             // lblIDPregunta
             // 
