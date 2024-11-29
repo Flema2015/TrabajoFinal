@@ -45,7 +45,7 @@
             btnCargarRespuesta = new Button();
             lblRespuestas = new Label();
             btnAceptar = new Button();
-            btnSalir = new Button();
+            btnVolver = new Button();
             lblIDPregunta = new Label();
             SuspendLayout();
             // 
@@ -121,10 +121,12 @@
             // 
             // txtPregunta
             // 
+            txtPregunta.BorderStyle = BorderStyle.FixedSingle;
             txtPregunta.Location = new Point(212, 75);
             txtPregunta.Name = "txtPregunta";
             txtPregunta.Size = new Size(287, 23);
             txtPregunta.TabIndex = 9;
+            txtPregunta.MouseClick += txtPregunta_MouseClick;
             // 
             // txtRespuesta
             // 
@@ -197,15 +199,15 @@
             btnAceptar.Text = "Aceptar";
             btnAceptar.UseVisualStyleBackColor = true;
             // 
-            // btnSalir
+            // btnVolver
             // 
-            btnSalir.Location = new Point(366, 358);
-            btnSalir.Name = "btnSalir";
-            btnSalir.Size = new Size(97, 29);
-            btnSalir.TabIndex = 19;
-            btnSalir.Text = "Salir";
-            btnSalir.UseVisualStyleBackColor = true;
-            btnSalir.Click += btnCancelar_Click;
+            btnVolver.Location = new Point(366, 358);
+            btnVolver.Name = "btnVolver";
+            btnVolver.Size = new Size(97, 29);
+            btnVolver.TabIndex = 19;
+            btnVolver.Text = "Volver";
+            btnVolver.UseVisualStyleBackColor = true;
+            btnVolver.Click += btnCancelar_Click;
             // 
             // lblIDPregunta
             // 
@@ -222,7 +224,7 @@
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(739, 411);
             Controls.Add(lblIDPregunta);
-            Controls.Add(btnSalir);
+            Controls.Add(btnVolver);
             Controls.Add(btnAceptar);
             Controls.Add(lblRespuestas);
             Controls.Add(btnCargarRespuesta);
@@ -267,7 +269,7 @@
         private Button btnCargarRespuesta;
         private Label lblRespuestas;
         private Button btnAceptar;
-        private Button btnSalir;
+        private Button btnVolver;
         private Label lblIDPregunta;
     }
 }
