@@ -10,8 +10,10 @@
 
         private void btnAlta_Click(object sender, EventArgs e)
         {
-            FrmAltaPregunta frmAltaPregunta = new FrmAltaPregunta();
-            frmAltaPregunta.ShowDialog();
+            using (FrmAltaPregunta frmAltaPregunta = new FrmAltaPregunta())
+            {
+                frmAltaPregunta.ShowDialog();
+            }
         }
 
         private void btnBaja_Click(object sender, EventArgs e)

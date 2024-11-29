@@ -10,9 +10,12 @@ namespace TrabajoFinal_
 
         private void btnAdminBanco_Click(object sender, EventArgs e)
         {
-            FrmBancoDePreguntas frmBancoPreguntas = new FrmBancoDePreguntas();
-            frmBancoPreguntas.ShowDialog();
+            using (FrmBancoDePreguntas frmBancoPreguntas = new FrmBancoDePreguntas())
+            {
+                frmBancoPreguntas.ShowDialog();
+            }
         }
+
         private void btnGenerarExm_Click(object sender, EventArgs e)
         {
             FrmGeneracionExm frmGeneracionExm = new FrmGeneracionExm();
@@ -21,10 +24,11 @@ namespace TrabajoFinal_
 
         private void btnRespuestas_Click(object sender, EventArgs e)
         {
-            FrmCargaDatosExamen frmCargaDatosExamen = new FrmCargaDatosExamen();
-            frmCargaDatosExamen.Visible = true;
+            using (FrmCargaDatosExamen frmCargaDatosExamen = new FrmCargaDatosExamen())
+            {
+                frmCargaDatosExamen.ShowDialog();
+            }
         }
-
 
         private void btnCorregir_Click(object sender, EventArgs e)
         {

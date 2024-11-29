@@ -9,8 +9,10 @@
 
         private void btnCargar_Click(object sender, EventArgs e)
         {
-            FrmRealizarExamen frmRealizarExamen = new FrmRealizarExamen();
-            frmRealizarExamen.ShowDialog();
+            using (FrmRealizarExamen frmRealizarExamen = new FrmRealizarExamen())
+            {
+                frmRealizarExamen.ShowDialog();
+            }
         }
 
         private void btnVolver_Click(object sender, EventArgs e)

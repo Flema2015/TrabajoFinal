@@ -1,4 +1,5 @@
-﻿namespace TrabajoFinal_
+﻿
+namespace TrabajoFinal_
 {
     partial class FrmAltaPregunta
     {
@@ -198,6 +199,7 @@
             btnAceptar.TabIndex = 18;
             btnAceptar.Text = "Aceptar";
             btnAceptar.UseVisualStyleBackColor = true;
+            btnAceptar.Click += btnAceptar_Click_1;
             // 
             // btnVolver
             // 
