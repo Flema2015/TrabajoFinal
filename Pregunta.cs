@@ -1,14 +1,8 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace TrabajoFinal_
+﻿namespace TrabajoFinal_
 {
     public class Pregunta
     {
-        public string PreguntaId { get; set; }
+        public int PreguntaId { get; set; }
         public string TxtPregunta { get; set; }
         public List<string> ListaDeRespuestas { get; set; }
         public string RespuestaCorrecta { get; set; }

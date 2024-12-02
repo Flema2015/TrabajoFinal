@@ -29,6 +29,7 @@ namespace TrabajoFinal_
         /// </summary>
         private void InitializeComponent()
         {
+            components = new System.ComponentModel.Container();
             lblPreguntaID = new Label();
             lblPregunta = new Label();
             lblListaRespuestas = new Label();
@@ -47,7 +48,9 @@ namespace TrabajoFinal_
             lblRespuestas = new Label();
             btnAceptar = new Button();
             btnVolver = new Button();
-            lblIDPregunta = new Label();
+            lblNumeroIdPregunta = new Label();
+            alertaVacio = new ErrorProvider(components);
+            ((System.ComponentModel.ISupportInitialize)alertaVacio).BeginInit();
             SuspendLayout();
             // 
             // lblPreguntaID
@@ -56,9 +59,9 @@ namespace TrabajoFinal_
             lblPreguntaID.Font = new Font("Segoe UI", 11.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
             lblPreguntaID.Location = new Point(104, 33);
             lblPreguntaID.Name = "lblPreguntaID";
-            lblPreguntaID.Size = new Size(89, 20);
+            lblPreguntaID.Size = new Size(93, 20);
             lblPreguntaID.TabIndex = 2;
-            lblPreguntaID.Text = "PreguntaID";
+            lblPreguntaID.Text = "Pregunta ID";
             // 
             // lblPregunta
             // 
@@ -212,21 +215,24 @@ namespace TrabajoFinal_
             btnVolver.UseVisualStyleBackColor = true;
             btnVolver.Click += btnVolver_Click;
             // 
-            // lblIDPregunta
+            // lblNumeroIdPregunta
             // 
-            lblIDPregunta.AutoSize = true;
-            lblIDPregunta.Location = new Point(212, 37);
-            lblIDPregunta.Name = "lblIDPregunta";
-            lblIDPregunta.Size = new Size(13, 15);
-            lblIDPregunta.TabIndex = 20;
-            lblIDPregunta.Text = "1";
+            lblNumeroIdPregunta.AutoSize = true;
+            lblNumeroIdPregunta.Location = new Point(212, 37);
+            lblNumeroIdPregunta.Name = "lblNumeroIdPregunta";
+            lblNumeroIdPregunta.Size = new Size(0, 15);
+            lblNumeroIdPregunta.TabIndex = 20;
+            // 
+            // alertaVacio
+            // 
+            alertaVacio.ContainerControl = this;
             // 
             // FrmAltaPregunta
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(739, 411);
-            Controls.Add(lblIDPregunta);
+            Controls.Add(lblNumeroIdPregunta);
             Controls.Add(btnVolver);
             Controls.Add(btnAceptar);
             Controls.Add(lblRespuestas);
@@ -248,7 +254,7 @@ namespace TrabajoFinal_
             Name = "FrmAltaPregunta";
             StartPosition = FormStartPosition.CenterScreen;
             Text = "FrmAltaPregunta";
-           
+            ((System.ComponentModel.ISupportInitialize)alertaVacio).EndInit();
             ResumeLayout(false);
             PerformLayout();
         }
@@ -274,6 +280,7 @@ namespace TrabajoFinal_
         private Label lblRespuestas;
         private Button btnAceptar;
         private Button btnVolver;
-        private Label lblIDPregunta;
+        private Label lblNumeroIdPregunta;
+        private ErrorProvider alertaVacio;
     }
 }
