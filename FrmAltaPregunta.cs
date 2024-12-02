@@ -56,13 +56,13 @@ namespace TrabajoFinal_
             pregunta.TxtPregunta = txtPregunta.Text;
             pregunta.ListaDeRespuestas = respuestas;
             string respuesta = txtRespuesta.Text;
-            pregunta.RespuestaCorrecta = cmbRespuestas.SelectedIndex.ToString();
+            pregunta.RespuestaCorrecta = cmbRespuestas.SelectedIndex;
             pregunta.Asignatura = txtAsignatura.Text;
             pregunta.Unidad = txtUnidad.Text;
             pregunta.SubUnidad = txtSubUnidad.Text;
             pregunta.Visible = true;
             
-            validarCampos(pregunta.TxtPregunta, respuesta, pregunta.RespuestaCorrecta, pregunta.Asignatura, pregunta.Unidad, pregunta.SubUnidad);
+            validarCampos(pregunta.TxtPregunta, respuesta, pregunta.Asignatura, pregunta.Unidad, pregunta.SubUnidad);
 
             // Mostrar un cuadro de diálogo para confirmar la acción
             DialogResult resultado = MessageBox.Show(
@@ -89,6 +89,8 @@ namespace TrabajoFinal_
 
                 i = 0;
                 lblRespuestas.Text = "Respuestas # " + (i + 1);
+                
+                cmbRespuestas.SelectedIndex = -1;
                 cmbRespuestas.Items.Clear();
 
                 maxId++;
@@ -137,7 +139,7 @@ namespace TrabajoFinal_
             }
         }
 
-        private void validarCampos(string Pregunta, string respuesta, string RespuestaCorrecta, string Asignatura, string Unidad, string SubUnidad)
+        private void validarCampos(string Pregunta, string respuesta, string Asignatura, string Unidad, string SubUnidad)
         {
             if (Pregunta == "")
             {
@@ -147,12 +149,6 @@ namespace TrabajoFinal_
             if (respuesta == "")
             {
                 MessageBox.Show("completar el campo de respuesta ");
-                return;
-
-            }
-            if (RespuestaCorrecta == "")
-            {
-                MessageBox.Show("completar el campo de Respuesta correcta");
                 return;
 
             }
