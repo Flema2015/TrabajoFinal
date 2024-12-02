@@ -39,7 +39,6 @@ namespace TrabajoFinal_
             lblSubUnidad = new Label();
             txtPregunta = new TextBox();
             txtRespuesta = new TextBox();
-            txtRespuestaCorrecta = new TextBox();
             txtAsignatura = new TextBox();
             txtUnidad = new TextBox();
             txtSubUnidad = new TextBox();
@@ -139,13 +138,6 @@ namespace TrabajoFinal_
             txtRespuesta.Size = new Size(100, 23);
             txtRespuesta.TabIndex = 10;
             // 
-            // txtRespuestaCorrecta
-            // 
-            txtRespuestaCorrecta.Location = new Point(254, 189);
-            txtRespuestaCorrecta.Name = "txtRespuestaCorrecta";
-            txtRespuestaCorrecta.Size = new Size(100, 23);
-            txtRespuestaCorrecta.TabIndex = 11;
-            // 
             // txtAsignatura
             // 
             txtAsignatura.Location = new Point(214, 229);
@@ -170,7 +162,7 @@ namespace TrabajoFinal_
             // cmbRespuestas
             // 
             cmbRespuestas.FormattingEnabled = true;
-            cmbRespuestas.Location = new Point(470, 147);
+            cmbRespuestas.Location = new Point(254, 189);
             cmbRespuestas.Name = "cmbRespuestas";
             cmbRespuestas.Size = new Size(121, 23);
             cmbRespuestas.TabIndex = 15;
@@ -241,7 +233,6 @@ namespace TrabajoFinal_
             Controls.Add(txtSubUnidad);
             Controls.Add(txtUnidad);
             Controls.Add(txtAsignatura);
-            Controls.Add(txtRespuestaCorrecta);
             Controls.Add(txtRespuesta);
             Controls.Add(txtPregunta);
             Controls.Add(lblSubUnidad);
@@ -271,7 +262,6 @@ namespace TrabajoFinal_
         private Label lblSubUnidad;
         private TextBox txtPregunta;
         private TextBox txtRespuesta;
-        private TextBox txtRespuestaCorrecta;
         private TextBox txtAsignatura;
         private TextBox txtUnidad;
         private TextBox txtSubUnidad;

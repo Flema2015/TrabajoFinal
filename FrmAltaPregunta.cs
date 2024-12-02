@@ -17,6 +17,8 @@ namespace TrabajoFinal_
         {
             InitializeComponent();
 
+            preguntas = CargarPreguntas();
+
             ObtenerIdPreguntaMaximo();
 
             // TODO verifica el ultimo id en el archivo.
@@ -54,7 +56,7 @@ namespace TrabajoFinal_
             pregunta.TxtPregunta = txtPregunta.Text;
             pregunta.ListaDeRespuestas = respuestas;
             string respuesta = txtRespuesta.Text;
-            pregunta.RespuestaCorrecta = txtRespuestaCorrecta.Text;
+            pregunta.RespuestaCorrecta = cmbRespuestas.SelectedIndex.ToString();
             pregunta.Asignatura = txtAsignatura.Text;
             pregunta.Unidad = txtUnidad.Text;
             pregunta.SubUnidad = txtSubUnidad.Text;
@@ -81,7 +83,6 @@ namespace TrabajoFinal_
                 txtPregunta.Text = "";
                 respuestas = new List<string>();
                 txtRespuesta.Text = "";
-                txtRespuestaCorrecta.Text = "";
                 txtAsignatura.Text = "";
                 txtUnidad.Text = "";
                 txtSubUnidad.Text = "";
@@ -213,6 +214,7 @@ namespace TrabajoFinal_
             }
         }
 
+
         private void GuardarPregunta()
         {
             string rutaArchivo = Path.Combine(CARPETA, "Preguntas.json");
@@ -223,8 +225,6 @@ namespace TrabajoFinal_
                 if (!Directory.Exists(CARPETA))
                 {
                     Directory.CreateDirectory(CARPETA);
-                }
-
                 // Crea una lista para almacenar las preguntas en formato JSON
                 var listaPreguntasJson = preguntas.Select(pregunta => new
                 {
@@ -245,10 +245,55 @@ namespace TrabajoFinal_
                 File.WriteAllText(rutaArchivo, json);
 
                 MessageBox.Show("Datos guardados correctamente en el archivo JSON.");
+                }
+                else
+                {
+                    string json = JsonSerializer.Serialize(preguntas, new JsonSerializerOptions { WriteIndented = true });
+                    File.WriteAllText(rutaArchivo, json);
+
+                    maxId = int.Parse(lblNumeroIdPregunta.Text);
+
+                    MessageBox.Show("Datos guardados correctamente en el archivo JSON.");
+                }
+
             }
             catch (Exception ex)
             {
                 MessageBox.Show("Error al guardar los datos: " + ex.Message);
+            }
+        }
+
+        private List<Pregunta> CargarPreguntas()
+        {
+            string rutaArchivo = Path.Combine(CARPETA, "Preguntas.json");
+
+            try
+            {
+                // Verifica si el archivo existe
+                if (!File.Exists(rutaArchivo))
+                {
+                    MessageBox.Show("El archivo JSON no existe.");
+                    return new List<Pregunta>();
+                }
+
+                // Lee el contenido del archivo JSON
+                string contenidoJson = File.ReadAllText(rutaArchivo);
+
+                // Deserializa el JSON en una lista de preguntas
+                var preguntas = JsonSerializer.Deserialize<List<Pregunta>>(contenidoJson);
+
+                if (preguntas == null || !preguntas.Any())
+                {
+                    MessageBox.Show("No se encontraron preguntas en el archivo JSON.");
+                    return new List<Pregunta>();
+                }
+
+                return preguntas;
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error al cargar las preguntas: " + ex.Message);
+                return new List<Pregunta>();
             }
         }
     }
