@@ -8,6 +8,7 @@ namespace TrabajoFinal_
         const int MAX = 4;
 
         int i = 0;
+        int j = 0;
         int maxId = 0;
 
         List<Pregunta> preguntas = new List<Pregunta>();
@@ -173,6 +174,7 @@ namespace TrabajoFinal_
         {
             string rutaArchivoJson = Path.Combine(CARPETA, "Preguntas.json");
 
+            int idFaltante = 0;
             try
             {
                 // Verifica si el archivo existe
@@ -190,19 +192,32 @@ namespace TrabajoFinal_
                 // Deserializa el JSON en una lista de objetos
                 var preguntas = JsonSerializer.Deserialize<List<Pregunta>>(contenidoJson);
 
+                var idsOrdenados = preguntas.Select(p => p.PreguntaId).ToList();
+
                 if (preguntas == null || !preguntas.Any())
                 {
                     lblNumeroIdPregunta.Text = maxId.ToString();
 
                     return;
                 }
+                 
+                for (int j = 0; j < idsOrdenados.Count - 1; j++)
+                {
+                    if (idsOrdenados[j + 1] - idsOrdenados[j] > 1)
+                    {
+                        idFaltante = idsOrdenados[j] + 1;
+                        lblNumeroIdPregunta.Text = (idFaltante).ToString();
+                    }
+                    else
+                    {                      
+                        // Obtiene el máximo PreguntaId
+                        int idMax = preguntas.Max(p => (int)p.PreguntaId);
 
-                // Obtiene el máximo PreguntaId
-                int idMax = preguntas.Max(p => (int)p.PreguntaId);
+                        maxId = idMax;
 
-                maxId = idMax;
-
-                lblNumeroIdPregunta.Text = (maxId + 1).ToString();
+                        lblNumeroIdPregunta.Text = (maxId + 1).ToString();
+                    }
+                }
             }
             catch (Exception ex)
             {

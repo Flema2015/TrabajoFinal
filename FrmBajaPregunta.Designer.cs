@@ -31,11 +31,13 @@
             btnBorrar = new Button();
             btnVolver = new Button();
             lstBaja = new ListBox();
+            lblPreguntaABorrar = new Label();
+            cmbPreguntaABorrar = new ComboBox();
             SuspendLayout();
             // 
             // btnBorrar
             // 
-            btnBorrar.Location = new Point(214, 362);
+            btnBorrar.Location = new Point(566, 137);
             btnBorrar.Name = "btnBorrar";
             btnBorrar.Size = new Size(84, 37);
             btnBorrar.TabIndex = 0;
@@ -45,7 +47,7 @@
             // 
             // btnVolver
             // 
-            btnVolver.Location = new Point(407, 362);
+            btnVolver.Location = new Point(350, 362);
             btnVolver.Name = "btnVolver";
             btnVolver.Size = new Size(82, 37);
             btnVolver.TabIndex = 1;
@@ -59,15 +61,33 @@
             lstBaja.ItemHeight = 15;
             lstBaja.Location = new Point(24, 13);
             lstBaja.Name = "lstBaja";
-            lstBaja.Size = new Size(685, 334);
+            lstBaja.Size = new Size(465, 334);
             lstBaja.TabIndex = 2;
-            lstBaja.SelectedIndexChanged += lstBaja_SelectedIndexChanged;
+            // 
+            // lblPreguntaABorrar
+            // 
+            lblPreguntaABorrar.AutoSize = true;
+            lblPreguntaABorrar.Location = new Point(566, 56);
+            lblPreguntaABorrar.Name = "lblPreguntaABorrar";
+            lblPreguntaABorrar.Size = new Size(102, 15);
+            lblPreguntaABorrar.TabIndex = 3;
+            lblPreguntaABorrar.Text = "Pregunta a borrar:";
+            // 
+            // cmbPreguntaABorrar
+            // 
+            cmbPreguntaABorrar.FormattingEnabled = true;
+            cmbPreguntaABorrar.Location = new Point(566, 93);
+            cmbPreguntaABorrar.Name = "cmbPreguntaABorrar";
+            cmbPreguntaABorrar.Size = new Size(121, 23);
+            cmbPreguntaABorrar.TabIndex = 4;
             // 
             // FrmBajaPregunta
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(739, 411);
+            Controls.Add(cmbPreguntaABorrar);
+            Controls.Add(lblPreguntaABorrar);
             Controls.Add(lstBaja);
             Controls.Add(btnVolver);
             Controls.Add(btnBorrar);
@@ -75,6 +95,7 @@
             StartPosition = FormStartPosition.CenterScreen;
             Text = "BajaPregunta";
             ResumeLayout(false);
+            PerformLayout();
         }
 
         #endregion
@@ -82,5 +103,7 @@
         private Button btnBorrar;
         private Button btnVolver;
         private ListBox lstBaja;
+        private Label lblPreguntaABorrar;
+        private ComboBox cmbPreguntaABorrar;
     }
 }
