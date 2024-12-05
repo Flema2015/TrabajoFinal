@@ -230,6 +230,7 @@
             Controls.Add(lblPreguntaID);
             Controls.Add(btnVolver);
             Controls.Add(btnAceptar);
+            FormBorderStyle = FormBorderStyle.None;
             Name = "FrmModificarPregunta";
             StartPosition = FormStartPosition.CenterScreen;
             Text = "ModificarPregunta";

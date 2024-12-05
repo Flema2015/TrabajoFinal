@@ -144,6 +144,7 @@
             Controls.Add(lblRespuestasCorrectas);
             Controls.Add(btnVolver);
             Controls.Add(btnCorregir);
+            FormBorderStyle = FormBorderStyle.None;
             Name = "FrmCompararRespuestas";
             StartPosition = FormStartPosition.CenterScreen;
             Text = "FrmCompararRespuestas";

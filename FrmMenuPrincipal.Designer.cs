@@ -74,12 +74,14 @@
             realizarExamenToolStripMenuItem.Name = "realizarExamenToolStripMenuItem";
             realizarExamenToolStripMenuItem.Size = new Size(236, 26);
             realizarExamenToolStripMenuItem.Text = "Realizar examen";
+            realizarExamenToolStripMenuItem.Click += realizarExamenToolStripMenuItem_Click;
             // 
             // correcciónDeExamenToolStripMenuItem
             // 
             correcciónDeExamenToolStripMenuItem.Name = "correcciónDeExamenToolStripMenuItem";
             correcciónDeExamenToolStripMenuItem.Size = new Size(236, 26);
             correcciónDeExamenToolStripMenuItem.Text = "Corrección de examen";
+            correcciónDeExamenToolStripMenuItem.Click += correcciónDeExamenToolStripMenuItem_Click;
             // 
             // salirToolStripMenuItem
             // 

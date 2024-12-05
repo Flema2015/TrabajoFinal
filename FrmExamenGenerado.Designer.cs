@@ -58,6 +58,7 @@
             ClientSize = new Size(739, 411);
             Controls.Add(btnVolver);
             Controls.Add(lstExamenGenerado);
+            FormBorderStyle = FormBorderStyle.None;
             Name = "FrmExamenGenerado";
             StartPosition = FormStartPosition.CenterScreen;
             Text = "Exámen Generado";

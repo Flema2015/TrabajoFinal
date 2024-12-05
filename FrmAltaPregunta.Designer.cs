@@ -47,7 +47,6 @@ namespace TrabajoFinal_
             lblRespuestas = new Label();
             btnAceptar = new Button();
             btnVolver = new Button();
-            lblNumeroIdPregunta = new Label();
             alertaVacio = new ErrorProvider(components);
             ((System.ComponentModel.ISupportInitialize)alertaVacio).BeginInit();
             SuspendLayout();
@@ -207,14 +206,6 @@ namespace TrabajoFinal_
             btnVolver.UseVisualStyleBackColor = true;
             btnVolver.Click += btnVolver_Click;
             // 
-            // lblNumeroIdPregunta
-            // 
-            lblNumeroIdPregunta.AutoSize = true;
-            lblNumeroIdPregunta.Location = new Point(212, 37);
-            lblNumeroIdPregunta.Name = "lblNumeroIdPregunta";
-            lblNumeroIdPregunta.Size = new Size(0, 15);
-            lblNumeroIdPregunta.TabIndex = 20;
-            // 
             // alertaVacio
             // 
             alertaVacio.ContainerControl = this;
@@ -224,7 +215,6 @@ namespace TrabajoFinal_
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(739, 411);
-            Controls.Add(lblNumeroIdPregunta);
             Controls.Add(btnVolver);
             Controls.Add(btnAceptar);
             Controls.Add(lblRespuestas);
@@ -242,6 +232,7 @@ namespace TrabajoFinal_
             Controls.Add(lblListaRespuestas);
             Controls.Add(lblPregunta);
             Controls.Add(lblPreguntaID);
+            FormBorderStyle = FormBorderStyle.None;
             Name = "FrmAltaPregunta";
             StartPosition = FormStartPosition.CenterScreen;
             Text = "FrmAltaPregunta";
@@ -270,7 +261,6 @@ namespace TrabajoFinal_
         private Label lblRespuestas;
         private Button btnAceptar;
         private Button btnVolver;
-        private Label lblNumeroIdPregunta;
         private ErrorProvider alertaVacio;
     }
 }

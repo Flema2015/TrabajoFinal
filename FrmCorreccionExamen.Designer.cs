@@ -111,9 +111,11 @@
             Controls.Add(lblIDExamen);
             Controls.Add(btnVolver);
             Controls.Add(btnBuscarRespuestas);
+            FormBorderStyle = FormBorderStyle.None;
             Name = "FrmCorreccionEx";
             StartPosition = FormStartPosition.CenterScreen;
             Text = "Corección de Exámenes";
+            FormClosed += FrmCorreccionEx_FormClosed;
             ResumeLayout(false);
             PerformLayout();
         }

@@ -88,6 +88,7 @@ namespace TrabajoFinal_
 
             preguntas.RemoveAt(indiceElegido);
 
+            cmbPreguntaABorrar.Text = "";
             GuardarCambiosEnArchivos();
             ActualizarLst();          
         }

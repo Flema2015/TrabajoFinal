@@ -27,5 +27,11 @@ namespace TrabajoFinal_
         {
             this.Close();
         }
+
+        private void FrmAdministrarExamen_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            // Mostrar el menú usando la clase estática
+            GestorMenu.MostrarMenu();
+        }
     }
 }

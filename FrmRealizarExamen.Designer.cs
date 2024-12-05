@@ -61,6 +61,7 @@
             lblFechaResolucion = new Label();
             lblCarreraCompletar = new Label();
             lblAsignaturaCompletar = new Label();
+            btnVolver = new Button();
             groupBox1.SuspendLayout();
             groupBox2.SuspendLayout();
             groupBox3.SuspendLayout();
@@ -88,7 +89,7 @@
             // 
             // btnEntregarExamen
             // 
-            btnEntregarExamen.Location = new Point(298, 398);
+            btnEntregarExamen.Location = new Point(231, 395);
             btnEntregarExamen.Name = "btnEntregarExamen";
             btnEntregarExamen.Size = new Size(75, 23);
             btnEntregarExamen.TabIndex = 6;
@@ -426,11 +427,23 @@
             lblAsignaturaCompletar.TabIndex = 14;
             lblAsignaturaCompletar.Text = "x";
             // 
+            // btnVolver
+            // 
+            btnVolver.Location = new Point(350, 395);
+            btnVolver.Name = "btnVolver";
+            btnVolver.Size = new Size(75, 23);
+            btnVolver.TabIndex = 15;
+            btnVolver.Text = "Volver";
+            btnVolver.UseVisualStyleBackColor = true;
+            btnVolver.Click += btnVolver_Click;
+            // 
             // FrmRealizarExamen
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(725, 450);
+            ClientSize = new Size(700, 430);
+            ControlBox = false;
+            Controls.Add(btnVolver);
             Controls.Add(lblAsignaturaCompletar);
             Controls.Add(lblCarreraCompletar);
             Controls.Add(lblFechaResolucion);
@@ -444,9 +457,14 @@
             Controls.Add(btnEntregarExamen);
             Controls.Add(lblCarrera);
             Controls.Add(lblIDExamen);
+            FormBorderStyle = FormBorderStyle.None;
+            MaximizeBox = false;
+            MinimizeBox = false;
             Name = "FrmRealizarExamen";
+            ShowIcon = false;
             StartPosition = FormStartPosition.CenterScreen;
             Text = "Realizar Exámen";
+            FormClosed += FrmRealizarExamen_FormClosed;
             groupBox1.ResumeLayout(false);
             groupBox1.PerformLayout();
             groupBox2.ResumeLayout(false);
@@ -497,5 +515,6 @@
         private Label lblFechaResolucion;
         private Label lblCarreraCompletar;
         private Label lblAsignaturaCompletar;
+        private Button btnVolver;
     }
 }

@@ -91,6 +91,7 @@
             Controls.Add(lstBaja);
             Controls.Add(btnVolver);
             Controls.Add(btnBorrar);
+            FormBorderStyle = FormBorderStyle.None;
             Name = "FrmBajaPregunta";
             StartPosition = FormStartPosition.CenterScreen;
             Text = "BajaPregunta";

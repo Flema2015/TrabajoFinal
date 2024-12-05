@@ -36,6 +36,16 @@ namespace TrabajoFinal_
             FrmAdministrarExamen frmAdministrarExamen = new FrmAdministrarExamen();
             AbrirFormularioHijo(frmAdministrarExamen);
         }
+        private void realizarExamenToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            FrmRealizarExamen frmRealizarExamen = new FrmRealizarExamen();
+            AbrirFormularioHijo(frmRealizarExamen);
+        }
+        private void correcciónDeExamenToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            FrmCorreccionEx frmCorreccionEx = new FrmCorreccionEx();
+            AbrirFormularioHijo(frmCorreccionEx);
+        }
 
         private void salirToolStripMenuItem_Click(object sender, EventArgs e)
         {
@@ -47,5 +57,7 @@ namespace TrabajoFinal_
             // Asignar el menú principal a la clase estática
             GestorMenu.MenuPrincipal = menuStrip1;
         }
+
+
     }
 }

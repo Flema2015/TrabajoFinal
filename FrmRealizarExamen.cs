@@ -15,5 +15,16 @@
             this.DialogResult = DialogResult.OK; // Opcional para indicar éxito
             this.Close(); // Cierra el formulario actual
         }
+
+        private void FrmRealizarExamen_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            // Mostrar el menú usando la clase estática
+            GestorMenu.MostrarMenu();
+        }
+
+        private void btnVolver_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
     }
 }

@@ -1,4 +1,5 @@
 ﻿using System.Text.Json;
+using static System.Diagnostics.Activity;
 
 namespace TrabajoFinal_
 {
@@ -10,6 +11,7 @@ namespace TrabajoFinal_
         int i = 0;
         int j = 0;
         int maxId = 0;
+        int numerador = 2;
 
         List<Pregunta> preguntas = new List<Pregunta>();
         List<string> respuestas = new List<string>();
@@ -53,7 +55,7 @@ namespace TrabajoFinal_
         {
             Pregunta pregunta = new Pregunta();
 
-            pregunta.PreguntaId = int.Parse(lblNumeroIdPregunta.Text);
+            pregunta.PreguntaId = maxId;
             pregunta.TxtPregunta = txtPregunta.Text;
             pregunta.ListaDeRespuestas = respuestas;
             string respuesta = txtRespuesta.Text;
@@ -80,7 +82,7 @@ namespace TrabajoFinal_
             if (resultado == DialogResult.Yes)
             {
                 // borra el contenido de los campos.
-                lblNumeroIdPregunta.Text = "";
+                //lblPreguntaID.Text = "Pregunta ID " + (maxId+1).ToString();
                 txtPregunta.Text = "";
                 respuestas = new List<string>();
                 txtRespuesta.Text = "";
@@ -96,7 +98,7 @@ namespace TrabajoFinal_
 
                 maxId++;
 
-                lblNumeroIdPregunta.Text = maxId.ToString();
+                lblPreguntaID.Text = "Pregunta ID " + maxId.ToString();
             }
             else
             {
@@ -106,6 +108,7 @@ namespace TrabajoFinal_
 
         private void btnCargarRespuesta_Click(object sender, EventArgs e)
         {
+
             bool error = false;
 
             if (txtRespuesta.Text == "")
@@ -126,14 +129,21 @@ namespace TrabajoFinal_
             // Da un maximo de respuestas.
             if (i < 4)
             {
-                lblRespuestas.Text = "Respuestas # " + (i + 1);
-                
-                respuestas.Add(txtRespuesta.Text);
-                i++;
-                
-                cmbRespuestas.Items.Add(txtRespuesta.Text);
+                if (numerador < 5)
+                {
+                    lblRespuestas.Text = "Respuesta #" + (numerador) + ":";
+                }
+                else
+                {
+                    lblRespuestas.Text = "Respuesta #4:";
+                }
 
+                respuestas.Add(txtRespuesta.Text);
+                numerador++;
+                i++;
+                cmbRespuestas.Items.Add(txtRespuesta.Text);
             }
+
             else
             {
                 MessageBox.Show("Se ha cargado el maximo de respuestas");
@@ -181,7 +191,7 @@ namespace TrabajoFinal_
                 if (!File.Exists(rutaArchivoJson))
                 {
                     maxId++;
-                    lblNumeroIdPregunta.Text = maxId.ToString();
+                    lblPreguntaID.Text = "Pregunta ID " + maxId.ToString();
 
                     return;
                 }
@@ -196,7 +206,7 @@ namespace TrabajoFinal_
 
                 if (preguntas == null || !preguntas.Any())
                 {
-                    lblNumeroIdPregunta.Text = maxId.ToString();
+                    lblPreguntaID.Text = "Pregunta ID " +  maxId.ToString();
 
                     return;
                 }
@@ -206,7 +216,7 @@ namespace TrabajoFinal_
                     if (idsOrdenados[j + 1] - idsOrdenados[j] > 1)
                     {
                         idFaltante = idsOrdenados[j] + 1;
-                        lblNumeroIdPregunta.Text = (idFaltante).ToString();
+                        lblPreguntaID.Text = (idFaltante).ToString();
                     }
                     else
                     {                      
@@ -215,7 +225,7 @@ namespace TrabajoFinal_
 
                         maxId = idMax;
 
-                        lblNumeroIdPregunta.Text = (maxId + 1).ToString();
+                        lblPreguntaID.Text = "Pregunta ID     " + (maxId + 1).ToString();
                     }
                 }
             }
@@ -262,7 +272,7 @@ namespace TrabajoFinal_
                     string json = JsonSerializer.Serialize(preguntas, new JsonSerializerOptions { WriteIndented = true });
                     File.WriteAllText(rutaArchivo, json);
 
-                    maxId = int.Parse(lblNumeroIdPregunta.Text);
+                    //maxId = int.Parse(lblPreguntaID.Text);
 
                     MessageBox.Show("Datos guardados correctamente en el archivo JSON.");
                 }
@@ -296,6 +306,9 @@ namespace TrabajoFinal_
                 if (preguntas == null || !preguntas.Any())
                 {
                     MessageBox.Show("No se encontraron preguntas en el archivo JSON.");
+                    maxId = 1;
+                   lblPreguntaID.Text = "Pregunta ID   " + maxId.ToString();
+
                     return new List<Pregunta>();
                 }
 

@@ -85,6 +85,7 @@
             Controls.Add(btnCancelar);
             Controls.Add(btnAceptar);
             Controls.Add(txtEditor);
+            FormBorderStyle = FormBorderStyle.None;
             Name = "FrmEditorPregunta";
             StartPosition = FormStartPosition.CenterScreen;
             Text = "FrmEditorPregunta";

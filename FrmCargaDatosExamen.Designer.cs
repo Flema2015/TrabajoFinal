@@ -101,6 +101,7 @@
             Controls.Add(lblCarrera);
             Controls.Add(btnVolver);
             Controls.Add(btnEmpezarExamen);
+            FormBorderStyle = FormBorderStyle.None;
             Name = "FrmCargaDatosExamen";
             StartPosition = FormStartPosition.CenterScreen;
             Text = "Cargar Carrera y Asignatura";

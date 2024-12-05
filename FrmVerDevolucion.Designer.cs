@@ -58,6 +58,7 @@
             ClientSize = new Size(800, 450);
             Controls.Add(lstDevolucion);
             Controls.Add(btnVolver);
+            FormBorderStyle = FormBorderStyle.None;
             Name = "FrmVerDevolucion";
             StartPosition = FormStartPosition.CenterScreen;
             Text = "FrmVerDevolucion";

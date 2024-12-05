@@ -36,7 +36,7 @@
             // 
             // btnIrAExamen
             // 
-            btnIrAExamen.Location = new Point(227, 229);
+            btnIrAExamen.Location = new Point(214, 229);
             btnIrAExamen.Name = "btnIrAExamen";
             btnIrAExamen.Size = new Size(107, 23);
             btnIrAExamen.TabIndex = 9;
@@ -55,7 +55,7 @@
             // 
             // btnVolver
             // 
-            btnVolver.Location = new Point(359, 229);
+            btnVolver.Location = new Point(349, 229);
             btnVolver.Name = "btnVolver";
             btnVolver.Size = new Size(105, 23);
             btnVolver.TabIndex = 6;
@@ -66,12 +66,12 @@
             // cmbAsignatura
             // 
             cmbAsignatura.FormattingEnabled = true;
-            cmbAsignatura.Location = new Point(343, 144);
+            cmbAsignatura.Location = new Point(324, 144);
             cmbAsignatura.Name = "cmbAsignatura";
             cmbAsignatura.Size = new Size(121, 23);
             cmbAsignatura.TabIndex = 11;
             // 
-            // FrmAdministracionExamen
+            // FrmAdministrarExamen
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
@@ -80,9 +80,11 @@
             Controls.Add(btnIrAExamen);
             Controls.Add(lblAsignatura);
             Controls.Add(btnVolver);
-            Name = "FrmAdministracionExamen";
+            FormBorderStyle = FormBorderStyle.None;
+            Name = "FrmAdministrarExamen";
             StartPosition = FormStartPosition.CenterScreen;
             Text = "Generación de Exámenes";
+            FormClosed += FrmAdministrarExamen_FormClosed;
             ResumeLayout(false);
             PerformLayout();
         }
