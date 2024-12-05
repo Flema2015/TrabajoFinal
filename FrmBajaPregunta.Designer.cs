@@ -28,56 +28,69 @@
         /// </summary>
         private void InitializeComponent()
         {
-            btnAceptar = new Button();
+            btnBorrar = new Button();
             btnVolver = new Button();
-            lblBorrarPregunta = new Label();
-            txtBorrarPregunta = new TextBox();
+            lstBaja = new ListBox();
+            lblPreguntaABorrar = new Label();
+            cmbPreguntaABorrar = new ComboBox();
             SuspendLayout();
             // 
-            // btnAceptar
+            // btnBorrar
             // 
-            btnAceptar.Location = new Point(256, 291);
-            btnAceptar.Name = "btnAceptar";
-            btnAceptar.Size = new Size(75, 23);
-            btnAceptar.TabIndex = 0;
-            btnAceptar.Text = "Aceptar";
-            btnAceptar.UseVisualStyleBackColor = true;
+            btnBorrar.Location = new Point(566, 137);
+            btnBorrar.Name = "btnBorrar";
+            btnBorrar.Size = new Size(84, 37);
+            btnBorrar.TabIndex = 0;
+            btnBorrar.Text = "Borrar";
+            btnBorrar.UseVisualStyleBackColor = true;
+            btnBorrar.Click += btnBorrar_Click;
             // 
             // btnVolver
             // 
-            btnVolver.Location = new Point(373, 291);
+            btnVolver.Location = new Point(350, 362);
             btnVolver.Name = "btnVolver";
-            btnVolver.Size = new Size(75, 23);
+            btnVolver.Size = new Size(82, 37);
             btnVolver.TabIndex = 1;
             btnVolver.Text = "Volver";
             btnVolver.UseVisualStyleBackColor = true;
             btnVolver.Click += btnVolver_Click;
             // 
-            // lblBorrarPregunta
+            // lstBaja
             // 
-            lblBorrarPregunta.AutoSize = true;
-            lblBorrarPregunta.Location = new Point(227, 193);
-            lblBorrarPregunta.Name = "lblBorrarPregunta";
-            lblBorrarPregunta.Size = new Size(104, 15);
-            lblBorrarPregunta.TabIndex = 2;
-            lblBorrarPregunta.Text = "Borrar Pregunta ID";
+            lstBaja.FormattingEnabled = true;
+            lstBaja.ItemHeight = 15;
+            lstBaja.Location = new Point(24, 13);
+            lstBaja.Name = "lstBaja";
+            lstBaja.Size = new Size(465, 334);
+            lstBaja.TabIndex = 2;
             // 
-            // txtBorrarPregunta
+            // lblPreguntaABorrar
             // 
-            txtBorrarPregunta.Location = new Point(373, 190);
-            txtBorrarPregunta.Name = "txtBorrarPregunta";
-            txtBorrarPregunta.Size = new Size(100, 23);
-            txtBorrarPregunta.TabIndex = 3;
+            lblPreguntaABorrar.AutoSize = true;
+            lblPreguntaABorrar.Location = new Point(566, 56);
+            lblPreguntaABorrar.Name = "lblPreguntaABorrar";
+            lblPreguntaABorrar.Size = new Size(102, 15);
+            lblPreguntaABorrar.TabIndex = 3;
+            lblPreguntaABorrar.Text = "Pregunta a borrar:";
+            // 
+            // cmbPreguntaABorrar
+            // 
+            cmbPreguntaABorrar.FormattingEnabled = true;
+            cmbPreguntaABorrar.Location = new Point(566, 93);
+            cmbPreguntaABorrar.Name = "cmbPreguntaABorrar";
+            cmbPreguntaABorrar.Size = new Size(121, 23);
+            cmbPreguntaABorrar.TabIndex = 4;
             // 
             // FrmBajaPregunta
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(739, 411);
-            Controls.Add(txtBorrarPregunta);
-            Controls.Add(lblBorrarPregunta);
+            Controls.Add(cmbPreguntaABorrar);
+            Controls.Add(lblPreguntaABorrar);
+            Controls.Add(lstBaja);
             Controls.Add(btnVolver);
-            Controls.Add(btnAceptar);
+            Controls.Add(btnBorrar);
             Name = "FrmBajaPregunta";
             StartPosition = FormStartPosition.CenterScreen;
             Text = "BajaPregunta";
@@ -87,9 +100,10 @@
 
         #endregion
 
-        private Button btnAceptar;
+        private Button btnBorrar;
         private Button btnVolver;
-        private Label lblBorrarPregunta;
-        private TextBox txtBorrarPregunta;
+        private ListBox lstBaja;
+        private Label lblPreguntaABorrar;
+        private ComboBox cmbPreguntaABorrar;
     }
 }
