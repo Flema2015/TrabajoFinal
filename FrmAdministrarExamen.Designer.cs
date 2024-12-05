@@ -1,6 +1,6 @@
 ﻿namespace TrabajoFinal_
 {
-    partial class FrmGeneracionExm
+    partial class FrmAdministrarExamen
     {
         /// <summary>
         /// Required designer variable.
@@ -71,7 +71,7 @@
             cmbAsignatura.Size = new Size(121, 23);
             cmbAsignatura.TabIndex = 11;
             // 
-            // FrmGeneracionExm
+            // FrmAdministracionExamen
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
@@ -80,7 +80,7 @@
             Controls.Add(btnIrAExamen);
             Controls.Add(lblAsignatura);
             Controls.Add(btnVolver);
-            Name = "FrmGeneracionExm";
+            Name = "FrmAdministracionExamen";
             StartPosition = FormStartPosition.CenterScreen;
             Text = "Generación de Exámenes";
             ResumeLayout(false);

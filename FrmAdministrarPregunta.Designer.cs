@@ -1,6 +1,6 @@
 ﻿namespace TrabajoFinal_
 {
-    partial class FrmBancoDePreguntas
+    partial class FrmAdministrarPregunta
     {
         /// <summary>
         /// Required designer variable.
@@ -74,7 +74,7 @@
             btnVolverAlMenu.UseVisualStyleBackColor = true;
             btnVolverAlMenu.Click += btnVolverAlMenu_Click;
             // 
-            // FrmBancoDePreguntas
+            // FrmAdministrarPregunta
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
@@ -83,9 +83,14 @@
             Controls.Add(btnModificar);
             Controls.Add(btnBaja);
             Controls.Add(btnAlta);
-            Name = "FrmBancoDePreguntas";
+            FormBorderStyle = FormBorderStyle.None;
+            MaximizeBox = false;
+            MinimizeBox = false;
+            Name = "FrmAdministrarPregunta";
+            ShowIcon = false;
             StartPosition = FormStartPosition.CenterScreen;
-            Text = "Administración del banco de preguntas";
+            Text = "Administrar preguntas";
+            FormClosed += this.FrmAdministrarPregunta_FormClosed;
             ResumeLayout(false);
         }
 

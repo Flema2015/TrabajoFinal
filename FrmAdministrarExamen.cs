@@ -1,8 +1,10 @@
-﻿namespace TrabajoFinal_
+﻿using System.Windows.Forms;
+
+namespace TrabajoFinal_
 {
-    public partial class FrmGeneracionExm : Form
+    public partial class FrmAdministrarExamen : Form
     {
-        public FrmGeneracionExm()
+        public FrmAdministrarExamen()
         {
             InitializeComponent();
             cmbAsignatura.DataSource = Enum.GetValues(typeof(Asignaturas));

@@ -1,11 +1,18 @@
 ﻿namespace TrabajoFinal_
 {
-    public partial class FrmBancoDePreguntas : Form
+    public partial class FrmAdministrarPregunta : Form
     {
         
-        public FrmBancoDePreguntas()
+        public FrmAdministrarPregunta()
         {
             InitializeComponent();
+        }
+
+        // Evento para restaurar el menú al cerrar el formulario hijo
+        private void FrmAdministrarPregunta_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            // Mostrar el menú usando la clase estática
+            GestorMenu.MostrarMenu();
         }
 
         private void btnAlta_Click(object sender, EventArgs e)
@@ -32,5 +39,7 @@
         {
             this.Close();
         }
+
+
     }
 }
