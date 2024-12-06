@@ -69,23 +69,57 @@ namespace TrabajoFinal_
 
         private void btnModificarRespuesta_Click(object sender, EventArgs e)
         {
-            try
+           
             {
-                int IndicieElegido = cmbNumeroRespuesta.SelectedIndex;
+                try
+                {
+                    // Validar que se haya seleccionado una respuesta en el ComboBox
+                    int IndicieElegido = cmbNumeroRespuesta.SelectedIndex;
+                    if (IndicieElegido == -1)
+                    {
+                        MessageBox.Show("selecciona una respuesta para modificar.");
+                        return;
+                    }
 
-                string NuevaRespuesta = txtRespuesta.Text;
+                    // Validar que se haya ingresado una nueva respuesta
+                    string NuevaRespuesta = txtRespuesta.Text;
+                    if (string.IsNullOrEmpty(NuevaRespuesta))
+                    {
+                        MessageBox.Show("ingresa una nueva respuesta.");
+                        return;
+                    }
 
-                string Json = File.ReadAllText(rutaArchivo);
-                preguntas = JsonSerializer.Deserialize<List<Pregunta>>(Json) ?? new List<Pregunta>();
+                    // Leer el archivo JSON
+                    string Json = File.ReadAllText(rutaArchivo);
+                    preguntas = JsonSerializer.Deserialize<List<Pregunta>>(Json) ?? new List<Pregunta>();
 
-                cmbNumeroRespuesta.Items[IndicieElegido] = NuevaRespuesta;
-                MessageBox.Show("La respuesta se ha modificado Correctamente");
+                    // Buscar la pregunta por el ID ingresado
+                    var pregunta = preguntas.FirstOrDefault(p => p.PreguntaId.ToString() == txtIDPregunta.Text);
+
+                    if (pregunta == null)
+                    {
+                        MessageBox.Show("No se encontró la pregunta con el ID proporcionado.");
+                        return;
+                    }
+
+                    // Modificar la respuesta en la lista de respuestas de la pregunta
+                    pregunta.ListaDeRespuestas[IndicieElegido] = NuevaRespuesta;
+
+                    // Actualizar el ComboBox para reflejar los cambios
+                    cmbNumeroRespuesta.Items[IndicieElegido] = NuevaRespuesta;
+
+                    // Guardar los cambios en el archivo JSON
+                    string nuevoJson = JsonSerializer.Serialize(preguntas, new JsonSerializerOptions { WriteIndented = true });
+                    File.WriteAllText(rutaArchivo, nuevoJson);
+
+                    MessageBox.Show("Datos guardados correctamente en el archivo JSON.");
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show("Error al modificar la respuesta.", ex.Message);
+                }
             }
 
-            catch (Exception ex)
-            {
-                MessageBox.Show("Error al Modificar!", ex.Message);
-            }
 
 
         }
@@ -94,8 +128,18 @@ namespace TrabajoFinal_
         {
             try
             {
-                
+                var pregunta = preguntas.FirstOrDefault(p => p.PreguntaId.ToString() == txtIDPregunta.Text);
+                if (pregunta == null) 
+                {
 
+                    MessageBox.Show("No se encontró la pregunta con el ID proporcionado.");
+                    return;
+                }
+                pregunta.TxtPregunta = txtPregunta.Text;
+                pregunta.RespuestaCorrecta = int.Parse(txtRespuestaCorrecta.Text);
+                pregunta.Asignatura = txtAsignatura.Text;
+                pregunta.Unidad = txtUnidad.Text;
+                pregunta.SubUnidad = txtSubUnidad.Text;
                 string Nuevojson = JsonSerializer.Serialize(preguntas, new JsonSerializerOptions { WriteIndented = true });
                 File.WriteAllText(rutaArchivo, Nuevojson);
                 MessageBox.Show("Datos guardados correctamente en el archivo JSON.");
