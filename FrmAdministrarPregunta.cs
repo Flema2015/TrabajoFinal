@@ -2,7 +2,6 @@
 {
     public partial class FrmAdministrarPregunta : Form
     {
-        
         public FrmAdministrarPregunta()
         {
             InitializeComponent();
@@ -39,7 +38,5 @@
         {
             this.Close();
         }
-
-
     }
 }

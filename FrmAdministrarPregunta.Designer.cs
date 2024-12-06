@@ -36,42 +36,66 @@
             // 
             // btnAlta
             // 
-            btnAlta.Location = new Point(178, 150);
+            btnAlta.BackColor = Color.White;
+            btnAlta.FlatAppearance.BorderColor = Color.Black;
+            btnAlta.FlatAppearance.BorderSize = 0;
+            btnAlta.FlatAppearance.MouseOverBackColor = Color.FromArgb(224, 224, 224);
+            btnAlta.FlatStyle = FlatStyle.Flat;
+            btnAlta.Font = new Font("Segoe UI", 9.75F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            btnAlta.Location = new Point(125, 146);
             btnAlta.Name = "btnAlta";
-            btnAlta.Size = new Size(90, 44);
+            btnAlta.Size = new Size(150, 50);
             btnAlta.TabIndex = 0;
-            btnAlta.Text = "Nueva Pregunta";
-            btnAlta.UseVisualStyleBackColor = true;
+            btnAlta.Text = "Nueva pregunta";
+            btnAlta.UseVisualStyleBackColor = false;
             btnAlta.Click += btnAlta_Click;
             // 
             // btnBaja
             // 
-            btnBaja.Location = new Point(312, 150);
+            btnBaja.BackColor = Color.White;
+            btnBaja.FlatAppearance.BorderColor = Color.Black;
+            btnBaja.FlatAppearance.BorderSize = 0;
+            btnBaja.FlatAppearance.MouseOverBackColor = Color.FromArgb(224, 224, 224);
+            btnBaja.FlatStyle = FlatStyle.Flat;
+            btnBaja.Font = new Font("Segoe UI", 14.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            btnBaja.Location = new Point(292, 146);
             btnBaja.Name = "btnBaja";
-            btnBaja.Size = new Size(90, 44);
+            btnBaja.Size = new Size(150, 50);
             btnBaja.TabIndex = 1;
             btnBaja.Text = "Baja";
-            btnBaja.UseVisualStyleBackColor = true;
+            btnBaja.UseVisualStyleBackColor = false;
             btnBaja.Click += btnBaja_Click;
             // 
             // btnModificar
             // 
-            btnModificar.Location = new Point(448, 150);
+            btnModificar.BackColor = Color.White;
+            btnModificar.FlatAppearance.BorderColor = Color.Black;
+            btnModificar.FlatAppearance.BorderSize = 0;
+            btnModificar.FlatAppearance.MouseOverBackColor = Color.FromArgb(224, 224, 224);
+            btnModificar.FlatStyle = FlatStyle.Flat;
+            btnModificar.Font = new Font("Segoe UI", 14.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            btnModificar.Location = new Point(458, 146);
             btnModificar.Name = "btnModificar";
-            btnModificar.Size = new Size(90, 44);
+            btnModificar.Size = new Size(150, 50);
             btnModificar.TabIndex = 2;
             btnModificar.Text = "Modificar";
-            btnModificar.UseVisualStyleBackColor = true;
+            btnModificar.UseVisualStyleBackColor = false;
             btnModificar.Click += btnModificar_Click;
             // 
             // btnVolverAlMenu
             // 
-            btnVolverAlMenu.Location = new Point(312, 245);
+            btnVolverAlMenu.BackColor = Color.White;
+            btnVolverAlMenu.FlatAppearance.BorderColor = Color.Black;
+            btnVolverAlMenu.FlatAppearance.BorderSize = 0;
+            btnVolverAlMenu.FlatAppearance.MouseOverBackColor = Color.FromArgb(224, 224, 224);
+            btnVolverAlMenu.FlatStyle = FlatStyle.Flat;
+            btnVolverAlMenu.Font = new Font("Segoe UI", 14.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            btnVolverAlMenu.Location = new Point(292, 261);
             btnVolverAlMenu.Name = "btnVolverAlMenu";
-            btnVolverAlMenu.Size = new Size(90, 44);
+            btnVolverAlMenu.Size = new Size(150, 50);
             btnVolverAlMenu.TabIndex = 3;
-            btnVolverAlMenu.Text = "Volver al menu";
-            btnVolverAlMenu.UseVisualStyleBackColor = true;
+            btnVolverAlMenu.Text = "Volver";
+            btnVolverAlMenu.UseVisualStyleBackColor = false;
             btnVolverAlMenu.Click += btnVolverAlMenu_Click;
             // 
             // FrmAdministrarPregunta
@@ -90,7 +114,7 @@
             ShowIcon = false;
             StartPosition = FormStartPosition.CenterScreen;
             Text = "Administrar preguntas";
-            FormClosed += this.FrmAdministrarPregunta_FormClosed;
+            FormClosed += FrmAdministrarPregunta_FormClosed;
             ResumeLayout(false);
         }
 

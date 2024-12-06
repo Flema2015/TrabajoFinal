@@ -54,156 +54,172 @@ namespace TrabajoFinal_
             // lblPreguntaID
             // 
             lblPreguntaID.AutoSize = true;
-            lblPreguntaID.Font = new Font("Segoe UI", 11.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            lblPreguntaID.Location = new Point(104, 33);
+            lblPreguntaID.Font = new Font("Segoe UI", 14.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            lblPreguntaID.Location = new Point(85, 9);
             lblPreguntaID.Name = "lblPreguntaID";
-            lblPreguntaID.Size = new Size(93, 20);
-            lblPreguntaID.TabIndex = 2;
+            lblPreguntaID.Size = new Size(120, 25);
+            lblPreguntaID.TabIndex = 0;
             lblPreguntaID.Text = "Pregunta ID";
             // 
             // lblPregunta
             // 
             lblPregunta.AutoSize = true;
-            lblPregunta.Font = new Font("Segoe UI", 11.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            lblPregunta.Location = new Point(104, 74);
+            lblPregunta.Font = new Font("Segoe UI", 14.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            lblPregunta.Location = new Point(110, 54);
             lblPregunta.Name = "lblPregunta";
-            lblPregunta.Size = new Size(73, 20);
-            lblPregunta.TabIndex = 3;
+            lblPregunta.Size = new Size(95, 25);
+            lblPregunta.TabIndex = 1;
             lblPregunta.Text = "Pregunta";
             // 
             // lblListaRespuestas
             // 
             lblListaRespuestas.AutoSize = true;
-            lblListaRespuestas.Font = new Font("Segoe UI", 11.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            lblListaRespuestas.Location = new Point(104, 114);
+            lblListaRespuestas.Font = new Font("Segoe UI", 14.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            lblListaRespuestas.Location = new Point(28, 98);
             lblListaRespuestas.Name = "lblListaRespuestas";
-            lblListaRespuestas.Size = new Size(148, 20);
-            lblListaRespuestas.TabIndex = 4;
-            lblListaRespuestas.Text = "Lista De Respuestas";
+            lblListaRespuestas.Size = new Size(177, 25);
+            lblListaRespuestas.TabIndex = 3;
+            lblListaRespuestas.Text = "Lista de respuestas";
             // 
             // lblRespuestaCorrecta
             // 
             lblRespuestaCorrecta.AutoSize = true;
-            lblRespuestaCorrecta.Font = new Font("Segoe UI", 11.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            lblRespuestaCorrecta.Location = new Point(104, 188);
+            lblRespuestaCorrecta.Font = new Font("Segoe UI", 14.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            lblRespuestaCorrecta.Location = new Point(23, 178);
             lblRespuestaCorrecta.Name = "lblRespuestaCorrecta";
-            lblRespuestaCorrecta.Size = new Size(144, 20);
-            lblRespuestaCorrecta.TabIndex = 5;
+            lblRespuestaCorrecta.Size = new Size(182, 25);
+            lblRespuestaCorrecta.TabIndex = 7;
             lblRespuestaCorrecta.Text = "Respuesta Correcta";
             // 
             // lblAsignatura
             // 
             lblAsignatura.AutoSize = true;
-            lblAsignatura.Font = new Font("Segoe UI", 11.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            lblAsignatura.Location = new Point(104, 229);
+            lblAsignatura.Font = new Font("Segoe UI", 14.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            lblAsignatura.Location = new Point(96, 224);
             lblAsignatura.Name = "lblAsignatura";
-            lblAsignatura.Size = new Size(86, 20);
-            lblAsignatura.TabIndex = 6;
+            lblAsignatura.Size = new Size(109, 25);
+            lblAsignatura.TabIndex = 9;
             lblAsignatura.Text = "Asignatura";
             // 
             // lblUnidad
             // 
             lblUnidad.AutoSize = true;
-            lblUnidad.Font = new Font("Segoe UI", 11.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            lblUnidad.Location = new Point(104, 267);
+            lblUnidad.Font = new Font("Segoe UI", 14.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            lblUnidad.Location = new Point(126, 267);
             lblUnidad.Name = "lblUnidad";
-            lblUnidad.Size = new Size(59, 20);
-            lblUnidad.TabIndex = 7;
+            lblUnidad.Size = new Size(77, 25);
+            lblUnidad.TabIndex = 11;
             lblUnidad.Text = "Unidad";
             // 
             // lblSubUnidad
             // 
             lblSubUnidad.AutoSize = true;
-            lblSubUnidad.Font = new Font("Segoe UI", 11.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            lblSubUnidad.Location = new Point(102, 304);
+            lblSubUnidad.Font = new Font("Segoe UI", 14.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            lblSubUnidad.Location = new Point(85, 310);
             lblSubUnidad.Name = "lblSubUnidad";
-            lblSubUnidad.Size = new Size(91, 20);
-            lblSubUnidad.TabIndex = 8;
+            lblSubUnidad.Size = new Size(120, 25);
+            lblSubUnidad.TabIndex = 13;
             lblSubUnidad.Text = "Sub-Unidad";
             // 
             // txtPregunta
             // 
             txtPregunta.BorderStyle = BorderStyle.FixedSingle;
-            txtPregunta.Location = new Point(212, 75);
+            txtPregunta.Font = new Font("Segoe UI", 14.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            txtPregunta.Location = new Point(211, 52);
             txtPregunta.Name = "txtPregunta";
-            txtPregunta.Size = new Size(287, 23);
-            txtPregunta.TabIndex = 9;
+            txtPregunta.Size = new Size(360, 33);
+            txtPregunta.TabIndex = 2;
             txtPregunta.MouseClick += txtPregunta_MouseClick;
             // 
             // txtRespuesta
             // 
-            txtRespuesta.Location = new Point(226, 150);
+            txtRespuesta.Font = new Font("Segoe UI", 14.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            txtRespuesta.Location = new Point(211, 131);
             txtRespuesta.Name = "txtRespuesta";
-            txtRespuesta.Size = new Size(100, 23);
-            txtRespuesta.TabIndex = 10;
+            txtRespuesta.Size = new Size(360, 33);
+            txtRespuesta.TabIndex = 5;
             // 
             // txtAsignatura
             // 
-            txtAsignatura.Location = new Point(214, 229);
+            txtAsignatura.Font = new Font("Segoe UI", 14.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            txtAsignatura.Location = new Point(211, 221);
             txtAsignatura.Name = "txtAsignatura";
-            txtAsignatura.Size = new Size(100, 23);
-            txtAsignatura.TabIndex = 12;
+            txtAsignatura.Size = new Size(360, 33);
+            txtAsignatura.TabIndex = 10;
             // 
             // txtUnidad
             // 
-            txtUnidad.Location = new Point(212, 267);
+            txtUnidad.Font = new Font("Segoe UI", 14.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            txtUnidad.Location = new Point(211, 264);
             txtUnidad.Name = "txtUnidad";
-            txtUnidad.Size = new Size(100, 23);
-            txtUnidad.TabIndex = 13;
+            txtUnidad.Size = new Size(360, 33);
+            txtUnidad.TabIndex = 12;
             // 
             // txtSubUnidad
             // 
-            txtSubUnidad.Location = new Point(212, 305);
+            txtSubUnidad.Font = new Font("Segoe UI", 14.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            txtSubUnidad.Location = new Point(211, 307);
             txtSubUnidad.Name = "txtSubUnidad";
-            txtSubUnidad.Size = new Size(100, 23);
+            txtSubUnidad.Size = new Size(360, 33);
             txtSubUnidad.TabIndex = 14;
             // 
             // cmbRespuestas
             // 
+            cmbRespuestas.Font = new Font("Segoe UI", 14.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
             cmbRespuestas.FormattingEnabled = true;
-            cmbRespuestas.Location = new Point(254, 189);
+            cmbRespuestas.Location = new Point(211, 175);
             cmbRespuestas.Name = "cmbRespuestas";
-            cmbRespuestas.Size = new Size(121, 23);
-            cmbRespuestas.TabIndex = 15;
+            cmbRespuestas.Size = new Size(360, 33);
+            cmbRespuestas.TabIndex = 8;
             // 
             // btnCargarRespuesta
             // 
-            btnCargarRespuesta.Location = new Point(352, 141);
+            btnCargarRespuesta.BackColor = Color.White;
+            btnCargarRespuesta.FlatAppearance.BorderColor = Color.Black;
+            btnCargarRespuesta.FlatAppearance.BorderSize = 0;
+            btnCargarRespuesta.FlatAppearance.MouseOverBackColor = Color.FromArgb(224, 224, 224);
+            btnCargarRespuesta.FlatStyle = FlatStyle.Flat;
+            btnCargarRespuesta.Font = new Font("Segoe UI", 9.75F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            btnCargarRespuesta.Location = new Point(577, 123);
             btnCargarRespuesta.Name = "btnCargarRespuesta";
-            btnCargarRespuesta.Size = new Size(97, 41);
-            btnCargarRespuesta.TabIndex = 16;
+            btnCargarRespuesta.Size = new Size(150, 50);
+            btnCargarRespuesta.TabIndex = 6;
             btnCargarRespuesta.Text = "Cargar Respuesta";
-            btnCargarRespuesta.UseVisualStyleBackColor = true;
+            btnCargarRespuesta.UseVisualStyleBackColor = false;
             btnCargarRespuesta.Click += btnCargarRespuesta_Click;
             // 
             // lblRespuestas
             // 
             lblRespuestas.AutoSize = true;
-            lblRespuestas.Font = new Font("Segoe UI", 11.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            lblRespuestas.Location = new Point(104, 150);
+            lblRespuestas.Font = new Font("Segoe UI", 14.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            lblRespuestas.Location = new Point(77, 134);
             lblRespuestas.Name = "lblRespuestas";
-            lblRespuestas.Size = new Size(107, 20);
-            lblRespuestas.TabIndex = 17;
-            lblRespuestas.Text = "Respuesta #1:";
+            lblRespuestas.Size = new Size(128, 25);
+            lblRespuestas.TabIndex = 4;
+            lblRespuestas.Text = "Respuesta #1";
             // 
             // btnAceptar
             // 
-            btnAceptar.Location = new Point(242, 357);
+            btnAceptar.BackColor = Color.White;
+            btnAceptar.Font = new Font("Segoe UI", 14.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            btnAceptar.Location = new Point(236, 349);
             btnAceptar.Name = "btnAceptar";
-            btnAceptar.Size = new Size(97, 29);
-            btnAceptar.TabIndex = 18;
+            btnAceptar.Size = new Size(150, 50);
+            btnAceptar.TabIndex = 16;
             btnAceptar.Text = "Aceptar";
-            btnAceptar.UseVisualStyleBackColor = true;
+            btnAceptar.UseVisualStyleBackColor = false;
             btnAceptar.Click += btnAceptar_Click_1;
             // 
             // btnVolver
             // 
-            btnVolver.Location = new Point(366, 358);
+            btnVolver.BackColor = Color.White;
+            btnVolver.Font = new Font("Segoe UI", 14.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            btnVolver.Location = new Point(392, 349);
             btnVolver.Name = "btnVolver";
-            btnVolver.Size = new Size(97, 29);
-            btnVolver.TabIndex = 19;
+            btnVolver.Size = new Size(150, 50);
+            btnVolver.TabIndex = 15;
             btnVolver.Text = "Volver";
-            btnVolver.UseVisualStyleBackColor = true;
+            btnVolver.UseVisualStyleBackColor = false;
             btnVolver.Click += btnVolver_Click;
             // 
             // alertaVacio
@@ -214,6 +230,7 @@ namespace TrabajoFinal_
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
+            BackColor = SystemColors.Control;
             ClientSize = new Size(739, 411);
             Controls.Add(btnVolver);
             Controls.Add(btnAceptar);

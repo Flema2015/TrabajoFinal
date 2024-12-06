@@ -11,7 +11,7 @@ namespace TrabajoFinal_
         int i = 0;
         int j = 0;
         int maxId = 0;
-        int numerador = 2;
+        //        int numerador = 2;
 
         List<Pregunta> preguntas = new List<Pregunta>();
         List<string> respuestas = new List<string>();
@@ -64,7 +64,7 @@ namespace TrabajoFinal_
             pregunta.Unidad = txtUnidad.Text;
             pregunta.SubUnidad = txtSubUnidad.Text;
             pregunta.Visible = true;
-            
+
             validarCampos(pregunta.TxtPregunta, respuesta, pregunta.Asignatura, pregunta.Unidad, pregunta.SubUnidad);
 
             // Mostrar un cuadro de diálogo para confirmar la acción
@@ -91,8 +91,8 @@ namespace TrabajoFinal_
                 txtSubUnidad.Text = "";
 
                 i = 0;
-                lblRespuestas.Text = "Respuestas # " + (i + 1);
-                
+                lblRespuestas.Text = "Respuesta #" + (i + 1);
+
                 cmbRespuestas.SelectedIndex = -1;
                 cmbRespuestas.Items.Clear();
 
@@ -108,7 +108,6 @@ namespace TrabajoFinal_
 
         private void btnCargarRespuesta_Click(object sender, EventArgs e)
         {
-
             bool error = false;
 
             if (txtRespuesta.Text == "")
@@ -127,23 +126,16 @@ namespace TrabajoFinal_
             }
 
             // Da un maximo de respuestas.
-            if (i < 4)
+            if (i < MAX)
             {
-                if (numerador < 5)
-                {
-                    lblRespuestas.Text = "Respuesta #" + (numerador) + ":";
-                }
-                else
-                {
-                    lblRespuestas.Text = "Respuesta #4:";
-                }
+                lblRespuestas.Text = "Respuesta #" + (i + 1);
 
                 respuestas.Add(txtRespuesta.Text);
-                numerador++;
+
                 i++;
+
                 cmbRespuestas.Items.Add(txtRespuesta.Text);
             }
-
             else
             {
                 MessageBox.Show("Se ha cargado el maximo de respuestas");
@@ -180,62 +172,6 @@ namespace TrabajoFinal_
             }
         }
 
-        private void ObtenerIdPreguntaMaximo()
-        {
-            string rutaArchivoJson = Path.Combine(CARPETA, "Preguntas.json");
-
-            int idFaltante = 0;
-            try
-            {
-                // Verifica si el archivo existe
-                if (!File.Exists(rutaArchivoJson))
-                {
-                    maxId++;
-                    lblPreguntaID.Text = "Pregunta ID " + maxId.ToString();
-
-                    return;
-                }
-
-                // Lee el contenido del archivo JSON
-                string contenidoJson = File.ReadAllText(rutaArchivoJson);
-
-                // Deserializa el JSON en una lista de objetos
-                var preguntas = JsonSerializer.Deserialize<List<Pregunta>>(contenidoJson);
-
-                var idsOrdenados = preguntas.Select(p => p.PreguntaId).ToList();
-
-                if (preguntas == null || !preguntas.Any())
-                {
-                    lblPreguntaID.Text = "Pregunta ID " +  maxId.ToString();
-
-                    return;
-                }
-                 
-                for (int j = 0; j < idsOrdenados.Count - 1; j++)
-                {
-                    if (idsOrdenados[j + 1] - idsOrdenados[j] > 1)
-                    {
-                        idFaltante = idsOrdenados[j] + 1;
-                        lblPreguntaID.Text = (idFaltante).ToString();
-                    }
-                    else
-                    {                      
-                        // Obtiene el máximo PreguntaId
-                        int idMax = preguntas.Max(p => (int)p.PreguntaId);
-
-                        maxId = idMax;
-
-                        lblPreguntaID.Text = "Pregunta ID     " + (maxId + 1).ToString();
-                    }
-                }
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show("Error al obtener el máximo PreguntaId: " + ex.Message);
-            }
-        }
-
-
         private void GuardarPregunta()
         {
             string rutaArchivo = Path.Combine(CARPETA, "Preguntas.json");
@@ -246,26 +182,26 @@ namespace TrabajoFinal_
                 if (!Directory.Exists(CARPETA))
                 {
                     Directory.CreateDirectory(CARPETA);
-                // Crea una lista para almacenar las preguntas en formato JSON
-                var listaPreguntasJson = preguntas.Select(pregunta => new
-                {
-                    PreguntaId = pregunta.PreguntaId,
-                    TxtPregunta = pregunta.TxtPregunta,
-                    ListaDeRespuestas = pregunta.ListaDeRespuestas,
-                    RespuestaCorrecta = pregunta.RespuestaCorrecta,
-                    Asignatura = pregunta.Asignatura,
-                    Unidad = pregunta.Unidad,
-                    SubUnidad = pregunta.SubUnidad,
-                    Visible = pregunta.Visible
-                }).ToList();
+                    // Crea una lista para almacenar las preguntas en formato JSON
+                    var listaPreguntasJson = preguntas.Select(pregunta => new
+                    {
+                        PreguntaId = pregunta.PreguntaId,
+                        TxtPregunta = pregunta.TxtPregunta,
+                        ListaDeRespuestas = pregunta.ListaDeRespuestas,
+                        RespuestaCorrecta = pregunta.RespuestaCorrecta,
+                        Asignatura = pregunta.Asignatura,
+                        Unidad = pregunta.Unidad,
+                        SubUnidad = pregunta.SubUnidad,
+                        Visible = pregunta.Visible
+                    }).ToList();
 
-                // Serializa la lista de preguntas al formato JSON
-                string json = JsonSerializer.Serialize(listaPreguntasJson, new JsonSerializerOptions { WriteIndented = true });
+                    // Serializa la lista de preguntas al formato JSON
+                    string json = JsonSerializer.Serialize(listaPreguntasJson, new JsonSerializerOptions { WriteIndented = true });
 
-                // Escribe el JSON en el archivo
-                File.WriteAllText(rutaArchivo, json);
+                    // Escribe el JSON en el archivo
+                    File.WriteAllText(rutaArchivo, json);
 
-                MessageBox.Show("Datos guardados correctamente en el archivo JSON.");
+                    MessageBox.Show("Datos guardados correctamente en el archivo JSON.");
                 }
                 else
                 {
@@ -305,9 +241,10 @@ namespace TrabajoFinal_
 
                 if (preguntas == null || !preguntas.Any())
                 {
+                    maxId += 1;
+                    lblPreguntaID.Text = "Pregunta ID    " + maxId.ToString();
+
                     MessageBox.Show("No se encontraron preguntas en el archivo JSON.");
-                    maxId = 1;
-                   lblPreguntaID.Text = "Pregunta ID   " + maxId.ToString();
 
                     return new List<Pregunta>();
                 }
@@ -317,7 +254,64 @@ namespace TrabajoFinal_
             catch (Exception ex)
             {
                 MessageBox.Show("Error al cargar las preguntas: " + ex.Message);
+
                 return new List<Pregunta>();
+            }
+        }
+
+        private void ObtenerIdPreguntaMaximo()
+        {
+            string rutaArchivoJson = Path.Combine(CARPETA, "Preguntas.json");
+
+            int idFaltante = 0;
+            try
+            {
+                // Verifica si el archivo existe
+                if (!File.Exists(rutaArchivoJson))
+                {
+                    maxId += 1;
+                    lblPreguntaID.Text = "Pregunta ID    " + maxId.ToString();
+
+                    return;
+                }
+
+                // Lee el contenido del archivo JSON
+                string contenidoJson = File.ReadAllText(rutaArchivoJson);
+
+                // Deserializa el JSON en una lista de objetos
+                List<Pregunta> preguntas = JsonSerializer.Deserialize<List<Pregunta>>(contenidoJson);
+
+                var idsOrdenados = preguntas.Select(p => p.PreguntaId).ToList();
+
+                if (preguntas == null || !preguntas.Any())
+                {
+                    maxId += 1;
+                    lblPreguntaID.Text = "Pregunta ID    " + maxId.ToString();
+
+                    return;
+                }
+
+                for (int j = 0; j < idsOrdenados.Count - 1; j++)
+                {
+                    if (idsOrdenados[j + 1] - idsOrdenados[j] > 1)
+                    {
+                        idFaltante = idsOrdenados[j] + 1;
+                        lblPreguntaID.Text = "Pregunta ID    " + idFaltante.ToString();
+                    }
+                    else
+                    {
+                        // Obtiene el máximo PreguntaId
+                        int idMax = preguntas.Max(p => (int)p.PreguntaId);
+
+                        maxId = idMax + 1;
+
+                        lblPreguntaID.Text = "Pregunta ID   " + maxId.ToString();
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error al obtener el máximo PreguntaId: " + ex.Message);
             }
         }
     }

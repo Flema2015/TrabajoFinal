@@ -7,8 +7,10 @@ namespace TrabajoFinal_
     public partial class FrmBajaPregunta : Form
     {
         const string CARPETA = "files";
-        string rutaArchivo = Path.Combine(CARPETA, "Preguntas.json");       
+        string rutaArchivo = Path.Combine(CARPETA, "Preguntas.json");
+
         private List<Pregunta> preguntas = new List<Pregunta>();
+
         public FrmBajaPregunta()
         {
             InitializeComponent();
@@ -19,7 +21,8 @@ namespace TrabajoFinal_
         private void btnVolver_Click(object sender, EventArgs e)
         {
             this.Close();
-        }       
+        }
+
         private void CargarBancoPreguntas()
         {                    
             try
@@ -36,13 +39,47 @@ namespace TrabajoFinal_
                 }
                
                 ActualizarLst();
-
             }
             catch(Exception ex) 
             {
                 MessageBox.Show("Error al cargar Json", ex.Message);
             }
         }
+
+        private void btnBorrar_Click(object sender, EventArgs e)
+        {
+            if (cmbPreguntaABorrar.SelectedIndex == -1)
+            {
+                MessageBox.Show("Seleccionar el elemento a eliminar");
+
+                return;
+            }
+          
+            int indiceElegido = cmbPreguntaABorrar.SelectedIndex;
+
+            preguntas.RemoveAt(indiceElegido);
+
+            cmbPreguntaABorrar.Text = "";
+
+            GuardarCambiosEnArchivos();
+            ActualizarLst();          
+        }
+
+        private void GuardarCambiosEnArchivos()
+        {
+            try
+            {
+                string JsonActualizado = JsonSerializer.Serialize(preguntas, new JsonSerializerOptions {WriteIndented = true });
+                File.WriteAllText(rutaArchivo, JsonActualizado);
+                MessageBox.Show("Se han guardado los cambios");
+            }
+            catch (Exception ex)
+            {
+
+                MessageBox.Show("Erorr al guardar ", ex.Message);
+            }
+        }
+
         private void ActualizarLst()
         {
             int i = 1;
@@ -72,38 +109,6 @@ namespace TrabajoFinal_
                 lstBaja.Items.Add("---------------------");
 
                 cmbPreguntaABorrar.Items.Add(pregunta.PreguntaId);
-
-            }
-        }
-
-        private void btnBorrar_Click(object sender, EventArgs e)
-        {
-            if (cmbPreguntaABorrar.SelectedIndex == -1)
-            {
-                MessageBox.Show("Falta seleciconar un elemento para eliminar.");
-                return;
-            }
-          
-            int indiceElegido = cmbPreguntaABorrar.SelectedIndex;
-
-            preguntas.RemoveAt(indiceElegido);
-
-            cmbPreguntaABorrar.Text = "";
-            GuardarCambiosEnArchivos();
-            ActualizarLst();          
-        }
-        private void GuardarCambiosEnArchivos()
-        {
-            try
-            {
-                string JsonActualizado = JsonSerializer.Serialize(preguntas, new JsonSerializerOptions {WriteIndented = true });
-                File.WriteAllText(rutaArchivo, JsonActualizado);
-                MessageBox.Show("Se han guardado los cambios");
-            }
-            catch (Exception ex)
-            {
-
-                MessageBox.Show("Erorr al guardar ", ex.Message);
             }
         }
     }

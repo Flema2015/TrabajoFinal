@@ -37,22 +37,34 @@
             // 
             // btnBorrar
             // 
-            btnBorrar.Location = new Point(566, 137);
+            btnBorrar.BackColor = Color.White;
+            btnBorrar.FlatAppearance.BorderColor = Color.Black;
+            btnBorrar.FlatAppearance.BorderSize = 0;
+            btnBorrar.FlatAppearance.MouseOverBackColor = Color.FromArgb(224, 224, 224);
+            btnBorrar.FlatStyle = FlatStyle.Flat;
+            btnBorrar.Font = new Font("Segoe UI", 14.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            btnBorrar.Location = new Point(524, 94);
             btnBorrar.Name = "btnBorrar";
-            btnBorrar.Size = new Size(84, 37);
+            btnBorrar.Size = new Size(150, 50);
             btnBorrar.TabIndex = 0;
             btnBorrar.Text = "Borrar";
-            btnBorrar.UseVisualStyleBackColor = true;
+            btnBorrar.UseVisualStyleBackColor = false;
             btnBorrar.Click += btnBorrar_Click;
             // 
             // btnVolver
             // 
-            btnVolver.Location = new Point(350, 362);
+            btnVolver.BackColor = Color.White;
+            btnVolver.FlatAppearance.BorderColor = Color.Black;
+            btnVolver.FlatAppearance.BorderSize = 0;
+            btnVolver.FlatAppearance.MouseOverBackColor = Color.FromArgb(224, 224, 224);
+            btnVolver.FlatStyle = FlatStyle.Flat;
+            btnVolver.Font = new Font("Segoe UI", 14.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            btnVolver.Location = new Point(524, 342);
             btnVolver.Name = "btnVolver";
-            btnVolver.Size = new Size(82, 37);
+            btnVolver.Size = new Size(150, 50);
             btnVolver.TabIndex = 1;
             btnVolver.Text = "Volver";
-            btnVolver.UseVisualStyleBackColor = true;
+            btnVolver.UseVisualStyleBackColor = false;
             btnVolver.Click += btnVolver_Click;
             // 
             // lstBaja
@@ -61,24 +73,26 @@
             lstBaja.ItemHeight = 15;
             lstBaja.Location = new Point(24, 13);
             lstBaja.Name = "lstBaja";
-            lstBaja.Size = new Size(465, 334);
+            lstBaja.Size = new Size(465, 379);
             lstBaja.TabIndex = 2;
             // 
             // lblPreguntaABorrar
             // 
             lblPreguntaABorrar.AutoSize = true;
-            lblPreguntaABorrar.Location = new Point(566, 56);
+            lblPreguntaABorrar.Font = new Font("Segoe UI", 14.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            lblPreguntaABorrar.Location = new Point(508, 13);
             lblPreguntaABorrar.Name = "lblPreguntaABorrar";
-            lblPreguntaABorrar.Size = new Size(102, 15);
+            lblPreguntaABorrar.Size = new Size(173, 25);
             lblPreguntaABorrar.TabIndex = 3;
-            lblPreguntaABorrar.Text = "Pregunta a borrar:";
+            lblPreguntaABorrar.Text = "Pregunta a borrar";
             // 
             // cmbPreguntaABorrar
             // 
+            cmbPreguntaABorrar.Font = new Font("Segoe UI", 14.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
             cmbPreguntaABorrar.FormattingEnabled = true;
-            cmbPreguntaABorrar.Location = new Point(566, 93);
+            cmbPreguntaABorrar.Location = new Point(508, 50);
             cmbPreguntaABorrar.Name = "cmbPreguntaABorrar";
-            cmbPreguntaABorrar.Size = new Size(121, 23);
+            cmbPreguntaABorrar.Size = new Size(179, 33);
             cmbPreguntaABorrar.TabIndex = 4;
             // 
             // FrmBajaPregunta
