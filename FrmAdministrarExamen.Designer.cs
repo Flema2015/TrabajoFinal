@@ -32,11 +32,13 @@
             lblAsignatura = new Label();
             btnVolver = new Button();
             cmbAsignatura = new ComboBox();
+            cmbUnidades = new ComboBox();
+            lblUnidades = new Label();
             SuspendLayout();
             // 
             // btnIrAExamen
             // 
-            btnIrAExamen.Location = new Point(214, 229);
+            btnIrAExamen.Location = new Point(189, 229);
             btnIrAExamen.Name = "btnIrAExamen";
             btnIrAExamen.Size = new Size(107, 23);
             btnIrAExamen.TabIndex = 9;
@@ -55,7 +57,7 @@
             // 
             // btnVolver
             // 
-            btnVolver.Location = new Point(349, 229);
+            btnVolver.Location = new Point(324, 229);
             btnVolver.Name = "btnVolver";
             btnVolver.Size = new Size(105, 23);
             btnVolver.TabIndex = 6;
@@ -71,11 +73,30 @@
             cmbAsignatura.Size = new Size(121, 23);
             cmbAsignatura.TabIndex = 11;
             // 
+            // cmbUnidades
+            // 
+            cmbUnidades.FormattingEnabled = true;
+            cmbUnidades.Location = new Point(324, 173);
+            cmbUnidades.Name = "cmbUnidades";
+            cmbUnidades.Size = new Size(121, 23);
+            cmbUnidades.TabIndex = 13;
+            // 
+            // lblUnidades
+            // 
+            lblUnidades.AutoSize = true;
+            lblUnidades.Location = new Point(214, 176);
+            lblUnidades.Name = "lblUnidades";
+            lblUnidades.Size = new Size(56, 15);
+            lblUnidades.TabIndex = 12;
+            lblUnidades.Text = "Unidades";
+            // 
             // FrmAdministrarExamen
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(739, 411);
+            Controls.Add(cmbUnidades);
+            Controls.Add(lblUnidades);
             Controls.Add(cmbAsignatura);
             Controls.Add(btnIrAExamen);
             Controls.Add(lblAsignatura);
@@ -96,5 +117,7 @@
         private Label lblAsignatura;
         private Button btnVolver;
         private ComboBox cmbAsignatura;
+        private ComboBox cmbUnidades;
+        private Label lblUnidades;
     }
 }
