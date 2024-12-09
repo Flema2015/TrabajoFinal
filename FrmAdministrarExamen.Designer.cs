@@ -34,6 +34,7 @@
             cmbAsignatura = new ComboBox();
             cmbUnidades = new ComboBox();
             lblUnidades = new Label();
+            btnVerUltimoExamen = new Button();
             SuspendLayout();
             // 
             // btnIrAExamen
@@ -57,7 +58,7 @@
             // 
             // btnVolver
             // 
-            btnVolver.Location = new Point(324, 229);
+            btnVolver.Location = new Point(455, 229);
             btnVolver.Name = "btnVolver";
             btnVolver.Size = new Size(105, 23);
             btnVolver.TabIndex = 6;
@@ -90,11 +91,22 @@
             lblUnidades.TabIndex = 12;
             lblUnidades.Text = "Unidades";
             // 
+            // btnVerUltimoExamen
+            // 
+            btnVerUltimoExamen.Location = new Point(315, 229);
+            btnVerUltimoExamen.Name = "btnVerUltimoExamen";
+            btnVerUltimoExamen.Size = new Size(121, 23);
+            btnVerUltimoExamen.TabIndex = 14;
+            btnVerUltimoExamen.Text = "Ver Último Exámen";
+            btnVerUltimoExamen.UseVisualStyleBackColor = true;
+            btnVerUltimoExamen.Click += btnVerUltimoExamen_Click;
+            // 
             // FrmAdministrarExamen
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(739, 411);
+            Controls.Add(btnVerUltimoExamen);
             Controls.Add(cmbUnidades);
             Controls.Add(lblUnidades);
             Controls.Add(cmbAsignatura);
@@ -119,5 +131,6 @@
         private ComboBox cmbAsignatura;
         private ComboBox cmbUnidades;
         private Label lblUnidades;
+        private Button btnVerUltimoExamen;
     }
 }

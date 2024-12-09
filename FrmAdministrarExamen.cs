@@ -13,7 +13,7 @@ namespace TrabajoFinal_
 
         public FrmAdministrarExamen()
         {
-            InitializeComponent();           
+            InitializeComponent();
             cargarJSON();
             cmbAsignatura.SelectedIndex = 0;
             cmbUnidades.SelectedIndex = 0;
@@ -22,8 +22,9 @@ namespace TrabajoFinal_
 
         private void btnIrAExamen_Click(object sender, EventArgs e)
         {
-            FrmExamenGenerado frmExamenGenerado = new FrmExamenGenerado();
-            frmExamenGenerado.ShowDialog();
+            
+            validarSeleccion();
+            crearExamen();
         }
 
         private void btnVolver_Click(object sender, EventArgs e)
@@ -53,9 +54,87 @@ namespace TrabajoFinal_
             }
             catch (Exception ex)
             {
-                MessageBox.Show("error al cargar el json" +  ex.Message);
+                MessageBox.Show("error al cargar el json" + ex.Message);
             }
 
+        }
+
+        private void crearExamen()
+        {
+            try
+            {
+                // Leer exámenes existentes si el archivo ya está creado
+                if (File.Exists(rutaArchivoExamen))
+                {
+                    string jsonExamenes = File.ReadAllText(rutaArchivoExamen);
+                    examenes = JsonSerializer.Deserialize<List<Examen>>(jsonExamenes) ?? new List<Examen>();
+                }
+
+                // Filtrar preguntas por asignatura seleccionada
+                var preguntasFiltradasPorAsignatura = preguntas
+                    .Where(p => p.Asignatura == cmbAsignatura.Text)
+                    .ToList();
+
+                // Determinar las unidades según la selección del ComboBox
+                int unidadInicio = 1, unidadFin = 3;
+                if (cmbUnidades.Text.Contains("4 - 6"))
+                {
+                    unidadInicio = 4;
+                    unidadFin = 6;
+                }
+
+                // Filtrar por el rango de unidades
+                var preguntasFiltradasPorUnidades = preguntasFiltradasPorAsignatura
+                    .Where(p => int.TryParse(p.Unidad, out int unidad) && unidad >= unidadInicio && unidad <= unidadFin)
+                    .ToList();
+
+                // Agrupar por subunidad y seleccionar una pregunta aleatoria por cada subunidad
+                var preguntasPorSubunidad = preguntasFiltradasPorUnidades
+                    .GroupBy(p => new { p.Unidad, p.SubUnidad })
+                    .Select(grupo =>
+                    {
+                        var preguntasDeSubunidad = grupo.ToList();
+                        return preguntasDeSubunidad[new Random().Next(preguntasDeSubunidad.Count)]; // Selección aleatoria
+                    })
+                    .ToList();
+
+                // Crear un nuevo examen
+                Examen nuevoExamen = new Examen
+                {
+                    ExamenId = examenes.Count + 1,
+                    Fecha = DateTime.Now.Date,
+                    Asignatura = cmbAsignatura.Text,
+                    Preguntas = preguntasPorSubunidad
+                };
+
+                // Agregar el examen a la lista
+                examenes.Add(nuevoExamen);
+
+                // Guardar en el archivo JSON
+                File.WriteAllText(rutaArchivoExamen, JsonSerializer.Serialize(examenes));
+
+                MessageBox.Show("Examen creado con éxito.");
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error al crear el examen: " + ex.Message);
+            }
+        }
+
+
+        private void validarSeleccion()
+        {
+            if (string.IsNullOrWhiteSpace(cmbAsignatura.Text) || string.IsNullOrWhiteSpace(cmbUnidades.Text))
+            {
+                MessageBox.Show("Por favor, selecciona una asignatura y un rango de unidades.");
+                return;
+            }
+        }
+
+        private void btnVerUltimoExamen_Click(object sender, EventArgs e)
+        {
+            FrmExamenGenerado frmExamenGenerado = new FrmExamenGenerado();
+            frmExamenGenerado.ShowDialog();
         }
     }
 }
