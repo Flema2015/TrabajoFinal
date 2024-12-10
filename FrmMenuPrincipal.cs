@@ -38,8 +38,8 @@ namespace TrabajoFinal_
         }
         private void realizarExamenToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            FrmRealizarExamen frmRealizarExamen = new FrmRealizarExamen();
-            AbrirFormularioHijo(frmRealizarExamen);
+            FrmCargaDatosExamen frmCargaDatosExamen = new FrmCargaDatosExamen();
+            AbrirFormularioHijo(frmCargaDatosExamen);
         }
         private void correcciónDeExamenToolStripMenuItem_Click(object sender, EventArgs e)
         {

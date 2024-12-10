@@ -34,11 +34,12 @@
             lblAsignatura = new Label();
             cmbCarrera = new ComboBox();
             cmbAsignatura = new ComboBox();
+            btnElegirCarrera = new Button();
             SuspendLayout();
             // 
             // btnEmpezarExamen
             // 
-            btnEmpezarExamen.Location = new Point(257, 253);
+            btnEmpezarExamen.Location = new Point(225, 256);
             btnEmpezarExamen.Name = "btnEmpezarExamen";
             btnEmpezarExamen.Size = new Size(112, 23);
             btnEmpezarExamen.TabIndex = 0;
@@ -48,7 +49,7 @@
             // 
             // btnVolver
             // 
-            btnVolver.Location = new Point(391, 253);
+            btnVolver.Location = new Point(359, 256);
             btnVolver.Name = "btnVolver";
             btnVolver.Size = new Size(107, 23);
             btnVolver.TabIndex = 1;
@@ -59,7 +60,7 @@
             // lblCarrera
             // 
             lblCarrera.AutoSize = true;
-            lblCarrera.Location = new Point(251, 132);
+            lblCarrera.Location = new Point(219, 135);
             lblCarrera.Name = "lblCarrera";
             lblCarrera.Size = new Size(45, 15);
             lblCarrera.TabIndex = 4;
@@ -68,7 +69,7 @@
             // lblAsignatura
             // 
             lblAsignatura.AutoSize = true;
-            lblAsignatura.Location = new Point(251, 178);
+            lblAsignatura.Location = new Point(219, 220);
             lblAsignatura.Name = "lblAsignatura";
             lblAsignatura.Size = new Size(64, 15);
             lblAsignatura.TabIndex = 5;
@@ -77,7 +78,7 @@
             // cmbCarrera
             // 
             cmbCarrera.FormattingEnabled = true;
-            cmbCarrera.Location = new Point(377, 132);
+            cmbCarrera.Location = new Point(345, 135);
             cmbCarrera.Name = "cmbCarrera";
             cmbCarrera.Size = new Size(121, 23);
             cmbCarrera.TabIndex = 6;
@@ -85,16 +86,27 @@
             // cmbAsignatura
             // 
             cmbAsignatura.FormattingEnabled = true;
-            cmbAsignatura.Location = new Point(377, 175);
+            cmbAsignatura.Location = new Point(345, 217);
             cmbAsignatura.Name = "cmbAsignatura";
             cmbAsignatura.Size = new Size(121, 23);
             cmbAsignatura.TabIndex = 7;
+            // 
+            // btnElegirCarrera
+            // 
+            btnElegirCarrera.Location = new Point(283, 175);
+            btnElegirCarrera.Name = "btnElegirCarrera";
+            btnElegirCarrera.Size = new Size(112, 23);
+            btnElegirCarrera.TabIndex = 8;
+            btnElegirCarrera.Text = "Elegir Examen";
+            btnElegirCarrera.UseVisualStyleBackColor = true;
+            btnElegirCarrera.Click += btnElegirCarrera_Click;
             // 
             // FrmCargaDatosExamen
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(739, 411);
+            Controls.Add(btnElegirCarrera);
             Controls.Add(cmbAsignatura);
             Controls.Add(cmbCarrera);
             Controls.Add(lblAsignatura);
@@ -117,5 +129,6 @@
         private Label lblAsignatura;
         private ComboBox cmbCarrera;
         private ComboBox cmbAsignatura;
+        private Button btnElegirCarrera;
     }
 }

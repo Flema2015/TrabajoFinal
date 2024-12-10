@@ -50,7 +50,7 @@ namespace TrabajoFinal_
                 }
 
                 cmbUnidades.Items.Add("Unidades 1 - 3");
-                cmbUnidades.Items.Add("unidades 4 - 6");
+                cmbUnidades.Items.Add("Unidades 4 - 6");
             }
             catch (Exception ex)
             {
@@ -98,11 +98,13 @@ namespace TrabajoFinal_
                     })
                     .ToList();
 
+                DateTime fechaActual = DateTime.Now;
+
                 // Crear un nuevo examen
                 Examen nuevoExamen = new Examen
                 {
                     ExamenId = examenes.Count + 1,
-                    Fecha = DateTime.Now.Date,
+                    Fecha = fechaActual.ToString("yyyy-MM-dd"),
                     Asignatura = cmbAsignatura.Text,
                     Preguntas = preguntasPorSubunidad
                 };

@@ -72,16 +72,16 @@
             // lblIDExamen
             // 
             lblIDExamen.AutoSize = true;
-            lblIDExamen.Location = new Point(396, 49);
+            lblIDExamen.Location = new Point(325, 50);
             lblIDExamen.Name = "lblIDExamen";
-            lblIDExamen.Size = new Size(79, 15);
+            lblIDExamen.Size = new Size(77, 15);
             lblIDExamen.TabIndex = 1;
             lblIDExamen.Text = "ID Examen #x";
             // 
             // lblCarrera
             // 
             lblCarrera.AutoSize = true;
-            lblCarrera.Location = new Point(149, 23);
+            lblCarrera.Location = new Point(78, 24);
             lblCarrera.Name = "lblCarrera";
             lblCarrera.Size = new Size(45, 15);
             lblCarrera.TabIndex = 2;
@@ -89,7 +89,7 @@
             // 
             // btnEntregarExamen
             // 
-            btnEntregarExamen.Location = new Point(231, 395);
+            btnEntregarExamen.Location = new Point(147, 580);
             btnEntregarExamen.Name = "btnEntregarExamen";
             btnEntregarExamen.Size = new Size(75, 23);
             btnEntregarExamen.TabIndex = 6;
@@ -100,7 +100,7 @@
             // lblAsignatura
             // 
             lblAsignatura.AutoSize = true;
-            lblAsignatura.Location = new Point(149, 49);
+            lblAsignatura.Location = new Point(78, 50);
             lblAsignatura.Name = "lblAsignatura";
             lblAsignatura.Size = new Size(64, 15);
             lblAsignatura.TabIndex = 8;
@@ -109,7 +109,7 @@
             // lblFecha
             // 
             lblFecha.AutoSize = true;
-            lblFecha.Location = new Point(396, 23);
+            lblFecha.Location = new Point(325, 24);
             lblFecha.Name = "lblFecha";
             lblFecha.Size = new Size(38, 15);
             lblFecha.TabIndex = 9;
@@ -121,7 +121,7 @@
             groupBox1.Controls.Add(rdoRespuesta3Pregunta1);
             groupBox1.Controls.Add(rdoRespuesta2Pregunta1);
             groupBox1.Controls.Add(rdoRespuesta1Pregunta1);
-            groupBox1.Location = new Point(48, 79);
+            groupBox1.Location = new Point(43, 79);
             groupBox1.Name = "groupBox1";
             groupBox1.Size = new Size(200, 151);
             groupBox1.TabIndex = 10;
@@ -178,7 +178,7 @@
             groupBox2.Controls.Add(rdoRespuesta3Pregunta2);
             groupBox2.Controls.Add(rdoRespuesta1Pregunta2);
             groupBox2.Controls.Add(rdoRespuesta2Pregunta2);
-            groupBox2.Location = new Point(254, 79);
+            groupBox2.Location = new Point(43, 236);
             groupBox2.Name = "groupBox2";
             groupBox2.Size = new Size(200, 151);
             groupBox2.TabIndex = 11;
@@ -235,7 +235,7 @@
             groupBox3.Controls.Add(rdoRespuesta3Pregunta3);
             groupBox3.Controls.Add(rdoRespuesta1Pregunta3);
             groupBox3.Controls.Add(rdoRespuesta2Pregunta3);
-            groupBox3.Location = new Point(460, 79);
+            groupBox3.Location = new Point(43, 393);
             groupBox3.Name = "groupBox3";
             groupBox3.Size = new Size(200, 151);
             groupBox3.TabIndex = 11;
@@ -292,7 +292,7 @@
             groupBox4.Controls.Add(rdoRespuesta3Pregunta4);
             groupBox4.Controls.Add(rdoRespuesta2Pregunta4);
             groupBox4.Controls.Add(rdoRespuesta1Pregunta4);
-            groupBox4.Location = new Point(163, 236);
+            groupBox4.Location = new Point(260, 172);
             groupBox4.Name = "groupBox4";
             groupBox4.Size = new Size(200, 140);
             groupBox4.TabIndex = 11;
@@ -349,7 +349,7 @@
             groupBox5.Controls.Add(rdoRespuesta2Pregunta5);
             groupBox5.Controls.Add(rdoRespuesta3Pregunta5);
             groupBox5.Controls.Add(rdoRespuesta1Pregunta5);
-            groupBox5.Location = new Point(369, 236);
+            groupBox5.Location = new Point(260, 329);
             groupBox5.Name = "groupBox5";
             groupBox5.Size = new Size(200, 140);
             groupBox5.TabIndex = 11;
@@ -403,33 +403,33 @@
             // lblFechaResolucion
             // 
             lblFechaResolucion.AutoSize = true;
-            lblFechaResolucion.Location = new Point(462, 23);
+            lblFechaResolucion.Location = new Point(391, 24);
             lblFechaResolucion.Name = "lblFechaResolucion";
-            lblFechaResolucion.Size = new Size(13, 15);
+            lblFechaResolucion.Size = new Size(12, 15);
             lblFechaResolucion.TabIndex = 12;
             lblFechaResolucion.Text = "x";
             // 
             // lblCarreraCompletar
             // 
             lblCarreraCompletar.AutoSize = true;
-            lblCarreraCompletar.Location = new Point(231, 23);
+            lblCarreraCompletar.Location = new Point(160, 24);
             lblCarreraCompletar.Name = "lblCarreraCompletar";
-            lblCarreraCompletar.Size = new Size(13, 15);
+            lblCarreraCompletar.Size = new Size(12, 15);
             lblCarreraCompletar.TabIndex = 13;
             lblCarreraCompletar.Text = "x";
             // 
             // lblAsignaturaCompletar
             // 
             lblAsignaturaCompletar.AutoSize = true;
-            lblAsignaturaCompletar.Location = new Point(231, 49);
+            lblAsignaturaCompletar.Location = new Point(160, 50);
             lblAsignaturaCompletar.Name = "lblAsignaturaCompletar";
-            lblAsignaturaCompletar.Size = new Size(13, 15);
+            lblAsignaturaCompletar.Size = new Size(12, 15);
             lblAsignaturaCompletar.TabIndex = 14;
             lblAsignaturaCompletar.Text = "x";
             // 
             // btnVolver
             // 
-            btnVolver.Location = new Point(350, 395);
+            btnVolver.Location = new Point(266, 580);
             btnVolver.Name = "btnVolver";
             btnVolver.Size = new Size(75, 23);
             btnVolver.TabIndex = 15;
@@ -441,7 +441,7 @@
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(700, 430);
+            ClientSize = new Size(533, 635);
             ControlBox = false;
             Controls.Add(btnVolver);
             Controls.Add(lblAsignaturaCompletar);

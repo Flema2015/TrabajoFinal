@@ -2,6 +2,9 @@
 {
     public partial class FrmRealizarExamen : Form
     {
+        const string CARPETA = "files";       
+        string rutaArchivoExamen = Path.Combine(CARPETA, "Examenes.json");
+        private List<Examen> examenes = new List<Examen>();
         public FrmRealizarExamen()
         {
             InitializeComponent();
@@ -26,5 +29,7 @@
         {
             this.Close();
         }
+
+        
     }
 }

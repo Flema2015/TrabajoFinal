@@ -9,7 +9,7 @@ namespace TrabajoFinal_
     internal class Examen
     {
         public int ExamenId { get; set; }
-        public DateTime Fecha {  get; set; }
+        public string Fecha {  get; set; }
         public string Asignatura { get; set; }
         public List<Pregunta> Preguntas { get; set; }
 
