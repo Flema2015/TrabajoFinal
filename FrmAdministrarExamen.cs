@@ -10,6 +10,7 @@ namespace TrabajoFinal_
         private List<Pregunta> preguntas = new List<Pregunta>();
         private List<Examen> examenes = new List<Examen>();
         string rutaArchivoExamen = Path.Combine(CARPETA, "Examenes.json");
+        
 
         public FrmAdministrarExamen()
         {
@@ -17,6 +18,7 @@ namespace TrabajoFinal_
             cargarJSON();
             cmbAsignatura.SelectedIndex = 0;
             cmbUnidades.SelectedIndex = 0;
+            
         }
 
 
@@ -106,7 +108,8 @@ namespace TrabajoFinal_
                     ExamenId = examenes.Count + 1,
                     Fecha = fechaActual.ToString("yyyy-MM-dd"),
                     Asignatura = cmbAsignatura.Text,
-                    Preguntas = preguntasPorSubunidad
+                    Preguntas = preguntasPorSubunidad,
+                  
                 };
 
                 // Agregar el examen a la lista

@@ -21,34 +21,41 @@ namespace TrabajoFinal_
 
         private void cargarExamen()
         {
-            string Json = File.ReadAllText(rutaArchivoExamen);
-            examenes = JsonSerializer.Deserialize<List<Examen>>(Json) ?? new List<Examen>();
-            int i = 1;
-            int j = 1;
-
-            foreach (var examen in examenes)
+            try
             {
-                lstExamenGenerado.Items.Add($"ID: {examen.ExamenId}");
+                string Json = File.ReadAllText(rutaArchivoExamen);
+                examenes = JsonSerializer.Deserialize<List<Examen>>(Json) ?? new List<Examen>();
+                int i = 1;
+                int j = 1;
 
-                lstExamenGenerado.Items.Add($"FECHA: {examen.Fecha}");
-                
-                lstExamenGenerado.Items.Add($"ASIGNATURA: {examen.Asignatura}");
-
-                lstExamenGenerado.Items.Add("-----------------------------------");
-
-                foreach (var preguntas in examen.Preguntas)
+                foreach (var examen in examenes)
                 {
-                    lstExamenGenerado.Items.Add($"PREGUNTA {i}: {preguntas.TxtPregunta}");
-                    i++;
-                    foreach (var respuestas in preguntas.ListaDeRespuestas)
-                    {
-                        lstExamenGenerado.Items.Add($"RESPUESTA {j}: {respuestas}");
-                        j++;
-                    }
-                    j = 1;
+                    lstExamenGenerado.Items.Add($"ID: {examen.ExamenId}");
+
+                    lstExamenGenerado.Items.Add($"FECHA: {examen.Fecha}");
+
+                    lstExamenGenerado.Items.Add($"ASIGNATURA: {examen.Asignatura}");
+
                     lstExamenGenerado.Items.Add("-----------------------------------");
+
+                    foreach (var preguntas in examen.Preguntas)
+                    {
+                        lstExamenGenerado.Items.Add($"PREGUNTA {i}: {preguntas.TxtPregunta}");
+                        i++;
+                        foreach (var respuestas in preguntas.ListaDeRespuestas)
+                        {
+                            lstExamenGenerado.Items.Add($"RESPUESTA {j}: {respuestas}");
+                            j++;
+                        }
+                        j = 1;
+                        lstExamenGenerado.Items.Add("-----------------------------------");
+                    }
+                    i = 1;
                 }
-                i = 1;             
+            }
+            catch(Exception ex)
+            {
+                MessageBox.Show("Error al cargar Examen." + ex.Message);
             }
         }
     }

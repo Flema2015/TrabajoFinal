@@ -15,10 +15,12 @@
 
         private void btnCargar_Click(object sender, EventArgs e)
         {
-            using (FrmRealizarExamen frmRealizarExamen = new FrmRealizarExamen())
+            using (FrmRealizarExamen frmRealizarExamen = new FrmRealizarExamen(cmbAsignatura.Text))
             {
                 frmRealizarExamen.ShowDialog();
+                frmRealizarExamen.Carrera = cmbCarrera.SelectedItem.ToString();
             }
+
         }
 
         private void btnVolver_Click(object sender, EventArgs e)
@@ -28,20 +30,21 @@
 
         private void cargarAsignatura()
         {
-            if (cmbCarrera.Text == "Ing. en Sistemas")
-            {
-                cmbAsignatura.Items.Add("historia");
-            }
 
-            if (cmbCarrera.Text == "LGTI")
-            {
-                cmbAsignatura.Items.Add("historia");
-            }
+                if (cmbCarrera.Text == "Ing. en Sistemas")
+                {
+                    cmbAsignatura.Items.Add("programacion");
+                }
 
-            if (cmbCarrera.Text == "Lic. Videojuegos")
-            {
-                cmbAsignatura.Items.Add("historia");
-            }
+                if (cmbCarrera.Text == "LGTI")
+                {
+                    cmbAsignatura.Items.Add("programacion");
+                }
+
+                if (cmbCarrera.Text == "Lic. Videojuegos")
+                {
+                    cmbAsignatura.Items.Add("programacion");
+                }    
         }
 
         private void btnElegirCarrera_Click(object sender, EventArgs e)

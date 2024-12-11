@@ -105,7 +105,7 @@
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(739, 411);
+            ClientSize = new Size(708, 411);
             Controls.Add(btnElegirCarrera);
             Controls.Add(cmbAsignatura);
             Controls.Add(cmbCarrera);
