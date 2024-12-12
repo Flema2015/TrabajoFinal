@@ -15,6 +15,8 @@ namespace TrabajoFinal_
 
         List<Pregunta> preguntas = new List<Pregunta>();
         List<string> respuestas = new List<string>();
+        List<Asignatura> asignaturas = new List<Asignatura>();
+        string rutaArchivoAsignaturas = Path.Combine(CARPETA, "Asignaturas.json");
 
         public FrmAltaPregunta()
         {
@@ -23,6 +25,7 @@ namespace TrabajoFinal_
             preguntas = CargarPreguntas();
 
             ObtenerIdPreguntaMaximo();
+            CargarAsignaturas();
 
             // TODO verifica el ultimo id en el archivo.
         }
@@ -60,10 +63,16 @@ namespace TrabajoFinal_
             pregunta.ListaDeRespuestas = respuestas;
             string respuesta = txtRespuesta.Text;
             pregunta.RespuestaCorrecta = cmbRespuestas.SelectedIndex;
-            pregunta.Asignatura = txtAsignatura.Text;
             pregunta.Unidad = txtUnidad.Text;
             pregunta.SubUnidad = txtSubUnidad.Text;
             pregunta.Visible = true;
+
+            if (string.IsNullOrWhiteSpace(cmbAsignatura.Text))
+            {
+                MessageBox.Show("Debes seleccionar una asignatura");
+                return;
+            }
+            
 
             validarCampos(pregunta.TxtPregunta, respuesta, pregunta.Asignatura, pregunta.Unidad, pregunta.SubUnidad);
 
@@ -86,7 +95,7 @@ namespace TrabajoFinal_
                 txtPregunta.Text = "";
                 respuestas = new List<string>();
                 txtRespuesta.Text = "";
-                txtAsignatura.Text = "";
+                cmbAsignatura.SelectedIndex = -1;
                 txtUnidad.Text = "";
                 txtSubUnidad.Text = "";
 
@@ -216,7 +225,7 @@ namespace TrabajoFinal_
             }
             catch (Exception ex)
             {
-                MessageBox.Show("Error al guardar los datos: " + ex.Message);
+                MessageBox.Show("Error al guardar los datos");
             }
         }
 
@@ -312,6 +321,23 @@ namespace TrabajoFinal_
             catch (Exception ex)
             {
                 MessageBox.Show("Error al obtener el máximo PreguntaId: " + ex.Message);
+            }
+        }
+        private void CargarAsignaturas()
+        {
+            try
+            {
+                string Json = File.ReadAllText(rutaArchivoAsignaturas);
+                asignaturas = JsonSerializer.Deserialize<List<Asignatura>>(Json) ?? new List<Asignatura>();
+                foreach (Asignatura asignatura in asignaturas)
+                {
+                    cmbAsignatura.Items.Add(asignatura.Nombre);
+                }
+
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("No se pudieron cargar las asignaturas");
             }
         }
     }

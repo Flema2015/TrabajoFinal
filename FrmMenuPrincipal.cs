@@ -58,6 +58,10 @@ namespace TrabajoFinal_
             GestorMenu.MenuPrincipal = menuStrip1;
         }
 
-
+        private void administrarAsignaturasToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            FrmAdministrarAsignatura frmAdministrarAsignatura = new FrmAdministrarAsignatura();
+            AbrirFormularioHijo(frmAdministrarAsignatura);
+        }
     }
 }

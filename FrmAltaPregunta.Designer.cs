@@ -39,7 +39,6 @@ namespace TrabajoFinal_
             lblSubUnidad = new Label();
             txtPregunta = new TextBox();
             txtRespuesta = new TextBox();
-            txtAsignatura = new TextBox();
             txtUnidad = new TextBox();
             txtSubUnidad = new TextBox();
             cmbRespuestas = new ComboBox();
@@ -48,6 +47,7 @@ namespace TrabajoFinal_
             btnAceptar = new Button();
             btnVolver = new Button();
             alertaVacio = new ErrorProvider(components);
+            cmbAsignatura = new ComboBox();
             ((System.ComponentModel.ISupportInitialize)alertaVacio).BeginInit();
             SuspendLayout();
             // 
@@ -139,14 +139,6 @@ namespace TrabajoFinal_
             txtRespuesta.Size = new Size(360, 33);
             txtRespuesta.TabIndex = 5;
             // 
-            // txtAsignatura
-            // 
-            txtAsignatura.Font = new Font("Segoe UI", 14.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            txtAsignatura.Location = new Point(211, 221);
-            txtAsignatura.Name = "txtAsignatura";
-            txtAsignatura.Size = new Size(360, 33);
-            txtAsignatura.TabIndex = 10;
-            // 
             // txtUnidad
             // 
             txtUnidad.Font = new Font("Segoe UI", 14.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
@@ -226,12 +218,22 @@ namespace TrabajoFinal_
             // 
             alertaVacio.ContainerControl = this;
             // 
+            // cmbAsignatura
+            // 
+            cmbAsignatura.Font = new Font("Segoe UI", 14.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            cmbAsignatura.FormattingEnabled = true;
+            cmbAsignatura.Location = new Point(211, 221);
+            cmbAsignatura.Name = "cmbAsignatura";
+            cmbAsignatura.Size = new Size(360, 33);
+            cmbAsignatura.TabIndex = 17;
+            // 
             // FrmAltaPregunta
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = SystemColors.Control;
             ClientSize = new Size(739, 411);
+            Controls.Add(cmbAsignatura);
             Controls.Add(btnVolver);
             Controls.Add(btnAceptar);
             Controls.Add(lblRespuestas);
@@ -239,7 +241,6 @@ namespace TrabajoFinal_
             Controls.Add(cmbRespuestas);
             Controls.Add(txtSubUnidad);
             Controls.Add(txtUnidad);
-            Controls.Add(txtAsignatura);
             Controls.Add(txtRespuesta);
             Controls.Add(txtPregunta);
             Controls.Add(lblSubUnidad);
@@ -270,7 +271,6 @@ namespace TrabajoFinal_
         private Label lblSubUnidad;
         private TextBox txtPregunta;
         private TextBox txtRespuesta;
-        private TextBox txtAsignatura;
         private TextBox txtUnidad;
         private TextBox txtSubUnidad;
         private ComboBox cmbRespuestas;
@@ -279,5 +279,6 @@ namespace TrabajoFinal_
         private Button btnAceptar;
         private Button btnVolver;
         private ErrorProvider alertaVacio;
+        private ComboBox cmbAsignatura;
     }
 }

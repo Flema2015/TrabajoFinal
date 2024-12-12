@@ -30,6 +30,7 @@
         {
             menuStrip1 = new MenuStrip();
             inicioToolStripMenuItem = new ToolStripMenuItem();
+            administrarAsignaturasToolStripMenuItem = new ToolStripMenuItem();
             administrarPreguntasToolStripMenuItem = new ToolStripMenuItem();
             administrarExamenToolStripMenuItem = new ToolStripMenuItem();
             realizarExamenToolStripMenuItem = new ToolStripMenuItem();
@@ -49,44 +50,51 @@
             // 
             // inicioToolStripMenuItem
             // 
-            inicioToolStripMenuItem.DropDownItems.AddRange(new ToolStripItem[] { administrarPreguntasToolStripMenuItem, administrarExamenToolStripMenuItem, realizarExamenToolStripMenuItem, correcciónDeExamenToolStripMenuItem, salirToolStripMenuItem });
+            inicioToolStripMenuItem.DropDownItems.AddRange(new ToolStripItem[] { administrarAsignaturasToolStripMenuItem, administrarPreguntasToolStripMenuItem, administrarExamenToolStripMenuItem, realizarExamenToolStripMenuItem, correcciónDeExamenToolStripMenuItem, salirToolStripMenuItem });
             inicioToolStripMenuItem.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
             inicioToolStripMenuItem.Name = "inicioToolStripMenuItem";
             inicioToolStripMenuItem.Size = new Size(59, 25);
             inicioToolStripMenuItem.Text = "Inicio";
             // 
+            // administrarAsignaturasToolStripMenuItem
+            // 
+            administrarAsignaturasToolStripMenuItem.Name = "administrarAsignaturasToolStripMenuItem";
+            administrarAsignaturasToolStripMenuItem.Size = new Size(246, 26);
+            administrarAsignaturasToolStripMenuItem.Text = "Administrar asignaturas";
+            administrarAsignaturasToolStripMenuItem.Click += administrarAsignaturasToolStripMenuItem_Click;
+            // 
             // administrarPreguntasToolStripMenuItem
             // 
             administrarPreguntasToolStripMenuItem.Name = "administrarPreguntasToolStripMenuItem";
-            administrarPreguntasToolStripMenuItem.Size = new Size(236, 26);
+            administrarPreguntasToolStripMenuItem.Size = new Size(246, 26);
             administrarPreguntasToolStripMenuItem.Text = "Administrar preguntas";
             administrarPreguntasToolStripMenuItem.Click += administrarPreguntasToolStripMenuItem_Click;
             // 
             // administrarExamenToolStripMenuItem
             // 
             administrarExamenToolStripMenuItem.Name = "administrarExamenToolStripMenuItem";
-            administrarExamenToolStripMenuItem.Size = new Size(236, 26);
+            administrarExamenToolStripMenuItem.Size = new Size(246, 26);
             administrarExamenToolStripMenuItem.Text = "Administrar examen";
             administrarExamenToolStripMenuItem.Click += administrarExamenToolStripMenuItem_Click;
             // 
             // realizarExamenToolStripMenuItem
             // 
             realizarExamenToolStripMenuItem.Name = "realizarExamenToolStripMenuItem";
-            realizarExamenToolStripMenuItem.Size = new Size(236, 26);
+            realizarExamenToolStripMenuItem.Size = new Size(246, 26);
             realizarExamenToolStripMenuItem.Text = "Realizar examen";
             realizarExamenToolStripMenuItem.Click += realizarExamenToolStripMenuItem_Click;
             // 
             // correcciónDeExamenToolStripMenuItem
             // 
             correcciónDeExamenToolStripMenuItem.Name = "correcciónDeExamenToolStripMenuItem";
-            correcciónDeExamenToolStripMenuItem.Size = new Size(236, 26);
+            correcciónDeExamenToolStripMenuItem.Size = new Size(246, 26);
             correcciónDeExamenToolStripMenuItem.Text = "Corrección de examen";
             correcciónDeExamenToolStripMenuItem.Click += correcciónDeExamenToolStripMenuItem_Click;
             // 
             // salirToolStripMenuItem
             // 
             salirToolStripMenuItem.Name = "salirToolStripMenuItem";
-            salirToolStripMenuItem.Size = new Size(236, 26);
+            salirToolStripMenuItem.Size = new Size(246, 26);
             salirToolStripMenuItem.Text = "Salir";
             salirToolStripMenuItem.Click += salirToolStripMenuItem_Click;
             // 
@@ -118,5 +126,6 @@
         private ToolStripMenuItem realizarExamenToolStripMenuItem;
         private ToolStripMenuItem correcciónDeExamenToolStripMenuItem;
         private ToolStripMenuItem salirToolStripMenuItem;
+        private ToolStripMenuItem administrarAsignaturasToolStripMenuItem;
     }
 }
