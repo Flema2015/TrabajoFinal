@@ -15,12 +15,11 @@
 
         private void btnCargar_Click(object sender, EventArgs e)
         {
-            using (FrmRealizarExamen frmRealizarExamen = new FrmRealizarExamen(cmbAsignatura.Text))
+            using (FrmRealizarExamen frmRealizarExamen = new FrmRealizarExamen(cmbCarrera.SelectedItem.ToString(), cmbAsignatura.SelectedItem.ToString()))
             {
                 frmRealizarExamen.ShowDialog();
-                frmRealizarExamen.Carrera = cmbCarrera.SelectedItem.ToString();
+                //frmRealizarExamen.Carrera = cmbCarrera.SelectedItem.ToString();
             }
-
         }
 
         private void btnVolver_Click(object sender, EventArgs e)
@@ -28,31 +27,42 @@
             this.Close();
         }
 
-        private void cargarAsignatura()
-        {
-
-                if (cmbCarrera.Text == "Ing. en Sistemas")
-                {
-                    cmbAsignatura.Items.Add("programacion");
-                }
-
-                if (cmbCarrera.Text == "LGTI")
-                {
-                    cmbAsignatura.Items.Add("programacion");
-                }
-
-                if (cmbCarrera.Text == "Lic. Videojuegos")
-                {
-                    cmbAsignatura.Items.Add("programacion");
-                }    
-        }
-
         private void btnElegirCarrera_Click(object sender, EventArgs e)
         {
             cmbAsignatura.SelectedIndex = -1;
             cmbAsignatura.Items.Clear();
+
             cargarAsignatura();
-            
+        }
+
+        private void FrmCargaDatosExamen_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            GestorMenu.MostrarMenu();
+        }
+
+        private void cargarAsignatura()
+        {
+
+            if (cmbCarrera.Text == "Ing. en Sistemas")
+            {
+                cmbAsignatura.Items.Add("Matemática");
+                cmbAsignatura.Items.Add("Programación");
+                cmbAsignatura.Items.Add("Base de Datos");
+            }
+
+            if (cmbCarrera.Text == "LGTI")
+            {
+                cmbAsignatura.Items.Add("Programación");
+                cmbAsignatura.Items.Add("Metodología de Desarrollo");
+                cmbAsignatura.Items.Add("Lógica");
+            }
+
+            if (cmbCarrera.Text == "Lic. Videojuegos")
+            {
+                cmbAsignatura.Items.Add("Motores gráfico");
+                cmbAsignatura.Items.Add("Programación");
+                cmbAsignatura.Items.Add("Narrativa");
+            }
         }
     }
 }

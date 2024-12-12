@@ -4,21 +4,26 @@ namespace TrabajoFinal_
 {
     public partial class FrmRealizarExamen : Form
     {
-        const string CARPETA = "files";       
+        const string CARPETA = "files";
         string rutaArchivoExamen = Path.Combine(CARPETA, "Examenes.json");
+        string carreraAux, asignaturaAux;
+        bool bandera = false;
+
         private List<Pregunta> preguntas = new List<Pregunta>();
         private List<Examen> examenes = new List<Examen>();
         private List<Examen> examenesFiltrado = new List<Examen>();
-        string carreraAux, AsignaturaAux;
-        public string Carrera { get; set; }
-        public FrmRealizarExamen(string Asignatura)
+
+        //public string Carrera { get; set; }
+
+        public FrmRealizarExamen(string carrera, string asignatura)
         {
             InitializeComponent();
             DateTime fecha = DateTime.Now.Date;
-            carreraAux = Carrera;
-            AsignaturaAux = Asignatura;
+            carreraAux = carrera;
+            asignaturaAux = asignatura;
             lblFechaResolucion.Text = fecha.ToShortDateString();
-            lblCarreraCompletar.Text = Carrera;
+            lblCarreraCompletar.Text = carrera;
+
             CargarExamen();
         }
 
@@ -39,6 +44,7 @@ namespace TrabajoFinal_
         {
             this.Close();
         }
+
         private void CargarExamen()
         {
             if (File.Exists(rutaArchivoExamen))
@@ -46,30 +52,52 @@ namespace TrabajoFinal_
                 string jsonExamenes = File.ReadAllText(rutaArchivoExamen);
                 examenes = JsonSerializer.Deserialize<List<Examen>>(jsonExamenes) ?? new List<Examen>();
             }
-        
-         
-            var ExamenFiltradasPorCarrera = examenes
+
+            try
+            {
+                var ExamenFiltradasPorCarrera = examenes
                    .Where(e => e.Carrera == carreraAux)
-                   .ToList();
+                    .ToList();
 
-            var ExamenFiltradoPorAsignatura = ExamenFiltradasPorCarrera
-                .Where(e => e.Asignatura == AsignaturaAux)
-                .ToList();
+                var ExamenFiltradoPorAsignatura = ExamenFiltradasPorCarrera
+                    .Where(e => e.Asignatura == asignaturaAux)
+                    .ToList();
 
-            examenesFiltrado = ExamenFiltradoPorAsignatura;
+                examenesFiltrado = ExamenFiltradoPorAsignatura;
 
-            Random rand = new Random();
-            //Examen examenSeleccionado = ExamenFiltradoPorAsignatura[rand.Next(ExamenFiltradoPorAsignatura.Count )];
-            Examen examenesPrueba = examenes[0];
-            MostrarExamen(examenesPrueba);
+                int longitudListaExamen = examenesFiltrado.Count();
+                
+                if (longitudListaExamen <= 0)
+                {
+                    bandera = true;
+                    MessageBox.Show("No hay exámenes cargados con la carrera elegida o asignaturas.");
+                }
+                else
+                {
+                    // Crear una instancia de la clase Random
+                    Random random = new Random();
+
+                    // Generar un número aleatorio entre 1 y longitud de la lista de examenes
+                    int numeroAleatorio = random.Next(0, longitudListaExamen);
+                    Examen examenesPrueba = examenes[numeroAleatorio];
+
+                    MostrarExamen(examenesPrueba);
+
+                    //Examen examenSeleccionado = ExamenFiltradoPorAsignatura[rand.Next(ExamenFiltradoPorAsignatura.Count )];
+                }
+            }
+            catch (Exception e)
+            {
+                MessageBox.Show("No hay exámenes cargados con la carrera elegida o asignaturas.");
+            }
         }
+
         private void MostrarExamen(Examen examen)
         {
-            
             // cargar los Labels.
-            lblIDExamen.Text = examen.ExamenId.ToString();
-            lblCarreraCompletar.Text = examen.Carrera;
-            lblAsignaturaCompletar.Text = examen.Asignatura;
+            lblIDExamen.Text = "ID examen: " + examen.ExamenId.ToString();
+            lblCarreraCompletar.Text = carreraAux;
+            lblAsignaturaCompletar.Text = asignaturaAux;
             lblFechaResolucion.Text = examen.Fecha;
 
             //Grupo1 
@@ -86,7 +114,6 @@ namespace TrabajoFinal_
             rdoRespuesta3Pregunta2.Text = examen.Preguntas[1].ListaDeRespuestas[2];
             rdoRespuesta4Pregunta2.Text = examen.Preguntas[1].ListaDeRespuestas[3];
 
-
             //grupo 3
             lblPregunta3.Text = examen.Preguntas[2].TxtPregunta;
             rdoRespuesta1Pregunta3.Text = examen.Preguntas[2].ListaDeRespuestas[0];
@@ -101,14 +128,20 @@ namespace TrabajoFinal_
             rdoRespuesta3Pregunta4.Text = examen.Preguntas[3].ListaDeRespuestas[2];
             rdoRespuesta4Pregunta4.Text = examen.Preguntas[3].ListaDeRespuestas[3];
 
-
             //grupo 5 
             lblPregunta5.Text = examen.Preguntas[4].TxtPregunta;
             rdoRespuesta1Pregunta5.Text = examen.Preguntas[4].ListaDeRespuestas[0];
             rdoRespuesta2Pregunta5.Text = examen.Preguntas[4].ListaDeRespuestas[1];
             rdoRespuesta3Pregunta5.Text = examen.Preguntas[4].ListaDeRespuestas[2];
             rdoRespuesta4Pregunta5.Text = examen.Preguntas[4].ListaDeRespuestas[3];
+        }
 
+        private void FrmRealizarExamen_Load(object sender, EventArgs e)
+        {
+            if (bandera == true)
+            {
+                this.Close();
+            }
         }
     }
 }

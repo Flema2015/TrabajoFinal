@@ -43,7 +43,7 @@
             btnEmpezarExamen.Name = "btnEmpezarExamen";
             btnEmpezarExamen.Size = new Size(112, 23);
             btnEmpezarExamen.TabIndex = 0;
-            btnEmpezarExamen.Text = "Empezar Examen";
+            btnEmpezarExamen.Text = "Empezar examen";
             btnEmpezarExamen.UseVisualStyleBackColor = true;
             btnEmpezarExamen.Click += btnCargar_Click;
             // 
@@ -97,7 +97,7 @@
             btnElegirCarrera.Name = "btnElegirCarrera";
             btnElegirCarrera.Size = new Size(112, 23);
             btnElegirCarrera.TabIndex = 8;
-            btnElegirCarrera.Text = "Elegir Examen";
+            btnElegirCarrera.Text = "Elegir asignatura";
             btnElegirCarrera.UseVisualStyleBackColor = true;
             btnElegirCarrera.Click += btnElegirCarrera_Click;
             // 
@@ -117,6 +117,7 @@
             Name = "FrmCargaDatosExamen";
             StartPosition = FormStartPosition.CenterScreen;
             Text = "Cargar Carrera y Asignatura";
+            FormClosed += FrmCargaDatosExamen_FormClosed;
             ResumeLayout(false);
             PerformLayout();
         }

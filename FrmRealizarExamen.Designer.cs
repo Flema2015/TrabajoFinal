@@ -34,26 +34,31 @@
             lblAsignatura = new Label();
             lblFecha = new Label();
             groupBox1 = new GroupBox();
+            lblPregunta1 = new Label();
             rdoRespuesta4Pregunta1 = new RadioButton();
             rdoRespuesta3Pregunta1 = new RadioButton();
             rdoRespuesta2Pregunta1 = new RadioButton();
             rdoRespuesta1Pregunta1 = new RadioButton();
             groupBox2 = new GroupBox();
+            lblPregunta2 = new Label();
             rdoRespuesta4Pregunta2 = new RadioButton();
             rdoRespuesta3Pregunta2 = new RadioButton();
             rdoRespuesta1Pregunta2 = new RadioButton();
             rdoRespuesta2Pregunta2 = new RadioButton();
             groupBox3 = new GroupBox();
+            lblPregunta3 = new Label();
             rdoRespuesta4Pregunta3 = new RadioButton();
             rdoRespuesta3Pregunta3 = new RadioButton();
             rdoRespuesta1Pregunta3 = new RadioButton();
             rdoRespuesta2Pregunta3 = new RadioButton();
             groupBox4 = new GroupBox();
+            lblPregunta4 = new Label();
             rdoRespuesta4Pregunta4 = new RadioButton();
             rdoRespuesta3Pregunta4 = new RadioButton();
             rdoRespuesta2Pregunta4 = new RadioButton();
             rdoRespuesta1Pregunta4 = new RadioButton();
             groupBox5 = new GroupBox();
+            lblPregunta5 = new Label();
             rdoRespuesta4Pregunta5 = new RadioButton();
             rdoRespuesta2Pregunta5 = new RadioButton();
             rdoRespuesta3Pregunta5 = new RadioButton();
@@ -62,11 +67,6 @@
             lblCarreraCompletar = new Label();
             lblAsignaturaCompletar = new Label();
             btnVolver = new Button();
-            lblPregunta1 = new Label();
-            lblPregunta2 = new Label();
-            lblPregunta3 = new Label();
-            lblPregunta4 = new Label();
-            lblPregunta5 = new Label();
             groupBox1.SuspendLayout();
             groupBox2.SuspendLayout();
             groupBox3.SuspendLayout();
@@ -138,6 +138,14 @@
             groupBox1.TabStop = false;
             groupBox1.Text = "groupBox1";
             // 
+            // lblPregunta1
+            // 
+            lblPregunta1.AutoSize = true;
+            lblPregunta1.Location = new Point(6, 27);
+            lblPregunta1.Name = "lblPregunta1";
+            lblPregunta1.Size = new Size(0, 15);
+            lblPregunta1.TabIndex = 4;
+            // 
             // rdoRespuesta4Pregunta1
             // 
             rdoRespuesta4Pregunta1.AutoSize = true;
@@ -195,6 +203,14 @@
             groupBox2.TabIndex = 11;
             groupBox2.TabStop = false;
             groupBox2.Text = "groupBox2";
+            // 
+            // lblPregunta2
+            // 
+            lblPregunta2.AutoSize = true;
+            lblPregunta2.Location = new Point(6, 19);
+            lblPregunta2.Name = "lblPregunta2";
+            lblPregunta2.Size = new Size(0, 15);
+            lblPregunta2.TabIndex = 8;
             // 
             // rdoRespuesta4Pregunta2
             // 
@@ -254,6 +270,14 @@
             groupBox3.TabStop = false;
             groupBox3.Text = "groupBox3";
             // 
+            // lblPregunta3
+            // 
+            lblPregunta3.AutoSize = true;
+            lblPregunta3.Location = new Point(6, 27);
+            lblPregunta3.Name = "lblPregunta3";
+            lblPregunta3.Size = new Size(0, 15);
+            lblPregunta3.TabIndex = 12;
+            // 
             // rdoRespuesta4Pregunta3
             // 
             rdoRespuesta4Pregunta3.AutoSize = true;
@@ -311,6 +335,14 @@
             groupBox4.TabIndex = 11;
             groupBox4.TabStop = false;
             groupBox4.Text = "groupBox4";
+            // 
+            // lblPregunta4
+            // 
+            lblPregunta4.AutoSize = true;
+            lblPregunta4.Location = new Point(6, 22);
+            lblPregunta4.Name = "lblPregunta4";
+            lblPregunta4.Size = new Size(0, 15);
+            lblPregunta4.TabIndex = 13;
             // 
             // rdoRespuesta4Pregunta4
             // 
@@ -370,6 +402,14 @@
             groupBox5.TabStop = false;
             groupBox5.Text = "groupBox5";
             // 
+            // lblPregunta5
+            // 
+            lblPregunta5.AutoSize = true;
+            lblPregunta5.Location = new Point(6, 22);
+            lblPregunta5.Name = "lblPregunta5";
+            lblPregunta5.Size = new Size(0, 15);
+            lblPregunta5.TabIndex = 13;
+            // 
             // rdoRespuesta4Pregunta5
             // 
             rdoRespuesta4Pregunta5.AutoSize = true;
@@ -419,7 +459,7 @@
             lblFechaResolucion.AutoSize = true;
             lblFechaResolucion.Location = new Point(391, 24);
             lblFechaResolucion.Name = "lblFechaResolucion";
-            lblFechaResolucion.Size = new Size(13, 15);
+            lblFechaResolucion.Size = new Size(12, 15);
             lblFechaResolucion.TabIndex = 12;
             lblFechaResolucion.Text = "x";
             // 
@@ -428,7 +468,7 @@
             lblCarreraCompletar.AutoSize = true;
             lblCarreraCompletar.Location = new Point(160, 24);
             lblCarreraCompletar.Name = "lblCarreraCompletar";
-            lblCarreraCompletar.Size = new Size(13, 15);
+            lblCarreraCompletar.Size = new Size(12, 15);
             lblCarreraCompletar.TabIndex = 13;
             lblCarreraCompletar.Text = "x";
             // 
@@ -437,7 +477,7 @@
             lblAsignaturaCompletar.AutoSize = true;
             lblAsignaturaCompletar.Location = new Point(160, 50);
             lblAsignaturaCompletar.Name = "lblAsignaturaCompletar";
-            lblAsignaturaCompletar.Size = new Size(13, 15);
+            lblAsignaturaCompletar.Size = new Size(12, 15);
             lblAsignaturaCompletar.TabIndex = 14;
             lblAsignaturaCompletar.Text = "x";
             // 
@@ -450,46 +490,6 @@
             btnVolver.Text = "Volver";
             btnVolver.UseVisualStyleBackColor = true;
             btnVolver.Click += btnVolver_Click;
-            // 
-            // lblPregunta1
-            // 
-            lblPregunta1.AutoSize = true;
-            lblPregunta1.Location = new Point(6, 27);
-            lblPregunta1.Name = "lblPregunta1";
-            lblPregunta1.Size = new Size(0, 15);
-            lblPregunta1.TabIndex = 4;
-            // 
-            // lblPregunta2
-            // 
-            lblPregunta2.AutoSize = true;
-            lblPregunta2.Location = new Point(6, 19);
-            lblPregunta2.Name = "lblPregunta2";
-            lblPregunta2.Size = new Size(0, 15);
-            lblPregunta2.TabIndex = 8;
-            // 
-            // lblPregunta3
-            // 
-            lblPregunta3.AutoSize = true;
-            lblPregunta3.Location = new Point(6, 27);
-            lblPregunta3.Name = "lblPregunta3";
-            lblPregunta3.Size = new Size(0, 15);
-            lblPregunta3.TabIndex = 12;
-            // 
-            // lblPregunta4
-            // 
-            lblPregunta4.AutoSize = true;
-            lblPregunta4.Location = new Point(6, 22);
-            lblPregunta4.Name = "lblPregunta4";
-            lblPregunta4.Size = new Size(0, 15);
-            lblPregunta4.TabIndex = 13;
-            // 
-            // lblPregunta5
-            // 
-            lblPregunta5.AutoSize = true;
-            lblPregunta5.Location = new Point(6, 22);
-            lblPregunta5.Name = "lblPregunta5";
-            lblPregunta5.Size = new Size(0, 15);
-            lblPregunta5.TabIndex = 13;
             // 
             // FrmRealizarExamen
             // 
@@ -519,6 +519,7 @@
             StartPosition = FormStartPosition.CenterScreen;
             Text = "Realizar Exámen";
             FormClosed += FrmRealizarExamen_FormClosed;
+            Load += FrmRealizarExamen_Load;
             groupBox1.ResumeLayout(false);
             groupBox1.PerformLayout();
             groupBox2.ResumeLayout(false);
