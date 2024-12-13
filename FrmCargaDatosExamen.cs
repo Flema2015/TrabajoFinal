@@ -1,21 +1,27 @@
-﻿namespace TrabajoFinal_
+﻿using System.Text.Json;
+
+namespace TrabajoFinal_
 {
     public partial class FrmCargaDatosExamen : Form
     {
         const string CARPETA = "files";
+
+        string rutaArchivoAsignaturas = Path.Combine(CARPETA, "Asignaturas.json");
         string rutaArchivoExamen = Path.Combine(CARPETA, "Examenes.json");
+        
         private List<Examen> examenes = new List<Examen>();
+        List<Asignatura> asignaturas = new List<Asignatura>();
+
         public FrmCargaDatosExamen()
         {
             InitializeComponent();
-            cmbCarrera.Items.Add("Ing. en Sistemas");
-            cmbCarrera.Items.Add("LGTI");
-            cmbCarrera.Items.Add("Lic. Videojuegos");
+            CargarCarreras();
+            CargarAsignaturas();
         }
 
         private void btnCargar_Click(object sender, EventArgs e)
         {
-            using (FrmRealizarExamen frmRealizarExamen = new FrmRealizarExamen(cmbCarrera.SelectedItem.ToString(), cmbAsignatura.SelectedItem.ToString()))
+            using (FrmRealizarExamen frmRealizarExamen = new FrmRealizarExamen(cmbCarreras.SelectedItem.ToString(), cmbAsignaturas.SelectedItem.ToString()))
             {
                 frmRealizarExamen.ShowDialog();
                 //frmRealizarExamen.Carrera = cmbCarrera.SelectedItem.ToString();
@@ -29,10 +35,8 @@
 
         private void btnElegirCarrera_Click(object sender, EventArgs e)
         {
-            cmbAsignatura.SelectedIndex = -1;
-            cmbAsignatura.Items.Clear();
-
-            cargarAsignatura();
+            cmbAsignaturas.SelectedIndex = -1;
+            cmbAsignaturas.Items.Clear();
         }
 
         private void FrmCargaDatosExamen_FormClosed(object sender, FormClosedEventArgs e)
@@ -40,28 +44,51 @@
             GestorMenu.MostrarMenu();
         }
 
-        private void cargarAsignatura()
+        private void CargarCarreras()
         {
-
-            if (cmbCarrera.Text == "Ing. en Sistemas")
+            try
             {
-                cmbAsignatura.Items.Add("Matemática");
-                cmbAsignatura.Items.Add("Programación");
-                cmbAsignatura.Items.Add("Base de Datos");
+                string Json = File.ReadAllText(rutaArchivoAsignaturas);
+                asignaturas = JsonSerializer.Deserialize<List<Asignatura>>(Json) ?? new List<Asignatura>();
+
+                // Extraer las carreras únicas
+                var carrerasNoDuplicadas = asignaturas
+                    .Select(asignatura => asignatura.Carrera) // Obtener solo las carreras
+                    .Distinct() // Eliminar duplicados
+                    .ToList();
+
+                foreach (String carrera in carrerasNoDuplicadas)
+                {
+                    cmbCarreras.Items.Add(carrera);
+                }
             }
-
-            if (cmbCarrera.Text == "LGTI")
+            catch (Exception ex)
             {
-                cmbAsignatura.Items.Add("Programación");
-                cmbAsignatura.Items.Add("Metodología de Desarrollo");
-                cmbAsignatura.Items.Add("Lógica");
+                MessageBox.Show("No se pudieron cargar las asignaturas.");
             }
+        }
 
-            if (cmbCarrera.Text == "Lic. Videojuegos")
+        private void CargarAsignaturas()
+        {
+            try
             {
-                cmbAsignatura.Items.Add("Motores gráfico");
-                cmbAsignatura.Items.Add("Programación");
-                cmbAsignatura.Items.Add("Narrativa");
+                string Json = File.ReadAllText(rutaArchivoAsignaturas);
+                asignaturas = JsonSerializer.Deserialize<List<Asignatura>>(Json) ?? new List<Asignatura>();
+
+                // Extraer las asignaturas únicas
+                var asignaturasNoDuplicadas = asignaturas
+                    .Select(asignatura => asignatura.Nombre) // Obtener solo los nombres de las asignaturas
+                    .Distinct() // Eliminar duplicados
+                    .ToList();
+
+                foreach (string asignatura in asignaturasNoDuplicadas)
+                {
+                    cmbAsignaturas.Items.Add(asignatura);
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("No se pudieron cargar las asignaturas.");
             }
         }
     }

@@ -39,28 +39,31 @@
             // 
             // btnIrAExamen
             // 
-            btnIrAExamen.Location = new Point(189, 229);
+            btnIrAExamen.Font = new Font("Segoe UI", 9.75F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            btnIrAExamen.Location = new Point(159, 229);
             btnIrAExamen.Name = "btnIrAExamen";
-            btnIrAExamen.Size = new Size(107, 23);
+            btnIrAExamen.Size = new Size(150, 50);
             btnIrAExamen.TabIndex = 9;
-            btnIrAExamen.Text = "Generar Exámen";
+            btnIrAExamen.Text = "Generar exámen";
             btnIrAExamen.UseVisualStyleBackColor = true;
             btnIrAExamen.Click += btnIrAExamen_Click;
             // 
             // lblAsignatura
             // 
             lblAsignatura.AutoSize = true;
-            lblAsignatura.Location = new Point(214, 147);
+            lblAsignatura.Font = new Font("Segoe UI", 14.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            lblAsignatura.Location = new Point(159, 125);
             lblAsignatura.Name = "lblAsignatura";
-            lblAsignatura.Size = new Size(64, 15);
+            lblAsignatura.Size = new Size(109, 25);
             lblAsignatura.TabIndex = 7;
             lblAsignatura.Text = "Asignatura";
             // 
             // btnVolver
             // 
-            btnVolver.Location = new Point(455, 229);
+            btnVolver.Font = new Font("Segoe UI", 9.75F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            btnVolver.Location = new Point(471, 229);
             btnVolver.Name = "btnVolver";
-            btnVolver.Size = new Size(105, 23);
+            btnVolver.Size = new Size(150, 50);
             btnVolver.TabIndex = 6;
             btnVolver.Text = "Volver";
             btnVolver.UseVisualStyleBackColor = true;
@@ -68,36 +71,40 @@
             // 
             // cmbAsignatura
             // 
+            cmbAsignatura.Font = new Font("Segoe UI", 14.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
             cmbAsignatura.FormattingEnabled = true;
-            cmbAsignatura.Location = new Point(324, 144);
+            cmbAsignatura.Location = new Point(274, 122);
             cmbAsignatura.Name = "cmbAsignatura";
-            cmbAsignatura.Size = new Size(121, 23);
+            cmbAsignatura.Size = new Size(347, 33);
             cmbAsignatura.TabIndex = 11;
             // 
             // cmbUnidades
             // 
+            cmbUnidades.Font = new Font("Segoe UI", 14.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
             cmbUnidades.FormattingEnabled = true;
-            cmbUnidades.Location = new Point(324, 173);
+            cmbUnidades.Location = new Point(274, 168);
             cmbUnidades.Name = "cmbUnidades";
-            cmbUnidades.Size = new Size(121, 23);
+            cmbUnidades.Size = new Size(347, 33);
             cmbUnidades.TabIndex = 13;
             // 
             // lblUnidades
             // 
             lblUnidades.AutoSize = true;
-            lblUnidades.Location = new Point(214, 176);
+            lblUnidades.Font = new Font("Segoe UI", 14.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            lblUnidades.Location = new Point(173, 171);
             lblUnidades.Name = "lblUnidades";
-            lblUnidades.Size = new Size(56, 15);
+            lblUnidades.Size = new Size(95, 25);
             lblUnidades.TabIndex = 12;
             lblUnidades.Text = "Unidades";
             // 
             // btnVerUltimoExamen
             // 
+            btnVerUltimoExamen.Font = new Font("Segoe UI", 9.75F, FontStyle.Bold, GraphicsUnit.Point, 0);
             btnVerUltimoExamen.Location = new Point(315, 229);
             btnVerUltimoExamen.Name = "btnVerUltimoExamen";
-            btnVerUltimoExamen.Size = new Size(121, 23);
+            btnVerUltimoExamen.Size = new Size(150, 50);
             btnVerUltimoExamen.TabIndex = 14;
-            btnVerUltimoExamen.Text = "Ver Último Exámen";
+            btnVerUltimoExamen.Text = "Último examen";
             btnVerUltimoExamen.UseVisualStyleBackColor = true;
             btnVerUltimoExamen.Click += btnVerUltimoExamen_Click;
             // 

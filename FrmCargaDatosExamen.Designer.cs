@@ -32,16 +32,17 @@
             btnVolver = new Button();
             lblCarrera = new Label();
             lblAsignatura = new Label();
-            cmbCarrera = new ComboBox();
-            cmbAsignatura = new ComboBox();
+            cmbCarreras = new ComboBox();
+            cmbAsignaturas = new ComboBox();
             btnElegirCarrera = new Button();
             SuspendLayout();
             // 
             // btnEmpezarExamen
             // 
-            btnEmpezarExamen.Location = new Point(225, 256);
+            btnEmpezarExamen.Font = new Font("Segoe UI", 9.75F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            btnEmpezarExamen.Location = new Point(123, 192);
             btnEmpezarExamen.Name = "btnEmpezarExamen";
-            btnEmpezarExamen.Size = new Size(112, 23);
+            btnEmpezarExamen.Size = new Size(150, 50);
             btnEmpezarExamen.TabIndex = 0;
             btnEmpezarExamen.Text = "Empezar examen";
             btnEmpezarExamen.UseVisualStyleBackColor = true;
@@ -49,9 +50,10 @@
             // 
             // btnVolver
             // 
-            btnVolver.Location = new Point(359, 256);
+            btnVolver.Font = new Font("Segoe UI", 9.75F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            btnVolver.Location = new Point(428, 192);
             btnVolver.Name = "btnVolver";
-            btnVolver.Size = new Size(107, 23);
+            btnVolver.Size = new Size(150, 50);
             btnVolver.TabIndex = 1;
             btnVolver.Text = "Volver";
             btnVolver.UseVisualStyleBackColor = true;
@@ -60,42 +62,46 @@
             // lblCarrera
             // 
             lblCarrera.AutoSize = true;
-            lblCarrera.Location = new Point(219, 135);
+            lblCarrera.Font = new Font("Segoe UI", 14.25F, FontStyle.Bold);
+            lblCarrera.Location = new Point(154, 81);
             lblCarrera.Name = "lblCarrera";
-            lblCarrera.Size = new Size(45, 15);
+            lblCarrera.Size = new Size(78, 25);
             lblCarrera.TabIndex = 4;
             lblCarrera.Text = "Carrera";
             // 
             // lblAsignatura
             // 
             lblAsignatura.AutoSize = true;
-            lblAsignatura.Location = new Point(219, 220);
+            lblAsignatura.Font = new Font("Segoe UI", 14.25F, FontStyle.Bold);
+            lblAsignatura.Location = new Point(123, 124);
             lblAsignatura.Name = "lblAsignatura";
-            lblAsignatura.Size = new Size(64, 15);
+            lblAsignatura.Size = new Size(109, 25);
             lblAsignatura.TabIndex = 5;
             lblAsignatura.Text = "Asignatura";
             // 
-            // cmbCarrera
+            // cmbCarreras
             // 
-            cmbCarrera.FormattingEnabled = true;
-            cmbCarrera.Location = new Point(345, 135);
-            cmbCarrera.Name = "cmbCarrera";
-            cmbCarrera.Size = new Size(121, 23);
-            cmbCarrera.TabIndex = 6;
+            cmbCarreras.Font = new Font("Segoe UI", 14.25F);
+            cmbCarreras.FormattingEnabled = true;
+            cmbCarreras.Location = new Point(238, 78);
+            cmbCarreras.Name = "cmbCarreras";
+            cmbCarreras.Size = new Size(340, 33);
+            cmbCarreras.TabIndex = 6;
             // 
-            // cmbAsignatura
+            // cmbAsignaturas
             // 
-            cmbAsignatura.FormattingEnabled = true;
-            cmbAsignatura.Location = new Point(345, 217);
-            cmbAsignatura.Name = "cmbAsignatura";
-            cmbAsignatura.Size = new Size(121, 23);
-            cmbAsignatura.TabIndex = 7;
+            cmbAsignaturas.Font = new Font("Segoe UI", 14.25F);
+            cmbAsignaturas.FormattingEnabled = true;
+            cmbAsignaturas.Location = new Point(238, 124);
+            cmbAsignaturas.Name = "cmbAsignaturas";
+            cmbAsignaturas.Size = new Size(340, 33);
+            cmbAsignaturas.TabIndex = 7;
             // 
             // btnElegirCarrera
             // 
-            btnElegirCarrera.Location = new Point(283, 175);
+            btnElegirCarrera.Location = new Point(546, 22);
             btnElegirCarrera.Name = "btnElegirCarrera";
-            btnElegirCarrera.Size = new Size(112, 23);
+            btnElegirCarrera.Size = new Size(150, 50);
             btnElegirCarrera.TabIndex = 8;
             btnElegirCarrera.Text = "Elegir asignatura";
             btnElegirCarrera.UseVisualStyleBackColor = true;
@@ -107,8 +113,8 @@
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(708, 411);
             Controls.Add(btnElegirCarrera);
-            Controls.Add(cmbAsignatura);
-            Controls.Add(cmbCarrera);
+            Controls.Add(cmbAsignaturas);
+            Controls.Add(cmbCarreras);
             Controls.Add(lblAsignatura);
             Controls.Add(lblCarrera);
             Controls.Add(btnVolver);
@@ -128,8 +134,8 @@
         private Button btnVolver;
         private Label lblCarrera;
         private Label lblAsignatura;
-        private ComboBox cmbCarrera;
-        private ComboBox cmbAsignatura;
+        private ComboBox cmbCarreras;
+        private ComboBox cmbAsignaturas;
         private Button btnElegirCarrera;
     }
 }

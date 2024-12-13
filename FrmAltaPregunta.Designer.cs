@@ -176,7 +176,7 @@ namespace TrabajoFinal_
             btnCargarRespuesta.Name = "btnCargarRespuesta";
             btnCargarRespuesta.Size = new Size(150, 50);
             btnCargarRespuesta.TabIndex = 6;
-            btnCargarRespuesta.Text = "Cargar Respuesta";
+            btnCargarRespuesta.Text = "Cargar respuesta";
             btnCargarRespuesta.UseVisualStyleBackColor = false;
             btnCargarRespuesta.Click += btnCargarRespuesta_Click;
             // 

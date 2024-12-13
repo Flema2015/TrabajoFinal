@@ -5,9 +5,6 @@ namespace TrabajoFinal_
     {
         public string Carrera { get; set; }
         public string Nombre {  get; set; }
-
-        public List<string> Unidades { get; set; }
-
-
+        public List<int> Unidades { get; set; }
     }
 }
