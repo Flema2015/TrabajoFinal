@@ -11,8 +11,11 @@ namespace TrabajoFinal_
         string rutaArchivoAsignaturas = Path.Combine(CARPETA, "Asignaturas.json");
 
         List<Pregunta> preguntas = new List<Pregunta>();
+        List<string> idPreguntas = new List<string>();
+
         List<Examen> examenes = new List<Examen>();
         List<Asignatura> asignaturas = new List<Asignatura>();
+
 
         public FrmAdministrarExamen()
         {
@@ -66,8 +69,8 @@ namespace TrabajoFinal_
 
         private void CrearExamen()
         {
+            
             string carrera = "", asignatura = "";
-
             carrera = SepararCarrera(carrera);
             asignatura = SepararAsignatura(asignatura);
 
@@ -79,6 +82,7 @@ namespace TrabajoFinal_
                     string jsonExamenes = File.ReadAllText(rutaArchivoExamenes);
                     examenes = JsonSerializer.Deserialize<List<Examen>>(jsonExamenes) ?? new List<Examen>();
                 }
+
 
                 // Filtrar preguntas por asignatura seleccionada
                 var preguntasFiltradasPorAsignatura = preguntas
@@ -110,6 +114,13 @@ namespace TrabajoFinal_
 
                 DateTime fechaActual = DateTime.Now;
 
+                foreach (var IdPregunta in preguntasPorSubunidad)
+                {
+                    idPreguntas.Add(IdPregunta.PreguntaId.ToString());
+
+                }
+             
+
                 // Crear un nuevo examen
                 Examen nuevoExamen = new Examen
                 {
@@ -117,6 +128,7 @@ namespace TrabajoFinal_
                     Fecha = fechaActual.ToString("yyyy-MM-dd"),
                     Asignatura = asignatura,
                     Preguntas = preguntasPorSubunidad,
+                    idPregunta = idPreguntas
                 };
 
                 // Agregar el examen a la lista

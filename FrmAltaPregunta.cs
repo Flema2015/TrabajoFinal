@@ -63,7 +63,9 @@ namespace TrabajoFinal_
             pregunta.ListaDeRespuestas = respuestas;
             string respuesta = txtRespuesta.Text;
             pregunta.RespuestaCorrecta = cmbRespuestas.SelectedIndex;
-            pregunta.Unidad = txtUnidad.Text;
+
+            pregunta.Asignatura = cmbAsignatura.Text;
+            pregunta.Unidad = txtUnidad.Text; 
             pregunta.SubUnidad = txtSubUnidad.Text;
             pregunta.Visible = true;
 
@@ -72,7 +74,7 @@ namespace TrabajoFinal_
                 MessageBox.Show("Debes seleccionar una asignatura");
                 return;
             }
-            
+
 
             validarCampos(pregunta.TxtPregunta, respuesta, pregunta.Asignatura, pregunta.Unidad, pregunta.SubUnidad);
 
@@ -339,6 +341,11 @@ namespace TrabajoFinal_
             {
                 MessageBox.Show("No se pudieron cargar las asignaturas");
             }
+        }
+
+        private void FrmAltaPregunta_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }

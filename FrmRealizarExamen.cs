@@ -1,4 +1,5 @@
 ﻿using System.Text.Json;
+using System.Windows.Forms;
 
 namespace TrabajoFinal_
 {
@@ -6,8 +7,12 @@ namespace TrabajoFinal_
     {
         const string CARPETA = "files";
         string rutaArchivoExamen = Path.Combine(CARPETA, "Examenes.json");
+        string rutaArchivo = Path.Combine(CARPETA, "Preguntas.json");
+
+
         string carreraAux, asignaturaAux;
         bool bandera = false;
+        string[] respuestasExamen = new string[5];
 
         private List<Pregunta> preguntas = new List<Pregunta>();
         private List<Examen> examenes = new List<Examen>();
@@ -29,9 +34,25 @@ namespace TrabajoFinal_
 
         private void btnEntregarExamen_Click(object sender, EventArgs e)
         {
+            string respuesta1;
+
+            string Json = File.ReadAllText(rutaArchivo);
+            preguntas = JsonSerializer.Deserialize<List<Pregunta>>(Json) ?? new List<Pregunta>();
+
+            foreach(Control control in grbPregunta1.Controls)
+            {
+                if (control is RadioButton radioButton && radioButton.Checked)
+                {
+                    respuesta1 = radioButton.Text; // Devuelve el texto del RadioButton seleccionado
+                }
+            }
+            respuesta1 = string.Empty; // Si no hay ninguno seleccionado
+
+
             // Cierra este formulario y cualquier modal anterior
             this.DialogResult = DialogResult.OK; // Opcional para indicar éxito
             this.Close(); // Cierra el formulario actual
+
         }
 
         private void FrmRealizarExamen_FormClosed(object sender, FormClosedEventArgs e)
@@ -99,6 +120,7 @@ namespace TrabajoFinal_
             lblCarreraCompletar.Text = carreraAux;
             lblAsignaturaCompletar.Text = asignaturaAux;
             lblFechaResolucion.Text = examen.Fecha;
+            txtNombreApellido.Text = examen.NombreYApellido;
 
             //Grupo1 
             lblPregunta1.Text = examen.Preguntas[0].TxtPregunta;

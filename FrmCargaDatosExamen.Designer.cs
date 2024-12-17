@@ -34,7 +34,6 @@
             lblAsignatura = new Label();
             cmbCarreras = new ComboBox();
             cmbAsignaturas = new ComboBox();
-            btnElegirCarrera = new Button();
             SuspendLayout();
             // 
             // btnEmpezarExamen
@@ -97,22 +96,11 @@
             cmbAsignaturas.Size = new Size(340, 33);
             cmbAsignaturas.TabIndex = 7;
             // 
-            // btnElegirCarrera
-            // 
-            btnElegirCarrera.Location = new Point(546, 22);
-            btnElegirCarrera.Name = "btnElegirCarrera";
-            btnElegirCarrera.Size = new Size(150, 50);
-            btnElegirCarrera.TabIndex = 8;
-            btnElegirCarrera.Text = "Elegir asignatura";
-            btnElegirCarrera.UseVisualStyleBackColor = true;
-            btnElegirCarrera.Click += btnElegirCarrera_Click;
-            // 
             // FrmCargaDatosExamen
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(708, 411);
-            Controls.Add(btnElegirCarrera);
+            ClientSize = new Size(708, 363);
             Controls.Add(cmbAsignaturas);
             Controls.Add(cmbCarreras);
             Controls.Add(lblAsignatura);
@@ -136,6 +124,5 @@
         private Label lblAsignatura;
         private ComboBox cmbCarreras;
         private ComboBox cmbAsignaturas;
-        private Button btnElegirCarrera;
     }
 }

@@ -254,6 +254,7 @@ namespace TrabajoFinal_
             Name = "FrmAltaPregunta";
             StartPosition = FormStartPosition.CenterScreen;
             Text = "FrmAltaPregunta";
+            Load += FrmAltaPregunta_Load;
             ((System.ComponentModel.ISupportInitialize)alertaVacio).EndInit();
             ResumeLayout(false);
             PerformLayout();
