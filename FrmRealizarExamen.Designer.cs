@@ -77,28 +77,29 @@
             // lblIDExamen
             // 
             lblIDExamen.AutoSize = true;
-            lblIDExamen.Font = new Font("Segoe UI", 9.75F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            lblIDExamen.Location = new Point(316, 50);
+            lblIDExamen.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            lblIDExamen.Location = new Point(266, 50);
             lblIDExamen.Name = "lblIDExamen";
-            lblIDExamen.Size = new Size(87, 17);
+            lblIDExamen.Size = new Size(114, 21);
             lblIDExamen.TabIndex = 1;
             lblIDExamen.Text = "ID Examen #x";
             // 
             // lblCarrera
             // 
             lblCarrera.AutoSize = true;
-            lblCarrera.Font = new Font("Segoe UI", 9.75F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            lblCarrera.Location = new Point(78, 24);
+            lblCarrera.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            lblCarrera.Location = new Point(71, 20);
             lblCarrera.Name = "lblCarrera";
-            lblCarrera.Size = new Size(52, 17);
+            lblCarrera.Size = new Size(65, 21);
             lblCarrera.TabIndex = 2;
             lblCarrera.Text = "Carrera";
             // 
             // btnEntregarExamen
             // 
-            btnEntregarExamen.Location = new Point(147, 580);
+            btnEntregarExamen.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            btnEntregarExamen.Location = new Point(43, 555);
             btnEntregarExamen.Name = "btnEntregarExamen";
-            btnEntregarExamen.Size = new Size(75, 23);
+            btnEntregarExamen.Size = new Size(150, 50);
             btnEntregarExamen.TabIndex = 6;
             btnEntregarExamen.Text = "Entregar";
             btnEntregarExamen.UseVisualStyleBackColor = true;
@@ -107,20 +108,20 @@
             // lblAsignatura
             // 
             lblAsignatura.AutoSize = true;
-            lblAsignatura.Font = new Font("Segoe UI", 9.75F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            lblAsignatura.Location = new Point(78, 50);
+            lblAsignatura.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            lblAsignatura.Location = new Point(43, 50);
             lblAsignatura.Name = "lblAsignatura";
-            lblAsignatura.Size = new Size(70, 17);
+            lblAsignatura.Size = new Size(93, 21);
             lblAsignatura.TabIndex = 8;
             lblAsignatura.Text = "Asignatura";
             // 
             // lblFecha
             // 
             lblFecha.AutoSize = true;
-            lblFecha.Font = new Font("Segoe UI", 9.75F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            lblFecha.Location = new Point(325, 24);
+            lblFecha.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            lblFecha.Location = new Point(326, 20);
             lblFecha.Name = "lblFecha";
-            lblFecha.Size = new Size(41, 17);
+            lblFecha.Size = new Size(54, 21);
             lblFecha.TabIndex = 9;
             lblFecha.Text = "Fecha";
             // 
@@ -136,7 +137,7 @@
             groupBox1.Size = new Size(200, 151);
             groupBox1.TabIndex = 10;
             groupBox1.TabStop = false;
-            groupBox1.Text = "groupBox1";
+            groupBox1.Text = "Pregunta 1";
             // 
             // lblPregunta1
             // 
@@ -250,10 +251,10 @@
             rdoRespuesta2Pregunta2.AutoSize = true;
             rdoRespuesta2Pregunta2.Location = new Point(6, 70);
             rdoRespuesta2Pregunta2.Name = "rdoRespuesta2Pregunta2";
-            rdoRespuesta2Pregunta2.Size = new Size(94, 19);
+            rdoRespuesta2Pregunta2.Size = new Size(88, 19);
             rdoRespuesta2Pregunta2.TabIndex = 5;
             rdoRespuesta2Pregunta2.TabStop = true;
-            rdoRespuesta2Pregunta2.Text = "radioButton7";
+            rdoRespuesta2Pregunta2.Text = "Preguntaa 2";
             rdoRespuesta2Pregunta2.UseVisualStyleBackColor = true;
             // 
             // groupBox3
@@ -268,7 +269,7 @@
             groupBox3.Size = new Size(200, 143);
             groupBox3.TabIndex = 11;
             groupBox3.TabStop = false;
-            groupBox3.Text = "groupBox3";
+            groupBox3.Text = "Pregunta 3";
             // 
             // lblPregunta3
             // 
@@ -329,12 +330,12 @@
             groupBox4.Controls.Add(rdoRespuesta3Pregunta4);
             groupBox4.Controls.Add(rdoRespuesta2Pregunta4);
             groupBox4.Controls.Add(rdoRespuesta1Pregunta4);
-            groupBox4.Location = new Point(260, 172);
+            groupBox4.Location = new Point(293, 174);
             groupBox4.Name = "groupBox4";
             groupBox4.Size = new Size(200, 140);
             groupBox4.TabIndex = 11;
             groupBox4.TabStop = false;
-            groupBox4.Text = "groupBox4";
+            groupBox4.Text = "Pregunta 4";
             // 
             // lblPregunta4
             // 
@@ -395,12 +396,12 @@
             groupBox5.Controls.Add(rdoRespuesta2Pregunta5);
             groupBox5.Controls.Add(rdoRespuesta3Pregunta5);
             groupBox5.Controls.Add(rdoRespuesta1Pregunta5);
-            groupBox5.Location = new Point(260, 329);
+            groupBox5.Location = new Point(293, 331);
             groupBox5.Name = "groupBox5";
             groupBox5.Size = new Size(200, 140);
             groupBox5.TabIndex = 11;
             groupBox5.TabStop = false;
-            groupBox5.Text = "groupBox5";
+            groupBox5.Text = "Pregunta 5";
             // 
             // lblPregunta5
             // 
@@ -483,9 +484,10 @@
             // 
             // btnVolver
             // 
-            btnVolver.Location = new Point(266, 580);
+            btnVolver.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            btnVolver.Location = new Point(343, 555);
             btnVolver.Name = "btnVolver";
-            btnVolver.Size = new Size(75, 23);
+            btnVolver.Size = new Size(150, 50);
             btnVolver.TabIndex = 15;
             btnVolver.Text = "Volver";
             btnVolver.UseVisualStyleBackColor = true;

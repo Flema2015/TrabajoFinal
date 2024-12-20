@@ -8,7 +8,7 @@ namespace TrabajoFinal_
 
         string rutaArchivoAsignaturas = Path.Combine(CARPETA, "Asignaturas.json");
         string rutaArchivoExamen = Path.Combine(CARPETA, "Examenes.json");
-        
+
         private List<Examen> examenes = new List<Examen>();
         List<Asignatura> asignaturas = new List<Asignatura>();
 
@@ -21,22 +21,39 @@ namespace TrabajoFinal_
 
         private void btnCargar_Click(object sender, EventArgs e)
         {
-            using (FrmRealizarExamen frmRealizarExamen = new FrmRealizarExamen(cmbCarreras.SelectedItem.ToString(), cmbAsignaturas.SelectedItem.ToString()))
+            bool validacion = false;
+
+            validacion = ValidarCampos(txtNombre.Text, txtApellido.Text);
+
+            if (string.IsNullOrEmpty(cmbCarreras.Text) || string.IsNullOrEmpty(cmbAsignaturas.Text))
             {
-                frmRealizarExamen.ShowDialog();
-                //frmRealizarExamen.Carrera = cmbCarrera.SelectedItem.ToString();
+                validacion = false;
+            }
+            
+            if(validacion) {
+                Alumno alumno = new Alumno();
+                DateTime fecha = DateTime.Now;
+
+                alumno.Nombre = txtNombre.Text;
+                alumno.Apellido = txtApellido.Text;
+                /*alumno.Carrera = cmbCarreras.Text;
+                alumno.Asignatura = cmbAsignaturas.Text;
+                alumno.Fecha = fecha.ToShortDateString();*/
+
+                using (FrmRealizarExamen frmRealizarExamen = new FrmRealizarExamen(alumno))
+                {
+                    frmRealizarExamen.ShowDialog();
+                }
+            }
+            else
+            {
+                MessageBox.Show("Completar todos los campos.");
             }
         }
 
         private void btnVolver_Click(object sender, EventArgs e)
         {
             this.Close();
-        }
-
-        private void btnElegirCarrera_Click(object sender, EventArgs e)
-        {
-            cmbAsignaturas.SelectedIndex = -1;
-            cmbAsignaturas.Items.Clear();
         }
 
         private void FrmCargaDatosExamen_FormClosed(object sender, FormClosedEventArgs e)
@@ -57,10 +74,10 @@ namespace TrabajoFinal_
                     .Distinct() // Eliminar duplicados
                     .ToList();
 
-                foreach (String carrera in carrerasNoDuplicadas)
+                /*foreach (String carrera in carrerasNoDuplicadas)
                 {
                     cmbCarreras.Items.Add(carrera);
-                }
+                }*/
             }
             catch (Exception ex)
             {
@@ -90,6 +107,20 @@ namespace TrabajoFinal_
             {
                 MessageBox.Show("No se pudieron cargar las asignaturas.");
             }
+        }
+
+        private bool ValidarCampos(string nombre, string apellido)
+        {
+            if(nombre == "")
+            {
+                return false;
+            }
+            if (apellido == "")
+            {
+                return false;
+            }
+
+            return true;
         }
     }
 }

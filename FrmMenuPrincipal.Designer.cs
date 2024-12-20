@@ -30,6 +30,7 @@
         {
             menuStrip1 = new MenuStrip();
             inicioToolStripMenuItem = new ToolStripMenuItem();
+            administrarCarrerasToolStripMenuItem = new ToolStripMenuItem();
             administrarAsignaturasToolStripMenuItem = new ToolStripMenuItem();
             administrarPreguntasToolStripMenuItem = new ToolStripMenuItem();
             administrarExamenToolStripMenuItem = new ToolStripMenuItem();
@@ -50,11 +51,18 @@
             // 
             // inicioToolStripMenuItem
             // 
-            inicioToolStripMenuItem.DropDownItems.AddRange(new ToolStripItem[] { administrarAsignaturasToolStripMenuItem, administrarPreguntasToolStripMenuItem, administrarExamenToolStripMenuItem, realizarExamenToolStripMenuItem, correcciónDeExamenToolStripMenuItem, salirToolStripMenuItem });
+            inicioToolStripMenuItem.DropDownItems.AddRange(new ToolStripItem[] { administrarCarrerasToolStripMenuItem, administrarAsignaturasToolStripMenuItem, administrarPreguntasToolStripMenuItem, administrarExamenToolStripMenuItem, realizarExamenToolStripMenuItem, correcciónDeExamenToolStripMenuItem, salirToolStripMenuItem });
             inicioToolStripMenuItem.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
             inicioToolStripMenuItem.Name = "inicioToolStripMenuItem";
             inicioToolStripMenuItem.Size = new Size(59, 25);
             inicioToolStripMenuItem.Text = "Inicio";
+            // 
+            // administrarCarrerasToolStripMenuItem
+            // 
+            administrarCarrerasToolStripMenuItem.Name = "administrarCarrerasToolStripMenuItem";
+            administrarCarrerasToolStripMenuItem.Size = new Size(246, 26);
+            administrarCarrerasToolStripMenuItem.Text = "Administrar carreras";
+            administrarCarrerasToolStripMenuItem.Click += administrarCarrerasToolStripMenuItem_Click;
             // 
             // administrarAsignaturasToolStripMenuItem
             // 
@@ -127,5 +135,6 @@
         private ToolStripMenuItem correcciónDeExamenToolStripMenuItem;
         private ToolStripMenuItem salirToolStripMenuItem;
         private ToolStripMenuItem administrarAsignaturasToolStripMenuItem;
+        private ToolStripMenuItem administrarCarrerasToolStripMenuItem;
     }
 }

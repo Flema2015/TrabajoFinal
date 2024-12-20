@@ -43,7 +43,7 @@
             btnIrAExamen.Location = new Point(159, 229);
             btnIrAExamen.Name = "btnIrAExamen";
             btnIrAExamen.Size = new Size(150, 50);
-            btnIrAExamen.TabIndex = 9;
+            btnIrAExamen.TabIndex = 3;
             btnIrAExamen.Text = "Generar exámen";
             btnIrAExamen.UseVisualStyleBackColor = true;
             btnIrAExamen.Click += btnIrAExamen_Click;
@@ -52,11 +52,11 @@
             // 
             lblAsignatura.AutoSize = true;
             lblAsignatura.Font = new Font("Segoe UI", 14.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            lblAsignatura.Location = new Point(159, 125);
+            lblAsignatura.Location = new Point(76, 125);
             lblAsignatura.Name = "lblAsignatura";
-            lblAsignatura.Size = new Size(109, 25);
+            lblAsignatura.Size = new Size(192, 25);
             lblAsignatura.TabIndex = 7;
-            lblAsignatura.Text = "Asignatura";
+            lblAsignatura.Text = "Carrera y asignatura";
             // 
             // btnVolver
             // 
@@ -64,7 +64,7 @@
             btnVolver.Location = new Point(471, 229);
             btnVolver.Name = "btnVolver";
             btnVolver.Size = new Size(150, 50);
-            btnVolver.TabIndex = 6;
+            btnVolver.TabIndex = 5;
             btnVolver.Text = "Volver";
             btnVolver.UseVisualStyleBackColor = true;
             btnVolver.Click += btnVolver_Click;
@@ -76,7 +76,7 @@
             cmbAsignatura.Location = new Point(274, 122);
             cmbAsignatura.Name = "cmbAsignatura";
             cmbAsignatura.Size = new Size(347, 33);
-            cmbAsignatura.TabIndex = 11;
+            cmbAsignatura.TabIndex = 1;
             // 
             // cmbUnidades
             // 
@@ -85,7 +85,7 @@
             cmbUnidades.Location = new Point(274, 168);
             cmbUnidades.Name = "cmbUnidades";
             cmbUnidades.Size = new Size(347, 33);
-            cmbUnidades.TabIndex = 13;
+            cmbUnidades.TabIndex = 2;
             // 
             // lblUnidades
             // 
@@ -103,7 +103,7 @@
             btnVerUltimoExamen.Location = new Point(315, 229);
             btnVerUltimoExamen.Name = "btnVerUltimoExamen";
             btnVerUltimoExamen.Size = new Size(150, 50);
-            btnVerUltimoExamen.TabIndex = 14;
+            btnVerUltimoExamen.TabIndex = 4;
             btnVerUltimoExamen.Text = "Último examen";
             btnVerUltimoExamen.UseVisualStyleBackColor = true;
             btnVerUltimoExamen.Click += btnVerUltimoExamen_Click;

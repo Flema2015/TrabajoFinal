@@ -48,6 +48,8 @@ namespace TrabajoFinal_
             btnVolver = new Button();
             alertaVacio = new ErrorProvider(components);
             cmbAsignatura = new ComboBox();
+            cmbCarrera = new ComboBox();
+            label1 = new Label();
             ((System.ComponentModel.ISupportInitialize)alertaVacio).BeginInit();
             SuspendLayout();
             // 
@@ -55,7 +57,7 @@ namespace TrabajoFinal_
             // 
             lblPreguntaID.AutoSize = true;
             lblPreguntaID.Font = new Font("Segoe UI", 14.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            lblPreguntaID.Location = new Point(85, 9);
+            lblPreguntaID.Location = new Point(66, 9);
             lblPreguntaID.Name = "lblPreguntaID";
             lblPreguntaID.Size = new Size(120, 25);
             lblPreguntaID.TabIndex = 0;
@@ -65,7 +67,7 @@ namespace TrabajoFinal_
             // 
             lblPregunta.AutoSize = true;
             lblPregunta.Font = new Font("Segoe UI", 14.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            lblPregunta.Location = new Point(110, 54);
+            lblPregunta.Location = new Point(91, 54);
             lblPregunta.Name = "lblPregunta";
             lblPregunta.Size = new Size(95, 25);
             lblPregunta.TabIndex = 1;
@@ -75,7 +77,7 @@ namespace TrabajoFinal_
             // 
             lblListaRespuestas.AutoSize = true;
             lblListaRespuestas.Font = new Font("Segoe UI", 14.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            lblListaRespuestas.Location = new Point(28, 98);
+            lblListaRespuestas.Location = new Point(9, 98);
             lblListaRespuestas.Name = "lblListaRespuestas";
             lblListaRespuestas.Size = new Size(177, 25);
             lblListaRespuestas.TabIndex = 3;
@@ -85,7 +87,7 @@ namespace TrabajoFinal_
             // 
             lblRespuestaCorrecta.AutoSize = true;
             lblRespuestaCorrecta.Font = new Font("Segoe UI", 14.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            lblRespuestaCorrecta.Location = new Point(23, 178);
+            lblRespuestaCorrecta.Location = new Point(4, 178);
             lblRespuestaCorrecta.Name = "lblRespuestaCorrecta";
             lblRespuestaCorrecta.Size = new Size(182, 25);
             lblRespuestaCorrecta.TabIndex = 7;
@@ -95,7 +97,7 @@ namespace TrabajoFinal_
             // 
             lblAsignatura.AutoSize = true;
             lblAsignatura.Font = new Font("Segoe UI", 14.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            lblAsignatura.Location = new Point(96, 224);
+            lblAsignatura.Location = new Point(77, 253);
             lblAsignatura.Name = "lblAsignatura";
             lblAsignatura.Size = new Size(109, 25);
             lblAsignatura.TabIndex = 9;
@@ -105,7 +107,7 @@ namespace TrabajoFinal_
             // 
             lblUnidad.AutoSize = true;
             lblUnidad.Font = new Font("Segoe UI", 14.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            lblUnidad.Location = new Point(126, 267);
+            lblUnidad.Location = new Point(107, 295);
             lblUnidad.Name = "lblUnidad";
             lblUnidad.Size = new Size(77, 25);
             lblUnidad.TabIndex = 11;
@@ -115,7 +117,7 @@ namespace TrabajoFinal_
             // 
             lblSubUnidad.AutoSize = true;
             lblSubUnidad.Font = new Font("Segoe UI", 14.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            lblSubUnidad.Location = new Point(85, 310);
+            lblSubUnidad.Location = new Point(66, 338);
             lblSubUnidad.Name = "lblSubUnidad";
             lblSubUnidad.Size = new Size(120, 25);
             lblSubUnidad.TabIndex = 13;
@@ -125,7 +127,7 @@ namespace TrabajoFinal_
             // 
             txtPregunta.BorderStyle = BorderStyle.FixedSingle;
             txtPregunta.Font = new Font("Segoe UI", 14.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            txtPregunta.Location = new Point(211, 52);
+            txtPregunta.Location = new Point(192, 52);
             txtPregunta.Name = "txtPregunta";
             txtPregunta.Size = new Size(360, 33);
             txtPregunta.TabIndex = 2;
@@ -134,7 +136,7 @@ namespace TrabajoFinal_
             // txtRespuesta
             // 
             txtRespuesta.Font = new Font("Segoe UI", 14.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            txtRespuesta.Location = new Point(211, 131);
+            txtRespuesta.Location = new Point(192, 131);
             txtRespuesta.Name = "txtRespuesta";
             txtRespuesta.Size = new Size(360, 33);
             txtRespuesta.TabIndex = 5;
@@ -142,7 +144,7 @@ namespace TrabajoFinal_
             // txtUnidad
             // 
             txtUnidad.Font = new Font("Segoe UI", 14.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            txtUnidad.Location = new Point(211, 264);
+            txtUnidad.Location = new Point(192, 292);
             txtUnidad.Name = "txtUnidad";
             txtUnidad.Size = new Size(360, 33);
             txtUnidad.TabIndex = 12;
@@ -150,7 +152,7 @@ namespace TrabajoFinal_
             // txtSubUnidad
             // 
             txtSubUnidad.Font = new Font("Segoe UI", 14.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            txtSubUnidad.Location = new Point(211, 307);
+            txtSubUnidad.Location = new Point(192, 335);
             txtSubUnidad.Name = "txtSubUnidad";
             txtSubUnidad.Size = new Size(360, 33);
             txtSubUnidad.TabIndex = 14;
@@ -159,7 +161,7 @@ namespace TrabajoFinal_
             // 
             cmbRespuestas.Font = new Font("Segoe UI", 14.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
             cmbRespuestas.FormattingEnabled = true;
-            cmbRespuestas.Location = new Point(211, 175);
+            cmbRespuestas.Location = new Point(192, 175);
             cmbRespuestas.Name = "cmbRespuestas";
             cmbRespuestas.Size = new Size(360, 33);
             cmbRespuestas.TabIndex = 8;
@@ -171,8 +173,8 @@ namespace TrabajoFinal_
             btnCargarRespuesta.FlatAppearance.BorderSize = 0;
             btnCargarRespuesta.FlatAppearance.MouseOverBackColor = Color.FromArgb(224, 224, 224);
             btnCargarRespuesta.FlatStyle = FlatStyle.Flat;
-            btnCargarRespuesta.Font = new Font("Segoe UI", 9.75F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            btnCargarRespuesta.Location = new Point(577, 123);
+            btnCargarRespuesta.Font = new Font("Segoe UI", 11.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            btnCargarRespuesta.Location = new Point(558, 123);
             btnCargarRespuesta.Name = "btnCargarRespuesta";
             btnCargarRespuesta.Size = new Size(150, 50);
             btnCargarRespuesta.TabIndex = 6;
@@ -184,7 +186,7 @@ namespace TrabajoFinal_
             // 
             lblRespuestas.AutoSize = true;
             lblRespuestas.Font = new Font("Segoe UI", 14.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            lblRespuestas.Location = new Point(77, 134);
+            lblRespuestas.Location = new Point(58, 134);
             lblRespuestas.Name = "lblRespuestas";
             lblRespuestas.Size = new Size(128, 25);
             lblRespuestas.TabIndex = 4;
@@ -194,7 +196,7 @@ namespace TrabajoFinal_
             // 
             btnAceptar.BackColor = Color.White;
             btnAceptar.Font = new Font("Segoe UI", 14.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            btnAceptar.Location = new Point(236, 349);
+            btnAceptar.Location = new Point(217, 381);
             btnAceptar.Name = "btnAceptar";
             btnAceptar.Size = new Size(150, 50);
             btnAceptar.TabIndex = 16;
@@ -206,7 +208,7 @@ namespace TrabajoFinal_
             // 
             btnVolver.BackColor = Color.White;
             btnVolver.Font = new Font("Segoe UI", 14.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            btnVolver.Location = new Point(392, 349);
+            btnVolver.Location = new Point(373, 381);
             btnVolver.Name = "btnVolver";
             btnVolver.Size = new Size(150, 50);
             btnVolver.TabIndex = 15;
@@ -222,17 +224,38 @@ namespace TrabajoFinal_
             // 
             cmbAsignatura.Font = new Font("Segoe UI", 14.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
             cmbAsignatura.FormattingEnabled = true;
-            cmbAsignatura.Location = new Point(211, 221);
+            cmbAsignatura.Location = new Point(192, 253);
             cmbAsignatura.Name = "cmbAsignatura";
             cmbAsignatura.Size = new Size(360, 33);
             cmbAsignatura.TabIndex = 17;
+            // 
+            // cmbCarrera
+            // 
+            cmbCarrera.Font = new Font("Segoe UI", 14.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            cmbCarrera.FormattingEnabled = true;
+            cmbCarrera.Location = new Point(192, 214);
+            cmbCarrera.Name = "cmbCarrera";
+            cmbCarrera.Size = new Size(360, 33);
+            cmbCarrera.TabIndex = 19;
+            // 
+            // label1
+            // 
+            label1.AutoSize = true;
+            label1.Font = new Font("Segoe UI", 14.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            label1.Location = new Point(106, 217);
+            label1.Name = "label1";
+            label1.Size = new Size(78, 25);
+            label1.TabIndex = 18;
+            label1.Text = "Carrera";
             // 
             // FrmAltaPregunta
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = SystemColors.Control;
-            ClientSize = new Size(739, 411);
+            ClientSize = new Size(718, 439);
+            Controls.Add(cmbCarrera);
+            Controls.Add(label1);
             Controls.Add(cmbAsignatura);
             Controls.Add(btnVolver);
             Controls.Add(btnAceptar);
@@ -254,6 +277,7 @@ namespace TrabajoFinal_
             Name = "FrmAltaPregunta";
             StartPosition = FormStartPosition.CenterScreen;
             Text = "FrmAltaPregunta";
+            Load += FrmAltaPregunta_Load;
             ((System.ComponentModel.ISupportInitialize)alertaVacio).EndInit();
             ResumeLayout(false);
             PerformLayout();
@@ -280,5 +304,7 @@ namespace TrabajoFinal_
         private Button btnVolver;
         private ErrorProvider alertaVacio;
         private ComboBox cmbAsignatura;
+        private ComboBox cmbCarrera;
+        private Label label1;
     }
 }

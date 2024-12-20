@@ -35,9 +35,9 @@ namespace TrabajoFinal_
                     {
                         txtPregunta.Text = pregunta.TxtPregunta;
                         txtRespuestaCorrecta.Text = pregunta.RespuestaCorrecta.ToString();
-                        txtAsignatura.Text = pregunta.Asignatura;
-                        txtUnidad.Text = pregunta.Unidad;
-                        txtSubUnidad.Text = pregunta.SubUnidad;
+                        //txtAsignatura.Text = pregunta.Asignatura;
+                        txtUnidad.Text = pregunta.Unidad.ToString();
+                        txtSubUnidad.Text = pregunta.SubUnidad.ToString();
                         foreach (var Respuesta in pregunta.ListaDeRespuestas)
                         {
                             cmbNumeroRespuesta.Items.Add(Respuesta);
@@ -137,9 +137,9 @@ namespace TrabajoFinal_
                 }
                 pregunta.TxtPregunta = txtPregunta.Text;
                 pregunta.RespuestaCorrecta = int.Parse(txtRespuestaCorrecta.Text);
-                pregunta.Asignatura = txtAsignatura.Text;
-                pregunta.Unidad = txtUnidad.Text;
-                pregunta.SubUnidad = txtSubUnidad.Text;
+                //pregunta.Asignatura = txtAsignatura.Text;
+                pregunta.Unidad = int.Parse(txtUnidad.Text);
+                pregunta.SubUnidad = int.Parse(txtSubUnidad.Text);
                 string Nuevojson = JsonSerializer.Serialize(preguntas, new JsonSerializerOptions { WriteIndented = true });
                 File.WriteAllText(rutaArchivo, Nuevojson);
                 MessageBox.Show("Datos guardados correctamente en el archivo JSON.");

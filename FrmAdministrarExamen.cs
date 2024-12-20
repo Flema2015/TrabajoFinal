@@ -81,9 +81,9 @@ namespace TrabajoFinal_
                 }
 
                 // Filtrar preguntas por asignatura seleccionada
-                var preguntasFiltradasPorAsignatura = preguntas
+               /*var preguntasFiltradasPorAsignatura = preguntas
                     .Where(p => p.Asignatura == asignatura)
-                    .ToList();
+                    .ToList();*/
 
                 // Determinar las unidades según la selección del ComboBox
                 int unidadInicio = 1, unidadFin = 3;
@@ -94,19 +94,19 @@ namespace TrabajoFinal_
                 }
 
                 // Filtrar por el rango de unidades
-                var preguntasFiltradasPorUnidades = preguntasFiltradasPorAsignatura
+                /*var preguntasFiltradasPorUnidades = preguntasFiltradasPorAsignatura
                     .Where(p => int.TryParse(p.Unidad, out int unidad) && unidad >= unidadInicio && unidad <= unidadFin)
-                    .ToList();
+                    .ToList();*/
 
                 // Agrupar por subunidad y seleccionar una pregunta aleatoria por cada subunidad
-                var preguntasPorSubunidad = preguntasFiltradasPorUnidades
+                /*var preguntasPorSubunidad = preguntasFiltradasPorUnidades
                     .GroupBy(p => new { p.Unidad, p.SubUnidad })
                     .Select(grupo =>
                     {
                         var preguntasDeSubunidad = grupo.ToList();
                         return preguntasDeSubunidad[new Random().Next(preguntasDeSubunidad.Count)]; // Selección aleatoria
                     })
-                    .ToList();
+                    .ToList();*/
 
                 DateTime fechaActual = DateTime.Now;
 
@@ -114,9 +114,9 @@ namespace TrabajoFinal_
                 Examen nuevoExamen = new Examen
                 {
                     ExamenId = examenes.Count + 1,
-                    Fecha = fechaActual.ToString("yyyy-MM-dd"),
-                    Asignatura = asignatura,
-                    Preguntas = preguntasPorSubunidad,
+                    //Fecha = fechaActual.ToString("yyyy-MM-dd"),
+                    /*Asignatura = asignatura,
+                    Preguntas = preguntasPorSubunidad,*/
                 };
 
                 // Agregar el examen a la lista

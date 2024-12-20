@@ -31,13 +31,13 @@
             btnAgregar = new Button();
             lblAsignatura = new Label();
             btnVolver = new Button();
-            txtAsignatura = new TextBox();
+            txtNombre = new TextBox();
             lblCarrera = new Label();
-            txtCarrera = new TextBox();
             lstAsignaturas = new ListBox();
             label1 = new Label();
             lblUnidades = new Label();
             cmbUnidades = new ComboBox();
+            cmbCarreras = new ComboBox();
             SuspendLayout();
             // 
             // btnAgregar
@@ -55,7 +55,7 @@
             // 
             lblAsignatura.AutoSize = true;
             lblAsignatura.Font = new Font("Segoe UI", 14.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            lblAsignatura.Location = new Point(418, 142);
+            lblAsignatura.Location = new Point(418, 38);
             lblAsignatura.Name = "lblAsignatura";
             lblAsignatura.Size = new Size(109, 25);
             lblAsignatura.TabIndex = 16;
@@ -72,31 +72,23 @@
             btnVolver.UseVisualStyleBackColor = true;
             btnVolver.Click += btnVolver_Click;
             // 
-            // txtAsignatura
+            // txtNombre
             // 
-            txtAsignatura.Font = new Font("Segoe UI", 14.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            txtAsignatura.Location = new Point(418, 170);
-            txtAsignatura.Name = "txtAsignatura";
-            txtAsignatura.Size = new Size(291, 33);
-            txtAsignatura.TabIndex = 3;
+            txtNombre.Font = new Font("Segoe UI", 14.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            txtNombre.Location = new Point(418, 66);
+            txtNombre.Name = "txtNombre";
+            txtNombre.Size = new Size(291, 33);
+            txtNombre.TabIndex = 3;
             // 
             // lblCarrera
             // 
             lblCarrera.AutoSize = true;
             lblCarrera.Font = new Font("Segoe UI", 14.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            lblCarrera.Location = new Point(418, 37);
+            lblCarrera.Location = new Point(418, 128);
             lblCarrera.Name = "lblCarrera";
             lblCarrera.Size = new Size(78, 25);
             lblCarrera.TabIndex = 23;
             lblCarrera.Text = "Carrera";
-            // 
-            // txtCarrera
-            // 
-            txtCarrera.Font = new Font("Segoe UI", 14.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            txtCarrera.Location = new Point(418, 65);
-            txtCarrera.Name = "txtCarrera";
-            txtCarrera.Size = new Size(291, 33);
-            txtCarrera.TabIndex = 2;
             // 
             // lstAsignaturas
             // 
@@ -137,18 +129,27 @@
             cmbUnidades.Size = new Size(291, 33);
             cmbUnidades.TabIndex = 32;
             // 
+            // cmbCarreras
+            // 
+            cmbCarreras.Font = new Font("Segoe UI", 14.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            cmbCarreras.FormattingEnabled = true;
+            cmbCarreras.Location = new Point(418, 156);
+            cmbCarreras.Name = "cmbCarreras";
+            cmbCarreras.Size = new Size(291, 33);
+            cmbCarreras.TabIndex = 33;
+            // 
             // FrmAdministrarAsignatura
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(721, 450);
+            Controls.Add(cmbCarreras);
             Controls.Add(cmbUnidades);
             Controls.Add(lblUnidades);
             Controls.Add(label1);
             Controls.Add(lstAsignaturas);
-            Controls.Add(txtCarrera);
             Controls.Add(lblCarrera);
-            Controls.Add(txtAsignatura);
+            Controls.Add(txtNombre);
             Controls.Add(btnAgregar);
             Controls.Add(lblAsignatura);
             Controls.Add(btnVolver);
@@ -156,6 +157,7 @@
             Name = "FrmAdministrarAsignatura";
             Text = "FrmAdministrarAsignatura";
             FormClosed += FrmAdministrarAsignatura_FormClosed;
+            Load += FrmAdministrarAsignatura_Load;
             ResumeLayout(false);
             PerformLayout();
         }
@@ -164,12 +166,12 @@
         private Button btnAgregar;
         private Label lblAsignatura;
         private Button btnVolver;
-        private TextBox txtAsignatura;
+        private TextBox txtNombre;
         private Label lblCarrera;
-        private TextBox txtCarrera;
         private ListBox lstAsignaturas;
         private Label label1;
         private Label lblUnidades;
         private ComboBox cmbUnidades;
+        private ComboBox cmbCarreras;
     }
 }

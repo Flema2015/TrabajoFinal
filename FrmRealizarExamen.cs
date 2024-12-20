@@ -15,14 +15,13 @@ namespace TrabajoFinal_
 
         //public string Carrera { get; set; }
 
-        public FrmRealizarExamen(string carrera, string asignatura)
+        public FrmRealizarExamen(Alumno alumno)
         {
             InitializeComponent();
-            DateTime fecha = DateTime.Now.Date;
-            carreraAux = carrera;
-            asignaturaAux = asignatura;
-            lblFechaResolucion.Text = fecha.ToShortDateString();
-            lblCarreraCompletar.Text = carrera;
+            carreraAux = alumno.Carrera.Nombre;
+            asignaturaAux = alumno.Asignaturas[0].Nombre;
+            lblFechaResolucion.Text = "";
+            lblCarreraCompletar.Text = carreraAux;
 
             CargarExamen();
         }
@@ -55,18 +54,18 @@ namespace TrabajoFinal_
 
             try
             {
-                var ExamenFiltradasPorCarrera = examenes
+                /*var ExamenFiltradasPorCarrera = examenes
                    .Where(e => e.Carrera == carreraAux)
-                    .ToList();
+                    .ToList();*/
 
-                var ExamenFiltradoPorAsignatura = ExamenFiltradasPorCarrera
+                /*var ExamenFiltradoPorAsignatura = ExamenFiltradasPorCarrera
                     .Where(e => e.Asignatura == asignaturaAux)
-                    .ToList();
+                    .ToList();*/
 
-                examenesFiltrado = ExamenFiltradoPorAsignatura;
+                //examenesFiltrado = ExamenFiltradoPorAsignatura;
 
                 int longitudListaExamen = examenesFiltrado.Count();
-                
+
                 if (longitudListaExamen <= 0)
                 {
                     bandera = true;
@@ -98,7 +97,7 @@ namespace TrabajoFinal_
             lblIDExamen.Text = "ID examen: " + examen.ExamenId.ToString();
             lblCarreraCompletar.Text = carreraAux;
             lblAsignaturaCompletar.Text = asignaturaAux;
-            lblFechaResolucion.Text = examen.Fecha;
+            //lblFechaResolucion.Text = examen.Fecha;
 
             //Grupo1 
             lblPregunta1.Text = examen.Preguntas[0].TxtPregunta;
