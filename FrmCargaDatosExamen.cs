@@ -6,41 +6,64 @@ namespace TrabajoFinal_
     {
         const string CARPETA = "files";
 
+        string rutaArchivoAlumnos = Path.Combine(CARPETA, "Alumnos.json");
         string rutaArchivoAsignaturas = Path.Combine(CARPETA, "Asignaturas.json");
-        string rutaArchivoExamen = Path.Combine(CARPETA, "Examenes.json");
+        string rutaArchivoCarreras = Path.Combine(CARPETA, "Carreras.json");
+        string rutaArchivoExamenes = Path.Combine(CARPETA, "Examenes.json");
+        string rutaArchivoPreguntas = Path.Combine(CARPETA, "Preguntas.json");
 
-        private List<Examen> examenes = new List<Examen>();
+        List<Carrera> carreras = new List<Carrera>();
         List<Asignatura> asignaturas = new List<Asignatura>();
+        List<Pregunta> preguntas = new List<Pregunta>();
+        List<Examen> examenes = new List<Examen>();
 
         public FrmCargaDatosExamen()
         {
             InitializeComponent();
-            CargarCarreras();
-            CargarAsignaturas();
         }
 
-        private void btnCargar_Click(object sender, EventArgs e)
+        private void FrmCargaDatosExamen_Load(object sender, EventArgs e)
+        {
+            carreras = CargarCareras();
+            if (carreras != null)
+            {
+                cmbCarrera.DataSource = carreras;
+                cmbCarrera.DisplayMember = "Nombre";
+            }
+
+            asignaturas = CargarAsignaturas();
+            if (asignaturas != null)
+            {
+                var asignaturasConCarrera = asignaturas.Select(a => new
+                {
+                    NombreCompleto = $"{a.Nombre} - {a.Carrera.Nombre}",
+                    Asignatura = a
+                }).ToList();
+
+                cmbAsignatura.DataSource = asignaturasConCarrera;
+                cmbAsignatura.DisplayMember = "NombreCompleto";
+                cmbAsignatura.ValueMember = "Asignatura";
+            }
+        }
+
+        private void btnEmpezarExamen_Click(object sender, EventArgs e)
         {
             bool validacion = false;
 
-            validacion = ValidarCampos(txtNombre.Text, txtApellido.Text);
-
-            if (string.IsNullOrEmpty(cmbCarreras.Text) || string.IsNullOrEmpty(cmbAsignaturas.Text))
+            validacion = ValidarSeleccion();
+            if (validacion)
             {
-                validacion = false;
-            }
-            
-            if(validacion) {
+                Carrera carrera = cmbCarrera.SelectedItem as Carrera;
+                cmbAsignatura.DataSource = asignaturas;
+                Asignatura asignatura = cmbAsignatura.SelectedItem as Asignatura;
                 Alumno alumno = new Alumno();
-                DateTime fecha = DateTime.Now;
 
+                DateTime fecha = DateTime.Now;
                 alumno.Nombre = txtNombre.Text;
                 alumno.Apellido = txtApellido.Text;
-                /*alumno.Carrera = cmbCarreras.Text;
-                alumno.Asignatura = cmbAsignaturas.Text;
-                alumno.Fecha = fecha.ToShortDateString();*/
+                alumno.Carrera = carrera;
 
-                using (FrmRealizarExamen frmRealizarExamen = new FrmRealizarExamen(alumno))
+                using (FrmRealizarExamen frmRealizarExamen = new FrmRealizarExamen(alumno, carrera, asignatura))
                 {
                     frmRealizarExamen.ShowDialog();
                 }
@@ -61,66 +84,36 @@ namespace TrabajoFinal_
             GestorMenu.MostrarMenu();
         }
 
-        private void CargarCarreras()
+        private bool ValidarSeleccion()
         {
-            try
+            if (string.IsNullOrWhiteSpace(cmbCarrera.Text) || string.IsNullOrWhiteSpace(cmbAsignatura.Text))
             {
-                string Json = File.ReadAllText(rutaArchivoAsignaturas);
-                asignaturas = JsonSerializer.Deserialize<List<Asignatura>>(Json) ?? new List<Asignatura>();
-
-                // Extraer las carreras únicas
-                var carrerasNoDuplicadas = asignaturas
-                    .Select(asignatura => asignatura.Carrera) // Obtener solo las carreras
-                    .Distinct() // Eliminar duplicados
-                    .ToList();
-
-                /*foreach (String carrera in carrerasNoDuplicadas)
-                {
-                    cmbCarreras.Items.Add(carrera);
-                }*/
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show("No se pudieron cargar las asignaturas.");
-            }
-        }
-
-        private void CargarAsignaturas()
-        {
-            try
-            {
-                string Json = File.ReadAllText(rutaArchivoAsignaturas);
-                asignaturas = JsonSerializer.Deserialize<List<Asignatura>>(Json) ?? new List<Asignatura>();
-
-                // Extraer las asignaturas únicas
-                var asignaturasNoDuplicadas = asignaturas
-                    .Select(asignatura => asignatura.Nombre) // Obtener solo los nombres de las asignaturas
-                    .Distinct() // Eliminar duplicados
-                    .ToList();
-
-                foreach (string asignatura in asignaturasNoDuplicadas)
-                {
-                    cmbAsignaturas.Items.Add(asignatura);
-                }
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show("No se pudieron cargar las asignaturas.");
-            }
-        }
-
-        private bool ValidarCampos(string nombre, string apellido)
-        {
-            if(nombre == "")
-            {
+                MessageBox.Show("Selecciona una Carrera y una Asignatura.");
                 return false;
             }
-            if (apellido == "")
+            if (txtNombre.Text == "" || txtApellido.Text == "")
             {
+                MessageBox.Show("Completar nombre y apellido.");
                 return false;
             }
 
             return true;
+        }
+
+        private List<Carrera> CargarCareras()
+        {
+            string jsonCarreras = File.ReadAllText(rutaArchivoCarreras);
+            var carreras = JsonSerializer.Deserialize<List<Carrera>>(jsonCarreras);
+
+            return carreras;
+        }
+
+        private List<Asignatura> CargarAsignaturas()
+        {
+            string jsonAsignaturas = File.ReadAllText(rutaArchivoAsignaturas);
+            var asignaturas = JsonSerializer.Deserialize<List<Asignatura>>(jsonAsignaturas);
+
+            return asignaturas;
         }
     }
 }

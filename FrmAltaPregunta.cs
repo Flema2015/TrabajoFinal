@@ -36,7 +36,7 @@ namespace TrabajoFinal_
             if (carreras != null)
             {
                 cmbCarrera.DataSource = carreras;
-                cmbCarrera.DisplayMember = "Name";
+                cmbCarrera.DisplayMember = "Nombre";
             }
 
             string jsonAsignaturas = File.ReadAllText(rutaArchivoAsignaturas);

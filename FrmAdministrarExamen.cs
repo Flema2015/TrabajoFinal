@@ -33,7 +33,7 @@ namespace TrabajoFinal_
                 cmbCarrera.DataSource = carreras;
                 cmbCarrera.DisplayMember = "Nombre";
             }
-
+            /*
             asignaturas = CargarAsignaturas();
             if (asignaturas != null)
             {
@@ -46,6 +46,27 @@ namespace TrabajoFinal_
                 cmbAsignatura.DataSource = asignaturasConCarrera;
                 cmbAsignatura.DisplayMember = "NombreCompleto";
                 cmbAsignatura.ValueMember = "Asignatura";
+            }
+            */
+        }
+
+        private void cmbCarrera_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            // Obtener Carrera seleccionada
+            var carreraSeleccionada = cmbCarrera.SelectedItem as Carrera;
+
+            asignaturas = CargarAsignaturas();
+            if (carreraSeleccionada != null)
+            {
+                // Filtrar asignaturas según la CarreraId
+                var asignaturasFiltradas = asignaturas
+                    .Where(a => a.CarreraId == carreraSeleccionada.CarreraId)
+                    .ToList();
+
+                // Actualizar ComboBox de Asignaturas
+                cmbAsignatura.DataSource = asignaturasFiltradas;
+                cmbAsignatura.DisplayMember = "Nombre";
+                cmbAsignatura.ValueMember = "AsignaturaId";
             }
         }
 
@@ -90,7 +111,6 @@ namespace TrabajoFinal_
         private void GenerarExamen()
         {
             Carrera carrera = cmbCarrera.SelectedItem as Carrera;
-            cmbAsignatura.DataSource = asignaturas;
             Asignatura asignatura = cmbAsignatura.SelectedItem as Asignatura;
             try
             {
@@ -99,6 +119,7 @@ namespace TrabajoFinal_
                 //examenes = JsonSerializer.Deserialize<List<Examen>>(jsonExamenes) ?? new List<Examen>();
                 id = examenes.Any() ? examenes.Max(c => c.ExamenId) + 1 : 1;
 
+                preguntas = CargarPreguntas();
                 // Filtrar preguntas por asignatura seleccionada
                 var preguntasFiltradasPorAsignatura = preguntas
                      .Where(p => p.Asignatura.Nombre == asignatura.Nombre)
@@ -136,6 +157,7 @@ namespace TrabajoFinal_
                     Fecha = fechaActual,
                     Carrera = carrera,
                     Asignatura = asignatura,
+                    Preguntas = preguntasPorSubunidad,
                 };
 
                 // Agregar el examen a la lista
@@ -165,6 +187,14 @@ namespace TrabajoFinal_
             return asignaturas;
         }
 
+        private List<Pregunta> CargarPreguntas()
+        {
+            string jsonPreguntas = File.ReadAllText(rutaArchivoPreguntas);
+            var preguntas = JsonSerializer.Deserialize<List<Pregunta>>(jsonPreguntas);
+
+            return preguntas;
+        }
+
         /*
         private void CargarAsignaturas()
         {
@@ -184,7 +214,7 @@ namespace TrabajoFinal_
             }
         }
         */
-        
+
         /*
         private string SepararCarrera(string carrera)
         {

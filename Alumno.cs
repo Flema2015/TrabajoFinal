@@ -8,5 +8,12 @@
         public Carrera Carrera { get; set; }
         public List<Examen> Examenes { get; set; }
         public List<Asignatura> Asignaturas { get; set; }
+
+        // Constructor para inicializar listas
+        public Alumno()
+        {
+            Examenes = new List<Examen>();
+            Asignaturas = new List<Asignatura>();
+        }
     }
 }

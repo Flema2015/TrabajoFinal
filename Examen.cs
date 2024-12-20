@@ -9,5 +9,11 @@
         public Alumno Alumno { get; set; }
         public List<Pregunta> Preguntas { get; set; }
         public float Calificacion { get; set; }
+
+        // Constructor para inicializar listas
+        public Examen()
+        {
+            Preguntas = new List<Pregunta>();
+        }
     }
 }

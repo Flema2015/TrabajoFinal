@@ -7,5 +7,6 @@ namespace TrabajoFinal_
         public string Nombre {  get; set; }
         public Carrera Carrera { get; set; }
         public List<int> Unidades { get; set; }
+        public int CarreraId { get; set; } // Relación con Carrera
     }
 }

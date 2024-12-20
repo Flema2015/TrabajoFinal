@@ -32,8 +32,8 @@
             btnVolver = new Button();
             lblCarrera = new Label();
             lblAsignatura = new Label();
-            cmbCarreras = new ComboBox();
-            cmbAsignaturas = new ComboBox();
+            cmbCarrera = new ComboBox();
+            cmbAsignatura = new ComboBox();
             label1 = new Label();
             label2 = new Label();
             txtNombre = new TextBox();
@@ -49,7 +49,7 @@
             btnEmpezarExamen.TabIndex = 0;
             btnEmpezarExamen.Text = "Empezar examen";
             btnEmpezarExamen.UseVisualStyleBackColor = true;
-            btnEmpezarExamen.Click += btnCargar_Click;
+            btnEmpezarExamen.Click += btnEmpezarExamen_Click;
             // 
             // btnVolver
             // 
@@ -82,23 +82,23 @@
             lblAsignatura.TabIndex = 5;
             lblAsignatura.Text = "Asignatura";
             // 
-            // cmbCarreras
+            // cmbCarrera
             // 
-            cmbCarreras.Font = new Font("Segoe UI", 14.25F);
-            cmbCarreras.FormattingEnabled = true;
-            cmbCarreras.Location = new Point(238, 172);
-            cmbCarreras.Name = "cmbCarreras";
-            cmbCarreras.Size = new Size(340, 33);
-            cmbCarreras.TabIndex = 6;
+            cmbCarrera.Font = new Font("Segoe UI", 14.25F);
+            cmbCarrera.FormattingEnabled = true;
+            cmbCarrera.Location = new Point(238, 172);
+            cmbCarrera.Name = "cmbCarrera";
+            cmbCarrera.Size = new Size(340, 33);
+            cmbCarrera.TabIndex = 6;
             // 
-            // cmbAsignaturas
+            // cmbAsignatura
             // 
-            cmbAsignaturas.Font = new Font("Segoe UI", 14.25F);
-            cmbAsignaturas.FormattingEnabled = true;
-            cmbAsignaturas.Location = new Point(238, 218);
-            cmbAsignaturas.Name = "cmbAsignaturas";
-            cmbAsignaturas.Size = new Size(340, 33);
-            cmbAsignaturas.TabIndex = 7;
+            cmbAsignatura.Font = new Font("Segoe UI", 14.25F);
+            cmbAsignatura.FormattingEnabled = true;
+            cmbAsignatura.Location = new Point(238, 218);
+            cmbAsignatura.Name = "cmbAsignatura";
+            cmbAsignatura.Size = new Size(340, 33);
+            cmbAsignatura.TabIndex = 7;
             // 
             // label1
             // 
@@ -145,8 +145,8 @@
             Controls.Add(txtNombre);
             Controls.Add(label2);
             Controls.Add(label1);
-            Controls.Add(cmbAsignaturas);
-            Controls.Add(cmbCarreras);
+            Controls.Add(cmbAsignatura);
+            Controls.Add(cmbCarrera);
             Controls.Add(lblAsignatura);
             Controls.Add(lblCarrera);
             Controls.Add(btnVolver);
@@ -156,6 +156,7 @@
             StartPosition = FormStartPosition.CenterScreen;
             Text = "Cargar Carrera y Asignatura";
             FormClosed += FrmCargaDatosExamen_FormClosed;
+            Load += FrmCargaDatosExamen_Load;
             ResumeLayout(false);
             PerformLayout();
         }
@@ -166,8 +167,8 @@
         private Button btnVolver;
         private Label lblCarrera;
         private Label lblAsignatura;
-        private ComboBox cmbCarreras;
-        private ComboBox cmbAsignaturas;
+        private ComboBox cmbCarrera;
+        private ComboBox cmbAsignatura;
         private Label label1;
         private Label label2;
         private TextBox txtNombre;

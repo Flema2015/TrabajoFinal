@@ -61,6 +61,7 @@ namespace TrabajoFinal_
                 asignatura.Nombre = nombre;
                 asignatura.Carrera = carrera;
                 asignatura.Unidades = Enumerable.Range(1, unidades).ToList(); // Generar lista de unidades
+                asignatura.CarreraId = carrera.CarreraId;
 
                 // Mostrar un cuadro de diálogo para confirmar la acción
                 DialogResult resultado = MessageBox.Show("¿Desea ingresar otra Asignatura?", "Confirmar cierre", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
@@ -103,6 +104,7 @@ namespace TrabajoFinal_
                     Nombre = asignatura.Nombre,
                     Carrera = asignatura.Carrera,
                     Unidades = asignatura.Unidades,
+                    CarreraId = asignatura.CarreraId,
                 }).ToList();
 
                 // Serializa la lista de preguntas al formato JSON

@@ -118,6 +118,7 @@
             cmbCarrera.Name = "cmbCarrera";
             cmbCarrera.Size = new Size(347, 33);
             cmbCarrera.TabIndex = 13;
+            cmbCarrera.SelectedIndexChanged += cmbCarrera_SelectedIndexChanged;
             // 
             // label1
             // 

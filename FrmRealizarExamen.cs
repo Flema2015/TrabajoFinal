@@ -15,11 +15,11 @@ namespace TrabajoFinal_
 
         //public string Carrera { get; set; }
 
-        public FrmRealizarExamen(Alumno alumno)
+        public FrmRealizarExamen(Alumno alumno, Carrera carrera, Asignatura asignatura)
         {
             InitializeComponent();
-            carreraAux = alumno.Carrera.Nombre;
-            asignaturaAux = alumno.Asignaturas[0].Nombre;
+            carreraAux = carrera.Nombre;
+            asignaturaAux = asignatura.Nombre;
             lblFechaResolucion.Text = "";
             lblCarreraCompletar.Text = carreraAux;
 
@@ -46,23 +46,20 @@ namespace TrabajoFinal_
 
         private void CargarExamen()
         {
-            if (File.Exists(rutaArchivoExamen))
-            {
-                string jsonExamenes = File.ReadAllText(rutaArchivoExamen);
-                examenes = JsonSerializer.Deserialize<List<Examen>>(jsonExamenes) ?? new List<Examen>();
-            }
+            string jsonExamenes = File.ReadAllText(rutaArchivoExamen);
+            examenes = JsonSerializer.Deserialize<List<Examen>>(jsonExamenes) ?? new List<Examen>();
 
             try
             {
-                /*var ExamenFiltradasPorCarrera = examenes
-                   .Where(e => e.Carrera == carreraAux)
-                    .ToList();*/
+                var examenFiltradoPorCarrera = examenes
+                   .Where(e => e.Carrera.Nombre == carreraAux)
+                    .ToList();
 
-                /*var ExamenFiltradoPorAsignatura = ExamenFiltradasPorCarrera
-                    .Where(e => e.Asignatura == asignaturaAux)
-                    .ToList();*/
+                var examenFiltradoPorAsignatura = examenFiltradoPorCarrera
+                    .Where(e => e.Asignatura.Nombre == asignaturaAux)
+                    .ToList();
 
-                //examenesFiltrado = ExamenFiltradoPorAsignatura;
+                examenesFiltrado = examenFiltradoPorAsignatura;
 
                 int longitudListaExamen = examenesFiltrado.Count();
 
