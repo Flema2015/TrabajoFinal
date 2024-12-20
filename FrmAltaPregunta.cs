@@ -1,5 +1,4 @@
 ﻿using System.Text.Json;
-using static System.Diagnostics.Activity;
 
 namespace TrabajoFinal_
 {

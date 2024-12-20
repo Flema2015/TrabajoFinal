@@ -12,11 +12,9 @@ namespace TrabajoFinal_
         string rutaArchivoExamenes = Path.Combine(CARPETA, "Examenes.json");
         string rutaArchivoPreguntas = Path.Combine(CARPETA, "Preguntas.json");
 
-
         public FrmMenuPrincipal()
         {
             InitializeComponent();
-
             InicializarArchivosJson();
         }
 
@@ -35,13 +33,6 @@ namespace TrabajoFinal_
         {
             FrmAdministrarPregunta frmAdministrarPreguntas = new FrmAdministrarPregunta();
             AbrirFormularioHijo(frmAdministrarPreguntas);
-
-            /*
-            FrmAdministrarPregunta frmAdministrarPreguntas = new FrmAdministrarPregunta();
-            frmAdministrarPreguntas.MdiParent = this;
-            menuStrip1.Visible = false;
-            frmAdministrarPreguntas.Show();
-            */
         }
 
         private void administrarExamenToolStripMenuItem_Click(object sender, EventArgs e)
