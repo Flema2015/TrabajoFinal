@@ -38,6 +38,8 @@
             label2 = new Label();
             txtNombre = new TextBox();
             txtApellido = new TextBox();
+            label3 = new Label();
+            txtDni = new TextBox();
             SuspendLayout();
             // 
             // btnEmpezarExamen
@@ -66,7 +68,7 @@
             // 
             lblCarrera.AutoSize = true;
             lblCarrera.Font = new Font("Segoe UI", 14.25F, FontStyle.Bold);
-            lblCarrera.Location = new Point(154, 175);
+            lblCarrera.Location = new Point(154, 205);
             lblCarrera.Name = "lblCarrera";
             lblCarrera.Size = new Size(78, 25);
             lblCarrera.TabIndex = 4;
@@ -76,7 +78,7 @@
             // 
             lblAsignatura.AutoSize = true;
             lblAsignatura.Font = new Font("Segoe UI", 14.25F, FontStyle.Bold);
-            lblAsignatura.Location = new Point(123, 221);
+            lblAsignatura.Location = new Point(123, 251);
             lblAsignatura.Name = "lblAsignatura";
             lblAsignatura.Size = new Size(109, 25);
             lblAsignatura.TabIndex = 5;
@@ -86,16 +88,17 @@
             // 
             cmbCarrera.Font = new Font("Segoe UI", 14.25F);
             cmbCarrera.FormattingEnabled = true;
-            cmbCarrera.Location = new Point(238, 172);
+            cmbCarrera.Location = new Point(238, 202);
             cmbCarrera.Name = "cmbCarrera";
             cmbCarrera.Size = new Size(340, 33);
             cmbCarrera.TabIndex = 6;
+            cmbCarrera.SelectedIndexChanged += cmbCarrera_SelectedIndexChanged;
             // 
             // cmbAsignatura
             // 
             cmbAsignatura.Font = new Font("Segoe UI", 14.25F);
             cmbAsignatura.FormattingEnabled = true;
-            cmbAsignatura.Location = new Point(238, 218);
+            cmbAsignatura.Location = new Point(238, 248);
             cmbAsignatura.Name = "cmbAsignatura";
             cmbAsignatura.Size = new Size(340, 33);
             cmbAsignatura.TabIndex = 7;
@@ -104,7 +107,7 @@
             // 
             label1.AutoSize = true;
             label1.Font = new Font("Segoe UI", 14.25F, FontStyle.Bold);
-            label1.Location = new Point(146, 82);
+            label1.Location = new Point(146, 112);
             label1.Name = "label1";
             label1.Size = new Size(86, 25);
             label1.TabIndex = 8;
@@ -114,7 +117,7 @@
             // 
             label2.AutoSize = true;
             label2.Font = new Font("Segoe UI", 14.25F, FontStyle.Bold);
-            label2.Location = new Point(146, 129);
+            label2.Location = new Point(146, 159);
             label2.Name = "label2";
             label2.Size = new Size(86, 25);
             label2.TabIndex = 9;
@@ -123,7 +126,7 @@
             // txtNombre
             // 
             txtNombre.Font = new Font("Segoe UI", 14.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            txtNombre.Location = new Point(238, 79);
+            txtNombre.Location = new Point(238, 109);
             txtNombre.Name = "txtNombre";
             txtNombre.Size = new Size(340, 33);
             txtNombre.TabIndex = 10;
@@ -131,16 +134,36 @@
             // txtApellido
             // 
             txtApellido.Font = new Font("Segoe UI", 14.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            txtApellido.Location = new Point(238, 126);
+            txtApellido.Location = new Point(238, 156);
             txtApellido.Name = "txtApellido";
             txtApellido.Size = new Size(340, 33);
             txtApellido.TabIndex = 11;
+            // 
+            // label3
+            // 
+            label3.AutoSize = true;
+            label3.Font = new Font("Segoe UI", 14.25F, FontStyle.Bold);
+            label3.Location = new Point(176, 67);
+            label3.Name = "label3";
+            label3.Size = new Size(56, 25);
+            label3.TabIndex = 12;
+            label3.Text = "D.N.I";
+            // 
+            // txtDni
+            // 
+            txtDni.Font = new Font("Segoe UI", 14.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            txtDni.Location = new Point(238, 64);
+            txtDni.Name = "txtDni";
+            txtDni.Size = new Size(340, 33);
+            txtDni.TabIndex = 13;
             // 
             // FrmCargaDatosExamen
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(708, 411);
+            Controls.Add(txtDni);
+            Controls.Add(label3);
             Controls.Add(txtApellido);
             Controls.Add(txtNombre);
             Controls.Add(label2);
@@ -173,5 +196,7 @@
         private Label label2;
         private TextBox txtNombre;
         private TextBox txtApellido;
+        private Label label3;
+        private TextBox txtDni;
     }
 }

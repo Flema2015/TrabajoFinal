@@ -27,27 +27,12 @@ namespace TrabajoFinal_
 
         private void FrmAdministrarExamen_Load(object sender, EventArgs e)
         {
-            carreras = CargarCareras();
+            carreras = CargarCarreras();
             if (carreras != null)
             {
                 cmbCarrera.DataSource = carreras;
                 cmbCarrera.DisplayMember = "Nombre";
             }
-            /*
-            asignaturas = CargarAsignaturas();
-            if (asignaturas != null)
-            {
-                var asignaturasConCarrera = asignaturas.Select(a => new
-                {
-                    NombreCompleto = $"{a.Nombre} - {a.Carrera.Nombre}",
-                    Asignatura = a
-                }).ToList();
-
-                cmbAsignatura.DataSource = asignaturasConCarrera;
-                cmbAsignatura.DisplayMember = "NombreCompleto";
-                cmbAsignatura.ValueMember = "Asignatura";
-            }
-            */
         }
 
         private void cmbCarrera_SelectedIndexChanged(object sender, EventArgs e)
@@ -72,11 +57,18 @@ namespace TrabajoFinal_
 
         private void btnGenerarExamen_Click(object sender, EventArgs e)
         {
+            string nombreCarrera = "", nombreAsignatura = "";
             bool verificación = false;
+
             verificación = ValidarSeleccion();
             if (verificación)
             {
-                GenerarExamen();
+                nombreCarrera = cmbCarrera.Text;
+                nombreAsignatura = cmbAsignatura.Text;
+                if (verificación)
+                {
+                    GenerarExamen(nombreCarrera, nombreAsignatura);
+                }
             }
         }
 
@@ -108,21 +100,30 @@ namespace TrabajoFinal_
             return true;
         }
 
-        private void GenerarExamen()
+        private void GenerarExamen(string nombreCarrera, string nombreAsignatura)
         {
-            Carrera carrera = cmbCarrera.SelectedItem as Carrera;
-            Asignatura asignatura = cmbAsignatura.SelectedItem as Asignatura;
+            // Carrera carrera = cmbCarrera.SelectedItem as Carrera;
+            // Asignatura asignatura = cmbAsignatura.SelectedItem as Asignatura;
             try
             {
-                // Lee los exámenes existentes
-                string jsonExamenes = File.ReadAllText(rutaArchivoExamenes);
-                //examenes = JsonSerializer.Deserialize<List<Examen>>(jsonExamenes) ?? new List<Examen>();
+                if (File.Exists(rutaArchivoExamenes))
+                {
+                    // Lee los exámenes existentes
+                    string jsonExamenes = File.ReadAllText(rutaArchivoExamenes);
+                    //examenes = JsonSerializer.Deserialize<List<Examen>>(jsonExamenes) ?? new List<Examen>();
+                }
+                // Genera id de examen secuencial incremental
                 id = examenes.Any() ? examenes.Max(c => c.ExamenId) + 1 : 1;
 
                 preguntas = CargarPreguntas();
+                // Filtrar preguntas por carrera seleccionada
+                var preguntasFiltradasPorCarrera = preguntas
+                     .Where(p => p.Carrera == nombreCarrera)
+                     .ToList();
+
                 // Filtrar preguntas por asignatura seleccionada
                 var preguntasFiltradasPorAsignatura = preguntas
-                     .Where(p => p.Asignatura.Nombre == asignatura.Nombre)
+                     .Where(p => p.Asignatura == nombreAsignatura)
                      .ToList();
 
                 // Determinar las unidades según la selección del ComboBox
@@ -154,24 +155,29 @@ namespace TrabajoFinal_
                 Examen examen = new Examen
                 {
                     ExamenId = id,
+                    AlumnoDNI = 0,
+                    AlumnoNombre = "",
+                    AlumnoApellido = "",
                     Fecha = fechaActual,
-                    Carrera = carrera,
-                    Asignatura = asignatura,
+                    Carrera = nombreCarrera,
+                    Asignatura = nombreAsignatura,
                     Preguntas = preguntasPorSubunidad,
+                    Calificacion = 0.0f,
                 };
 
                 // Agregar el examen a la lista
                 examenes.Add(examen);
+
                 // Guardar en el archivo JSON
                 File.WriteAllText(rutaArchivoExamenes, JsonSerializer.Serialize(examenes));
             }
             catch (Exception ex)
             {
-                MessageBox.Show("Error al generar el examen.");
+                MessageBox.Show("No se pudo generar el examen.");
             }
         }
 
-        private List<Carrera> CargarCareras()
+        private List<Carrera> CargarCarreras()
         {
             string jsonCarreras = File.ReadAllText(rutaArchivoCarreras);
             var carreras = JsonSerializer.Deserialize<List<Carrera>>(jsonCarreras);
@@ -194,48 +200,5 @@ namespace TrabajoFinal_
 
             return preguntas;
         }
-
-        /*
-        private void CargarAsignaturas()
-        {
-            try
-            {
-                string Json = File.ReadAllText(rutaArchivoAsignaturas);
-                asignaturas = JsonSerializer.Deserialize<List<Asignatura>>(Json) ?? new List<Asignatura>();
-
-                foreach (Asignatura asignatura in asignaturas)
-                {
-                    cmbAsignatura.Items.Add(asignatura.Carrera + " - " + asignatura.Nombre);
-                }
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show("No se pudieron cargar las asignaturas.");
-            }
-        }
-        */
-
-        /*
-        private string SepararCarrera(string carrera)
-        {
-            string seleccion = cmbAsignatura.Text;
-
-            // Separar el texto en base al guion "-"
-            string[] partes = seleccion.Split('-');
-            carrera = partes[0].Trim();
-
-            return carrera;
-        }
-
-        private string SepararAsignatura(string asignatura)
-        {
-            string seleccion = cmbAsignatura.Text;
-
-            // Separar el texto en base al guion "-"
-            string[] partes = seleccion.Split('-');
-            asignatura = partes[1].Trim();
-
-            return asignatura;
-        }*/
     }
 }

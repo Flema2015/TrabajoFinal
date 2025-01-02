@@ -237,6 +237,7 @@ namespace TrabajoFinal_
             cmbCarrera.Name = "cmbCarrera";
             cmbCarrera.Size = new Size(360, 33);
             cmbCarrera.TabIndex = 19;
+            cmbCarrera.SelectedIndexChanged += cmbCarrera_SelectedIndexChanged;
             // 
             // label1
             // 

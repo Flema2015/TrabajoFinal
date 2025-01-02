@@ -3,10 +3,12 @@
     public class Examen
     {
         public int ExamenId { get; set; }
+        public int AlumnoDNI { get; set; }
+        public string AlumnoNombre { get; set; }
+        public string AlumnoApellido { get; set; }
         public DateTime Fecha {  get; set; }
-        public Carrera Carrera {  get; set; }
-        public Asignatura Asignatura { get; set; }
-        public Alumno Alumno { get; set; }
+        public string Carrera {  get; set; }
+        public string Asignatura { get; set; }
         public List<Pregunta> Preguntas { get; set; }
         public float Calificacion { get; set; }
 

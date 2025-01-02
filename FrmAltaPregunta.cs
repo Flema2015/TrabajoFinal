@@ -11,10 +11,12 @@ namespace TrabajoFinal_
         int j = 0;
         int id = 0;
 
-        string rutaArchivoAsignaturas = Path.Combine(CARPETA, "Asignaturas.json");
         string rutaArchivoCarreras = Path.Combine(CARPETA, "Carreras.json");
+        string rutaArchivoAsignaturas = Path.Combine(CARPETA, "Asignaturas.json");
         string rutaArchivoPreguntas = Path.Combine(CARPETA, "Preguntas.json");
 
+        List<Carrera> carreras = new List<Carrera>();
+        List<Asignatura> asignaturas = new List<Asignatura>();
         List<Pregunta> preguntas = new List<Pregunta>();
         List<string> respuestas = new List<string>();
 
@@ -31,27 +33,31 @@ namespace TrabajoFinal_
 
         private void FrmAltaPregunta_Load(object sender, EventArgs e)
         {
-            string jsonCarreras = File.ReadAllText(rutaArchivoCarreras);
-            var carreras = JsonSerializer.Deserialize<List<Carrera>>(jsonCarreras);
+            carreras = CargarCareras();
             if (carreras != null)
             {
                 cmbCarrera.DataSource = carreras;
                 cmbCarrera.DisplayMember = "Nombre";
             }
+        }
 
-            string jsonAsignaturas = File.ReadAllText(rutaArchivoAsignaturas);
-            var asignaturas = JsonSerializer.Deserialize<List<Asignatura>>(jsonAsignaturas);
-            if (asignaturas != null)
+        private void cmbCarrera_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            // Obtener Carrera seleccionada
+            var carreraSeleccionada = cmbCarrera.SelectedItem as Carrera;
+
+            asignaturas = CargarAsignaturas();
+            if (carreraSeleccionada != null)
             {
-                var asignaturasConCarrera = asignaturas.Select(a => new
-                {
-                    NombreCompleto = $"{a.Nombre} - {a.Carrera.Nombre}",
-                    Asignatura = a
-                }).ToList();
+                // Filtrar asignaturas según la CarreraId
+                var asignaturasFiltradas = asignaturas
+                    .Where(a => a.CarreraId == carreraSeleccionada.CarreraId)
+                    .ToList();
 
-                cmbAsignatura.DataSource = asignaturasConCarrera;
-                cmbAsignatura.DisplayMember = "NombreCompleto";
-                cmbAsignatura.ValueMember = "Asignatura";
+                // Actualizar ComboBox de Asignaturas
+                cmbAsignatura.DataSource = asignaturasFiltradas;
+                cmbAsignatura.DisplayMember = "Nombre";
+                cmbAsignatura.ValueMember = "AsignaturaId";
             }
         }
 
@@ -94,8 +100,8 @@ namespace TrabajoFinal_
             pregunta.ListaDeRespuestas = respuestas;
             string respuesta = txtRespuesta.Text;
             pregunta.RespuestaCorrecta = cmbRespuestas.SelectedIndex;
-            pregunta.Carrera = carrera;
-            pregunta.Asignatura = asignatura;
+            pregunta.Carrera = cmbCarrera.Text;
+            pregunta.Asignatura = cmbAsignatura.Text;
             pregunta.Unidad = int.Parse(txtUnidad.Text);
             pregunta.SubUnidad = int.Parse(txtSubUnidad.Text);
             pregunta.Visible = true;
@@ -174,6 +180,14 @@ namespace TrabajoFinal_
             this.Close();
         }
 
+        private List<Carrera> CargarCareras()
+        {
+            string jsonCarreras = File.ReadAllText(rutaArchivoCarreras);
+            var carreras = JsonSerializer.Deserialize<List<Carrera>>(jsonCarreras);
+
+            return carreras;
+        }
+
         private bool validarCampos(string pregunta, string unidad, string subUnidad)
         {
             if (pregunta == "")
@@ -216,25 +230,6 @@ namespace TrabajoFinal_
             }
         }
 
-        private void CargarAsignaturas()
-        {
-            try
-            {
-                /*
-                string Json = File.ReadAllText(rutaArchivoAsignaturas);
-                asignaturas = JsonSerializer.Deserialize<List<Asignatura>>(Json) ?? new List<Asignatura>();
-                foreach (Asignatura asignatura in asignaturas)
-                {
-                    cmbAsignaturas.Items.Add(asignatura.Nombre);
-                }
-                */
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show("No se pudieron cargar las asignaturas.");
-            }
-        }
-
         private void GuardarPregunta()
         {
             try
@@ -264,62 +259,12 @@ namespace TrabajoFinal_
             }
         }
 
-        private void ObtenerIdPreguntaMaximo()
+        private List<Asignatura> CargarAsignaturas()
         {
-            /*
-            string rutaArchivoJson = Path.Combine(CARPETA, "Preguntas.json");
+            string jsonAsignaturas = File.ReadAllText(rutaArchivoAsignaturas);
+            var asignaturas = JsonSerializer.Deserialize<List<Asignatura>>(jsonAsignaturas);
 
-            int idFaltante = 0;
-            try
-            {
-                // Verifica si el archivo existe
-                if (!File.Exists(rutaArchivoJson))
-                {
-                    maxId += 1;
-                    lblPreguntaID.Text = "Pregunta ID    " + maxId.ToString();
-
-                    return;
-                }
-
-                // Lee el contenido del archivo JSON
-                string contenidoJson = File.ReadAllText(rutaArchivoJson);
-
-                // Deserializa el JSON en una lista de objetos
-                List<Pregunta> preguntas = JsonSerializer.Deserialize<List<Pregunta>>(contenidoJson);
-
-                var idsOrdenados = preguntas.Select(p => p.PreguntaId).ToList();
-
-                if (preguntas == null || !preguntas.Any())
-                {
-                    maxId += 1;
-                    lblPreguntaID.Text = "Pregunta ID    " + maxId.ToString();
-
-                    return;
-                }
-
-                for (int j = 0; j < idsOrdenados.Count - 1; j++)
-                {
-                    if (idsOrdenados[j + 1] - idsOrdenados[j] > 1)
-                    {
-                        idFaltante = idsOrdenados[j] + 1;
-                        lblPreguntaID.Text = "Pregunta ID    " + idFaltante.ToString();
-                    }
-                    else
-                    {
-                        // Obtiene el máximo PreguntaId
-                        int idMax = preguntas.Max(p => (int)p.PreguntaId);
-
-                        maxId = idMax + 1;
-
-                        lblPreguntaID.Text = "Pregunta ID   " + maxId.ToString();
-                    }
-                }
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show("Error al obtener el máximo PreguntaId: " + ex.Message);
-            }
-            */
+            return asignaturas;
         }
     }
 }

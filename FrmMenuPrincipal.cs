@@ -7,10 +7,10 @@ namespace TrabajoFinal_
         const string CARPETA = "files";
 
         string rutaArchivoAlumnos = Path.Combine(CARPETA, "Alumnos.json");
-        string rutaArchivoAsignaturas = Path.Combine(CARPETA, "Asignaturas.json");
         string rutaArchivoCarreras = Path.Combine(CARPETA, "Carreras.json");
-        string rutaArchivoExamenes = Path.Combine(CARPETA, "Examenes.json");
+        string rutaArchivoAsignaturas = Path.Combine(CARPETA, "Asignaturas.json");
         string rutaArchivoPreguntas = Path.Combine(CARPETA, "Preguntas.json");
+        string rutaArchivoExamenes = Path.Combine(CARPETA, "Examenes.json");
 
         public FrmMenuPrincipal()
         {
@@ -103,7 +103,8 @@ namespace TrabajoFinal_
                     string json = JsonSerializer.Serialize(rutaArchivoPreguntas, new JsonSerializerOptions { WriteIndented = true });
                     File.WriteAllText(rutaArchivoPreguntas, json);
                 }
-            }catch(Exception ex)
+            }
+            catch (Exception ex)
             {
                 MessageBox.Show("No se puedieron crear los archivos.");
             }

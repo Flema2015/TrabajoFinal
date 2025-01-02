@@ -6,7 +6,6 @@ namespace TrabajoFinal_
     {
         const string CARPETA = "files";
         string rutaArchivoExamen = Path.Combine(CARPETA, "Examenes.json");
-        string carreraAux, asignaturaAux;
         bool bandera = false;
 
         private List<Pregunta> preguntas = new List<Pregunta>();
@@ -15,15 +14,11 @@ namespace TrabajoFinal_
 
         //public string Carrera { get; set; }
 
-        public FrmRealizarExamen(Alumno alumno, Carrera carrera, Asignatura asignatura)
+        public FrmRealizarExamen(Examen examen)
         {
             InitializeComponent();
-            carreraAux = carrera.Nombre;
-            asignaturaAux = asignatura.Nombre;
             lblFechaResolucion.Text = "";
-            lblCarreraCompletar.Text = carreraAux;
-
-            CargarExamen();
+            MostrarExamen(examen);
         }
 
         private void btnEntregarExamen_Click(object sender, EventArgs e)
@@ -44,57 +39,13 @@ namespace TrabajoFinal_
             this.Close();
         }
 
-        private void CargarExamen()
-        {
-            string jsonExamenes = File.ReadAllText(rutaArchivoExamen);
-            examenes = JsonSerializer.Deserialize<List<Examen>>(jsonExamenes) ?? new List<Examen>();
-
-            try
-            {
-                var examenFiltradoPorCarrera = examenes
-                   .Where(e => e.Carrera.Nombre == carreraAux)
-                    .ToList();
-
-                var examenFiltradoPorAsignatura = examenFiltradoPorCarrera
-                    .Where(e => e.Asignatura.Nombre == asignaturaAux)
-                    .ToList();
-
-                examenesFiltrado = examenFiltradoPorAsignatura;
-
-                int longitudListaExamen = examenesFiltrado.Count();
-
-                if (longitudListaExamen <= 0)
-                {
-                    bandera = true;
-                    MessageBox.Show("No hay exámenes cargados con la carrera elegida o asignaturas.");
-                }
-                else
-                {
-                    // Crear una instancia de la clase Random
-                    Random random = new Random();
-
-                    // Generar un número aleatorio entre 1 y longitud de la lista de examenes
-                    int numeroAleatorio = random.Next(0, longitudListaExamen);
-                    Examen examenesPrueba = examenes[numeroAleatorio];
-
-                    MostrarExamen(examenesPrueba);
-
-                    //Examen examenSeleccionado = ExamenFiltradoPorAsignatura[rand.Next(ExamenFiltradoPorAsignatura.Count )];
-                }
-            }
-            catch (Exception e)
-            {
-                MessageBox.Show("No hay exámenes cargados con la carrera elegida o asignaturas.");
-            }
-        }
-
         private void MostrarExamen(Examen examen)
         {
             // cargar los Labels.
             lblIDExamen.Text = "ID examen: " + examen.ExamenId.ToString();
-            lblCarreraCompletar.Text = carreraAux;
-            lblAsignaturaCompletar.Text = asignaturaAux;
-            //lblFechaResolucion.Text = examen.Fecha;
+            lblCarreraCompletar.Text = examen.Carrera;
+            lblAsignaturaCompletar.Text = examen.Asignatura;
+            lblFechaResolucion.Text = examen.Fecha.ToString();
 
             //Grupo1 
             lblPregunta1.Text = examen.Preguntas[0].TxtPregunta;
