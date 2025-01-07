@@ -35,9 +35,9 @@
             lstRespuestasCorrectas = new ListBox();
             lstRespuestasUsuario = new ListBox();
             lblResultado = new Label();
-            txtResultado = new TextBox();
             lblDevolucion = new Label();
             lstDevolucion = new ListBox();
+            lblResultadoNum = new Label();
             SuspendLayout();
             // 
             // btnCorregir
@@ -104,13 +104,6 @@
             lblResultado.TabIndex = 6;
             lblResultado.Text = "Resultado";
             // 
-            // txtResultado
-            // 
-            txtResultado.Location = new Point(499, 77);
-            txtResultado.Name = "txtResultado";
-            txtResultado.Size = new Size(100, 23);
-            txtResultado.TabIndex = 7;
-            // 
             // lblDevolucion
             // 
             lblDevolucion.AutoSize = true;
@@ -129,14 +122,23 @@
             lstDevolucion.Size = new Size(204, 139);
             lstDevolucion.TabIndex = 9;
             // 
+            // lblResultadoNum
+            // 
+            lblResultadoNum.AutoSize = true;
+            lblResultadoNum.Location = new Point(499, 80);
+            lblResultadoNum.Name = "lblResultadoNum";
+            lblResultadoNum.Size = new Size(13, 15);
+            lblResultadoNum.TabIndex = 10;
+            lblResultadoNum.Text = "0";
+            // 
             // FrmCompararRespuestas
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(800, 450);
+            Controls.Add(lblResultadoNum);
             Controls.Add(lstDevolucion);
             Controls.Add(lblDevolucion);
-            Controls.Add(txtResultado);
             Controls.Add(lblResultado);
             Controls.Add(lstRespuestasUsuario);
             Controls.Add(lstRespuestasCorrectas);
@@ -161,8 +163,8 @@
         private ListBox lstRespuestasCorrectas;
         private ListBox lstRespuestasUsuario;
         private Label lblResultado;
-        private TextBox txtResultado;
         private Label lblDevolucion;
         private ListBox lstDevolucion;
+        private Label lblResultadoNum;
     }
 }

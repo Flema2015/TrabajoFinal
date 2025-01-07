@@ -78,7 +78,7 @@
             // 
             lblIDExamen.AutoSize = true;
             lblIDExamen.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            lblIDExamen.Location = new Point(266, 50);
+            lblIDExamen.Location = new Point(476, 50);
             lblIDExamen.Name = "lblIDExamen";
             lblIDExamen.Size = new Size(114, 21);
             lblIDExamen.TabIndex = 1;
@@ -97,7 +97,7 @@
             // btnEntregarExamen
             // 
             btnEntregarExamen.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            btnEntregarExamen.Location = new Point(43, 555);
+            btnEntregarExamen.Location = new Point(176, 573);
             btnEntregarExamen.Name = "btnEntregarExamen";
             btnEntregarExamen.Size = new Size(150, 50);
             btnEntregarExamen.TabIndex = 6;
@@ -119,7 +119,7 @@
             // 
             lblFecha.AutoSize = true;
             lblFecha.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            lblFecha.Location = new Point(326, 20);
+            lblFecha.Location = new Point(536, 20);
             lblFecha.Name = "lblFecha";
             lblFecha.Size = new Size(54, 21);
             lblFecha.TabIndex = 9;
@@ -134,23 +134,23 @@
             groupBox1.Controls.Add(rdoRespuesta1Pregunta1);
             groupBox1.Location = new Point(43, 79);
             groupBox1.Name = "groupBox1";
-            groupBox1.Size = new Size(200, 151);
+            groupBox1.Size = new Size(340, 161);
             groupBox1.TabIndex = 10;
             groupBox1.TabStop = false;
             groupBox1.Text = "Pregunta 1";
             // 
             // lblPregunta1
             // 
-            lblPregunta1.AutoSize = true;
-            lblPregunta1.Location = new Point(6, 27);
+            lblPregunta1.Anchor = AnchorStyles.Left | AnchorStyles.Right;
+            lblPregunta1.Location = new Point(3, 19);
             lblPregunta1.Name = "lblPregunta1";
-            lblPregunta1.Size = new Size(0, 15);
+            lblPregunta1.Size = new Size(337, 30);
             lblPregunta1.TabIndex = 4;
             // 
             // rdoRespuesta4Pregunta1
             // 
             rdoRespuesta4Pregunta1.AutoSize = true;
-            rdoRespuesta4Pregunta1.Location = new Point(6, 120);
+            rdoRespuesta4Pregunta1.Location = new Point(6, 127);
             rdoRespuesta4Pregunta1.Name = "rdoRespuesta4Pregunta1";
             rdoRespuesta4Pregunta1.Size = new Size(94, 19);
             rdoRespuesta4Pregunta1.TabIndex = 3;
@@ -161,7 +161,7 @@
             // rdoRespuesta3Pregunta1
             // 
             rdoRespuesta3Pregunta1.AutoSize = true;
-            rdoRespuesta3Pregunta1.Location = new Point(6, 95);
+            rdoRespuesta3Pregunta1.Location = new Point(6, 102);
             rdoRespuesta3Pregunta1.Name = "rdoRespuesta3Pregunta1";
             rdoRespuesta3Pregunta1.Size = new Size(94, 19);
             rdoRespuesta3Pregunta1.TabIndex = 2;
@@ -172,7 +172,7 @@
             // rdoRespuesta2Pregunta1
             // 
             rdoRespuesta2Pregunta1.AutoSize = true;
-            rdoRespuesta2Pregunta1.Location = new Point(6, 70);
+            rdoRespuesta2Pregunta1.Location = new Point(6, 77);
             rdoRespuesta2Pregunta1.Name = "rdoRespuesta2Pregunta1";
             rdoRespuesta2Pregunta1.Size = new Size(94, 19);
             rdoRespuesta2Pregunta1.TabIndex = 1;
@@ -183,7 +183,7 @@
             // rdoRespuesta1Pregunta1
             // 
             rdoRespuesta1Pregunta1.AutoSize = true;
-            rdoRespuesta1Pregunta1.Location = new Point(6, 45);
+            rdoRespuesta1Pregunta1.Location = new Point(6, 52);
             rdoRespuesta1Pregunta1.Name = "rdoRespuesta1Pregunta1";
             rdoRespuesta1Pregunta1.Size = new Size(94, 19);
             rdoRespuesta1Pregunta1.TabIndex = 0;
@@ -200,23 +200,23 @@
             groupBox2.Controls.Add(rdoRespuesta2Pregunta2);
             groupBox2.Location = new Point(43, 236);
             groupBox2.Name = "groupBox2";
-            groupBox2.Size = new Size(200, 151);
+            groupBox2.Size = new Size(340, 161);
             groupBox2.TabIndex = 11;
             groupBox2.TabStop = false;
-            groupBox2.Text = "groupBox2";
+            groupBox2.Text = "Pregunta 2";
             // 
             // lblPregunta2
             // 
-            lblPregunta2.AutoSize = true;
-            lblPregunta2.Location = new Point(6, 19);
+            lblPregunta2.Anchor = AnchorStyles.Left | AnchorStyles.Right;
+            lblPregunta2.Location = new Point(3, 19);
             lblPregunta2.Name = "lblPregunta2";
-            lblPregunta2.Size = new Size(0, 15);
+            lblPregunta2.Size = new Size(337, 30);
             lblPregunta2.TabIndex = 8;
             // 
             // rdoRespuesta4Pregunta2
             // 
             rdoRespuesta4Pregunta2.AutoSize = true;
-            rdoRespuesta4Pregunta2.Location = new Point(6, 120);
+            rdoRespuesta4Pregunta2.Location = new Point(6, 127);
             rdoRespuesta4Pregunta2.Name = "rdoRespuesta4Pregunta2";
             rdoRespuesta4Pregunta2.Size = new Size(94, 19);
             rdoRespuesta4Pregunta2.TabIndex = 7;
@@ -227,7 +227,7 @@
             // rdoRespuesta3Pregunta2
             // 
             rdoRespuesta3Pregunta2.AutoSize = true;
-            rdoRespuesta3Pregunta2.Location = new Point(6, 95);
+            rdoRespuesta3Pregunta2.Location = new Point(6, 102);
             rdoRespuesta3Pregunta2.Name = "rdoRespuesta3Pregunta2";
             rdoRespuesta3Pregunta2.Size = new Size(94, 19);
             rdoRespuesta3Pregunta2.TabIndex = 6;
@@ -238,7 +238,7 @@
             // rdoRespuesta1Pregunta2
             // 
             rdoRespuesta1Pregunta2.AutoSize = true;
-            rdoRespuesta1Pregunta2.Location = new Point(6, 45);
+            rdoRespuesta1Pregunta2.Location = new Point(6, 52);
             rdoRespuesta1Pregunta2.Name = "rdoRespuesta1Pregunta2";
             rdoRespuesta1Pregunta2.Size = new Size(94, 19);
             rdoRespuesta1Pregunta2.TabIndex = 4;
@@ -249,12 +249,12 @@
             // rdoRespuesta2Pregunta2
             // 
             rdoRespuesta2Pregunta2.AutoSize = true;
-            rdoRespuesta2Pregunta2.Location = new Point(6, 70);
+            rdoRespuesta2Pregunta2.Location = new Point(6, 77);
             rdoRespuesta2Pregunta2.Name = "rdoRespuesta2Pregunta2";
-            rdoRespuesta2Pregunta2.Size = new Size(88, 19);
+            rdoRespuesta2Pregunta2.Size = new Size(94, 19);
             rdoRespuesta2Pregunta2.TabIndex = 5;
             rdoRespuesta2Pregunta2.TabStop = true;
-            rdoRespuesta2Pregunta2.Text = "Preguntaa 2";
+            rdoRespuesta2Pregunta2.Text = "radioButton7";
             rdoRespuesta2Pregunta2.UseVisualStyleBackColor = true;
             // 
             // groupBox3
@@ -266,23 +266,23 @@
             groupBox3.Controls.Add(rdoRespuesta2Pregunta3);
             groupBox3.Location = new Point(43, 406);
             groupBox3.Name = "groupBox3";
-            groupBox3.Size = new Size(200, 143);
+            groupBox3.Size = new Size(340, 160);
             groupBox3.TabIndex = 11;
             groupBox3.TabStop = false;
             groupBox3.Text = "Pregunta 3";
             // 
             // lblPregunta3
             // 
-            lblPregunta3.AutoSize = true;
-            lblPregunta3.Location = new Point(6, 27);
+            lblPregunta3.Anchor = AnchorStyles.Left | AnchorStyles.Right;
+            lblPregunta3.Location = new Point(3, 19);
             lblPregunta3.Name = "lblPregunta3";
-            lblPregunta3.Size = new Size(0, 15);
+            lblPregunta3.Size = new Size(337, 30);
             lblPregunta3.TabIndex = 12;
             // 
             // rdoRespuesta4Pregunta3
             // 
             rdoRespuesta4Pregunta3.AutoSize = true;
-            rdoRespuesta4Pregunta3.Location = new Point(6, 119);
+            rdoRespuesta4Pregunta3.Location = new Point(6, 126);
             rdoRespuesta4Pregunta3.Name = "rdoRespuesta4Pregunta3";
             rdoRespuesta4Pregunta3.Size = new Size(94, 19);
             rdoRespuesta4Pregunta3.TabIndex = 11;
@@ -293,7 +293,7 @@
             // rdoRespuesta3Pregunta3
             // 
             rdoRespuesta3Pregunta3.AutoSize = true;
-            rdoRespuesta3Pregunta3.Location = new Point(6, 95);
+            rdoRespuesta3Pregunta3.Location = new Point(6, 102);
             rdoRespuesta3Pregunta3.Name = "rdoRespuesta3Pregunta3";
             rdoRespuesta3Pregunta3.Size = new Size(100, 19);
             rdoRespuesta3Pregunta3.TabIndex = 10;
@@ -304,7 +304,7 @@
             // rdoRespuesta1Pregunta3
             // 
             rdoRespuesta1Pregunta3.AutoSize = true;
-            rdoRespuesta1Pregunta3.Location = new Point(6, 45);
+            rdoRespuesta1Pregunta3.Location = new Point(6, 52);
             rdoRespuesta1Pregunta3.Name = "rdoRespuesta1Pregunta3";
             rdoRespuesta1Pregunta3.Size = new Size(100, 19);
             rdoRespuesta1Pregunta3.TabIndex = 8;
@@ -315,7 +315,7 @@
             // rdoRespuesta2Pregunta3
             // 
             rdoRespuesta2Pregunta3.AutoSize = true;
-            rdoRespuesta2Pregunta3.Location = new Point(5, 70);
+            rdoRespuesta2Pregunta3.Location = new Point(5, 77);
             rdoRespuesta2Pregunta3.Name = "rdoRespuesta2Pregunta3";
             rdoRespuesta2Pregunta3.Size = new Size(100, 19);
             rdoRespuesta2Pregunta3.TabIndex = 9;
@@ -330,25 +330,25 @@
             groupBox4.Controls.Add(rdoRespuesta3Pregunta4);
             groupBox4.Controls.Add(rdoRespuesta2Pregunta4);
             groupBox4.Controls.Add(rdoRespuesta1Pregunta4);
-            groupBox4.Location = new Point(293, 174);
+            groupBox4.Location = new Point(413, 149);
             groupBox4.Name = "groupBox4";
-            groupBox4.Size = new Size(200, 140);
+            groupBox4.Size = new Size(340, 156);
             groupBox4.TabIndex = 11;
             groupBox4.TabStop = false;
             groupBox4.Text = "Pregunta 4";
             // 
             // lblPregunta4
             // 
-            lblPregunta4.AutoSize = true;
-            lblPregunta4.Location = new Point(6, 22);
+            lblPregunta4.Anchor = AnchorStyles.Left | AnchorStyles.Right;
+            lblPregunta4.Location = new Point(3, 19);
             lblPregunta4.Name = "lblPregunta4";
-            lblPregunta4.Size = new Size(0, 15);
+            lblPregunta4.Size = new Size(337, 30);
             lblPregunta4.TabIndex = 13;
             // 
             // rdoRespuesta4Pregunta4
             // 
             rdoRespuesta4Pregunta4.AutoSize = true;
-            rdoRespuesta4Pregunta4.Location = new Point(6, 115);
+            rdoRespuesta4Pregunta4.Location = new Point(3, 127);
             rdoRespuesta4Pregunta4.Name = "rdoRespuesta4Pregunta4";
             rdoRespuesta4Pregunta4.Size = new Size(100, 19);
             rdoRespuesta4Pregunta4.TabIndex = 7;
@@ -359,7 +359,7 @@
             // rdoRespuesta3Pregunta4
             // 
             rdoRespuesta3Pregunta4.AutoSize = true;
-            rdoRespuesta3Pregunta4.Location = new Point(6, 90);
+            rdoRespuesta3Pregunta4.Location = new Point(3, 102);
             rdoRespuesta3Pregunta4.Name = "rdoRespuesta3Pregunta4";
             rdoRespuesta3Pregunta4.Size = new Size(100, 19);
             rdoRespuesta3Pregunta4.TabIndex = 6;
@@ -370,7 +370,7 @@
             // rdoRespuesta2Pregunta4
             // 
             rdoRespuesta2Pregunta4.AutoSize = true;
-            rdoRespuesta2Pregunta4.Location = new Point(6, 65);
+            rdoRespuesta2Pregunta4.Location = new Point(3, 77);
             rdoRespuesta2Pregunta4.Name = "rdoRespuesta2Pregunta4";
             rdoRespuesta2Pregunta4.Size = new Size(100, 19);
             rdoRespuesta2Pregunta4.TabIndex = 5;
@@ -381,7 +381,7 @@
             // rdoRespuesta1Pregunta4
             // 
             rdoRespuesta1Pregunta4.AutoSize = true;
-            rdoRespuesta1Pregunta4.Location = new Point(6, 40);
+            rdoRespuesta1Pregunta4.Location = new Point(3, 52);
             rdoRespuesta1Pregunta4.Name = "rdoRespuesta1Pregunta4";
             rdoRespuesta1Pregunta4.Size = new Size(100, 19);
             rdoRespuesta1Pregunta4.TabIndex = 4;
@@ -396,25 +396,25 @@
             groupBox5.Controls.Add(rdoRespuesta2Pregunta5);
             groupBox5.Controls.Add(rdoRespuesta3Pregunta5);
             groupBox5.Controls.Add(rdoRespuesta1Pregunta5);
-            groupBox5.Location = new Point(293, 331);
+            groupBox5.Location = new Point(413, 306);
             groupBox5.Name = "groupBox5";
-            groupBox5.Size = new Size(200, 140);
+            groupBox5.Size = new Size(340, 156);
             groupBox5.TabIndex = 11;
             groupBox5.TabStop = false;
             groupBox5.Text = "Pregunta 5";
             // 
             // lblPregunta5
             // 
-            lblPregunta5.AutoSize = true;
-            lblPregunta5.Location = new Point(6, 22);
+            lblPregunta5.Anchor = AnchorStyles.Left | AnchorStyles.Right;
+            lblPregunta5.Location = new Point(3, 19);
             lblPregunta5.Name = "lblPregunta5";
-            lblPregunta5.Size = new Size(0, 15);
+            lblPregunta5.Size = new Size(337, 30);
             lblPregunta5.TabIndex = 13;
             // 
             // rdoRespuesta4Pregunta5
             // 
             rdoRespuesta4Pregunta5.AutoSize = true;
-            rdoRespuesta4Pregunta5.Location = new Point(6, 115);
+            rdoRespuesta4Pregunta5.Location = new Point(6, 127);
             rdoRespuesta4Pregunta5.Name = "rdoRespuesta4Pregunta5";
             rdoRespuesta4Pregunta5.Size = new Size(100, 19);
             rdoRespuesta4Pregunta5.TabIndex = 11;
@@ -425,7 +425,7 @@
             // rdoRespuesta2Pregunta5
             // 
             rdoRespuesta2Pregunta5.AutoSize = true;
-            rdoRespuesta2Pregunta5.Location = new Point(6, 65);
+            rdoRespuesta2Pregunta5.Location = new Point(6, 77);
             rdoRespuesta2Pregunta5.Name = "rdoRespuesta2Pregunta5";
             rdoRespuesta2Pregunta5.Size = new Size(100, 19);
             rdoRespuesta2Pregunta5.TabIndex = 9;
@@ -436,7 +436,7 @@
             // rdoRespuesta3Pregunta5
             // 
             rdoRespuesta3Pregunta5.AutoSize = true;
-            rdoRespuesta3Pregunta5.Location = new Point(6, 90);
+            rdoRespuesta3Pregunta5.Location = new Point(6, 102);
             rdoRespuesta3Pregunta5.Name = "rdoRespuesta3Pregunta5";
             rdoRespuesta3Pregunta5.Size = new Size(100, 19);
             rdoRespuesta3Pregunta5.TabIndex = 10;
@@ -447,7 +447,7 @@
             // rdoRespuesta1Pregunta5
             // 
             rdoRespuesta1Pregunta5.AutoSize = true;
-            rdoRespuesta1Pregunta5.Location = new Point(6, 40);
+            rdoRespuesta1Pregunta5.Location = new Point(6, 52);
             rdoRespuesta1Pregunta5.Name = "rdoRespuesta1Pregunta5";
             rdoRespuesta1Pregunta5.Size = new Size(100, 19);
             rdoRespuesta1Pregunta5.TabIndex = 8;
@@ -458,7 +458,7 @@
             // lblFechaResolucion
             // 
             lblFechaResolucion.AutoSize = true;
-            lblFechaResolucion.Location = new Point(391, 24);
+            lblFechaResolucion.Location = new Point(601, 24);
             lblFechaResolucion.Name = "lblFechaResolucion";
             lblFechaResolucion.Size = new Size(12, 15);
             lblFechaResolucion.TabIndex = 12;
@@ -485,7 +485,7 @@
             // btnVolver
             // 
             btnVolver.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            btnVolver.Location = new Point(343, 555);
+            btnVolver.Location = new Point(476, 573);
             btnVolver.Name = "btnVolver";
             btnVolver.Size = new Size(150, 50);
             btnVolver.TabIndex = 15;
@@ -497,7 +497,7 @@
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(533, 635);
+            ClientSize = new Size(793, 635);
             ControlBox = false;
             Controls.Add(btnVolver);
             Controls.Add(lblAsignaturaCompletar);

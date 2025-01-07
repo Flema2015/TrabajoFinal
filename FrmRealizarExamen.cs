@@ -6,11 +6,13 @@ namespace TrabajoFinal_
     {
         const string CARPETA = "files";
         string rutaArchivoExamen = Path.Combine(CARPETA, "Examenes.json");
+        string rutaArchivoRespuestas = Path.Combine(CARPETA, "Respuestas.json");
         bool bandera = false;
 
         private List<Pregunta> preguntas = new List<Pregunta>();
         private List<Examen> examenes = new List<Examen>();
         private List<Examen> examenesFiltrado = new List<Examen>();
+        private List<String> respuestasExamen = new List<String>();
 
         //public string Carrera { get; set; }
 
@@ -23,6 +25,7 @@ namespace TrabajoFinal_
 
         private void btnEntregarExamen_Click(object sender, EventArgs e)
         {
+
             // Cierra este formulario y cualquier modal anterior
             this.DialogResult = DialogResult.OK; // Opcional para indicar éxito
             this.Close(); // Cierra el formulario actual
@@ -90,5 +93,57 @@ namespace TrabajoFinal_
                 this.Close();
             }
         }
+
+        private void GuardarResultados(Examen examen)
+        {
+            respuestasExamen.Add(examen.ExamenId.ToString());
+            respuestasExamen.Add(examen.AlumnoNombre);
+            respuestasExamen.Add(examen.AlumnoApellido);
+
+            foreach (Control control in groupBox1.Controls)
+            {
+                if (control is RadioButton radioButton && radioButton.Checked)
+                {
+                    respuestasExamen.Add((radioButton.TabIndex - 1).ToString());
+                }
+            }
+
+            foreach (Control control in groupBox2.Controls)
+            {
+                if (control is RadioButton radioButton && radioButton.Checked)
+                {
+                    respuestasExamen.Add((radioButton.TabIndex - 1).ToString());
+                }
+            }
+
+            foreach (Control control in groupBox3.Controls)
+            {
+                if (control is RadioButton radioButton && radioButton.Checked)
+                {
+                    respuestasExamen.Add((radioButton.TabIndex - 1).ToString());
+                }
+            }
+
+            foreach (Control control in groupBox4.Controls)
+            {
+                if (control is RadioButton radioButton && radioButton.Checked)
+                {
+                    respuestasExamen.Add((radioButton.TabIndex - 1).ToString());
+                }
+            }
+
+            foreach (Control control in groupBox5.Controls)
+            {
+                if (control is RadioButton radioButton && radioButton.Checked)
+                {
+                    respuestasExamen.Add((radioButton.TabIndex - 1).ToString());
+                }
+            }
+
+            string json = JsonSerializer.Serialize(respuestasExamen, new JsonSerializerOptions { WriteIndented = true });
+
+            File.WriteAllText(rutaArchivoRespuestas, json);
+        }
+
     }
 }
