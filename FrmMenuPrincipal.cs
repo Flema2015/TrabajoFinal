@@ -11,6 +11,8 @@ namespace TrabajoFinal_
         string rutaArchivoAsignaturas = Path.Combine(CARPETA, "Asignaturas.json");
         string rutaArchivoPreguntas = Path.Combine(CARPETA, "Preguntas.json");
         string rutaArchivoExamenes = Path.Combine(CARPETA, "Examenes.json");
+        string rutaArchivoCorrecciones = Path.Combine(CARPETA, "Correcciones.json");
+
 
         public FrmMenuPrincipal()
         {
@@ -102,6 +104,11 @@ namespace TrabajoFinal_
                 {
                     string json = JsonSerializer.Serialize(rutaArchivoPreguntas, new JsonSerializerOptions { WriteIndented = true });
                     File.WriteAllText(rutaArchivoPreguntas, json);
+                }
+                if (!File.Exists(rutaArchivoCorrecciones))
+                {
+                    string json = JsonSerializer.Serialize(rutaArchivoCorrecciones, new JsonSerializerOptions { WriteIndented = true });
+                    File.WriteAllText(rutaArchivoCorrecciones, json);
                 }
             }
             catch (Exception ex)

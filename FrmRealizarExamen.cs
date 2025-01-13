@@ -1,4 +1,5 @@
-﻿using System.Text.Json;
+﻿using System.Diagnostics;
+using System.Text.Json;
 
 namespace TrabajoFinal_
 {
@@ -6,19 +7,23 @@ namespace TrabajoFinal_
     {
         const string CARPETA = "files";
         string rutaArchivoExamen = Path.Combine(CARPETA, "Examenes.json");
-        string rutaArchivoRespuestas = Path.Combine(CARPETA, "Respuestas.json");
+        string rutaArchivoCorrecciones = Path.Combine(CARPETA, "Correcciones.json");
         bool bandera = false;
 
         private List<Pregunta> preguntas = new List<Pregunta>();
         private List<Examen> examenes = new List<Examen>();
+        private List<Examen> correcciones = new List<Examen>();
         private List<Examen> examenesFiltrado = new List<Examen>();
-        private List<String> respuestasExamen = new List<String>();
+        Examen examenAux = new Examen();
 
         //public string Carrera { get; set; }
 
         public FrmRealizarExamen(Examen examen)
         {
             InitializeComponent();
+            CargarExamenes();
+            CargarCorrecciones();
+            examenAux = examen;
             lblFechaResolucion.Text = "";
             MostrarExamen(examen);
         }
@@ -28,6 +33,7 @@ namespace TrabajoFinal_
 
             // Cierra este formulario y cualquier modal anterior
             this.DialogResult = DialogResult.OK; // Opcional para indicar éxito
+            GuardarResultados(examenAux);
             this.Close(); // Cierra el formulario actual
         }
 
@@ -35,11 +41,6 @@ namespace TrabajoFinal_
         {
             // Mostrar el menú usando la clase estática
             GestorMenu.MostrarMenu();
-        }
-
-        private void btnVolver_Click(object sender, EventArgs e)
-        {
-            this.Close();
         }
 
         private void MostrarExamen(Examen examen)
@@ -94,17 +95,44 @@ namespace TrabajoFinal_
             }
         }
 
+        private void CargarExamenes()
+        {
+            try
+            {
+                string Json = File.ReadAllText(rutaArchivoExamen);
+                examenes = JsonSerializer.Deserialize<List<Examen>>(Json) ?? new List<Examen>();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("No se pudieron cargar las asignaturas.");
+            }
+        }
+
+        private void CargarCorrecciones()
+        {
+            try
+            {
+                string Json = File.ReadAllText(rutaArchivoCorrecciones);
+                correcciones = JsonSerializer.Deserialize<List<Examen>>(Json) ?? new List<Examen>();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Correcciones está vacío.");
+            }
+        }
+
         private void GuardarResultados(Examen examen)
         {
-            respuestasExamen.Add(examen.ExamenId.ToString());
+            /*respuestasExamen.Add(examen.ExamenId.ToString());
             respuestasExamen.Add(examen.AlumnoNombre);
             respuestasExamen.Add(examen.AlumnoApellido);
+            respuestasExamen.Add(examen.AlumnoDNI.ToString());*/
 
             foreach (Control control in groupBox1.Controls)
             {
                 if (control is RadioButton radioButton && radioButton.Checked)
                 {
-                    respuestasExamen.Add((radioButton.TabIndex - 1).ToString());
+                    examen.Respuestas[0] = radioButton.TabIndex;
                 }
             }
 
@@ -112,7 +140,7 @@ namespace TrabajoFinal_
             {
                 if (control is RadioButton radioButton && radioButton.Checked)
                 {
-                    respuestasExamen.Add((radioButton.TabIndex - 1).ToString());
+                    examen.Respuestas[1] = radioButton.TabIndex;
                 }
             }
 
@@ -120,7 +148,7 @@ namespace TrabajoFinal_
             {
                 if (control is RadioButton radioButton && radioButton.Checked)
                 {
-                    respuestasExamen.Add((radioButton.TabIndex - 1).ToString());
+                    examen.Respuestas[2] = radioButton.TabIndex;
                 }
             }
 
@@ -128,7 +156,7 @@ namespace TrabajoFinal_
             {
                 if (control is RadioButton radioButton && radioButton.Checked)
                 {
-                    respuestasExamen.Add((radioButton.TabIndex - 1).ToString());
+                    examen.Respuestas[3] = radioButton.TabIndex;
                 }
             }
 
@@ -136,14 +164,43 @@ namespace TrabajoFinal_
             {
                 if (control is RadioButton radioButton && radioButton.Checked)
                 {
-                    respuestasExamen.Add((radioButton.TabIndex - 1).ToString());
+                    examen.Respuestas[4] = radioButton.TabIndex;
                 }
             }
 
-            string json = JsonSerializer.Serialize(respuestasExamen, new JsonSerializerOptions { WriteIndented = true });
 
-            File.WriteAllText(rutaArchivoRespuestas, json);
+            examen.Calificacion = CorregirExamen(examen);
+
+            examenes.Add(examen);
+
+            correcciones.Add(examen);
+
+            string json = JsonSerializer.Serialize(correcciones, new JsonSerializerOptions { WriteIndented = true });
+
+            File.WriteAllText(rutaArchivoCorrecciones, json);
         }
 
+        private float CorregirExamen(Examen examen)
+        {
+            float calificacion = 0;
+            string[] respuestaCorrecta = new string[6];
+            int[] indice = new int[6];
+
+            for (int i = 0; i < examen.Preguntas.Count; i++)
+            {
+                indice[i] = examen.Preguntas[i].RespuestaCorrecta;
+            }
+           
+            for (int i = 0; i < examen.Respuestas.Count; i++)
+            {
+                if (examen.Respuestas[i] == indice[i])
+                {
+                    calificacion += 2f;
+                }
+            }
+
+            return calificacion;
+
+        }
     }
 }

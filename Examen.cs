@@ -11,11 +11,13 @@
         public string Asignatura { get; set; }
         public List<Pregunta> Preguntas { get; set; }
         public float Calificacion { get; set; }
+        public List<int> Respuestas { get; set; }
 
         // Constructor para inicializar listas
         public Examen()
         {
-            Preguntas = new List<Pregunta>();
+            Preguntas = new List<Pregunta>(new Pregunta[6]);
+            Respuestas = new List<int>(new int[5]);
         }
     }
 }
