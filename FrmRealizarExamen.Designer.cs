@@ -137,6 +137,7 @@
             groupBox1.TabIndex = 10;
             groupBox1.TabStop = false;
             groupBox1.Text = "Pregunta 1";
+            
             // 
             // lblPregunta1
             // 
@@ -459,7 +460,7 @@
             lblFechaResolucion.AutoSize = true;
             lblFechaResolucion.Location = new Point(601, 24);
             lblFechaResolucion.Name = "lblFechaResolucion";
-            lblFechaResolucion.Size = new Size(12, 15);
+            lblFechaResolucion.Size = new Size(13, 15);
             lblFechaResolucion.TabIndex = 12;
             lblFechaResolucion.Text = "x";
             // 
@@ -468,7 +469,7 @@
             lblCarreraCompletar.AutoSize = true;
             lblCarreraCompletar.Location = new Point(160, 24);
             lblCarreraCompletar.Name = "lblCarreraCompletar";
-            lblCarreraCompletar.Size = new Size(12, 15);
+            lblCarreraCompletar.Size = new Size(13, 15);
             lblCarreraCompletar.TabIndex = 13;
             lblCarreraCompletar.Text = "x";
             // 
@@ -477,7 +478,7 @@
             lblAsignaturaCompletar.AutoSize = true;
             lblAsignaturaCompletar.Location = new Point(160, 50);
             lblAsignaturaCompletar.Name = "lblAsignaturaCompletar";
-            lblAsignaturaCompletar.Size = new Size(12, 15);
+            lblAsignaturaCompletar.Size = new Size(13, 15);
             lblAsignaturaCompletar.TabIndex = 14;
             lblAsignaturaCompletar.Text = "x";
             // 

@@ -46,9 +46,9 @@
             // 
             lstDevolucion.FormattingEnabled = true;
             lstDevolucion.ItemHeight = 15;
-            lstDevolucion.Location = new Point(236, 89);
+            lstDevolucion.Location = new Point(115, 64);
             lstDevolucion.Name = "lstDevolucion";
-            lstDevolucion.Size = new Size(289, 199);
+            lstDevolucion.Size = new Size(560, 244);
             lstDevolucion.TabIndex = 1;
             // 
             // FrmVerDevolucion

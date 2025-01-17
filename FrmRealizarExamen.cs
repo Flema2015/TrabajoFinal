@@ -94,7 +94,7 @@ namespace TrabajoFinal_
                 this.Close();
             }
         }
-
+        
         private void CargarExamenes()
         {
             try
@@ -200,6 +200,7 @@ namespace TrabajoFinal_
             }
 
             return calificacion;
+
 
         }
     }
