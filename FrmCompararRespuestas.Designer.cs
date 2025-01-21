@@ -62,18 +62,20 @@
             // lblRespuestasCorrectas
             // 
             lblRespuestasCorrectas.AutoSize = true;
-            lblRespuestasCorrectas.Location = new Point(12, 36);
+            lblRespuestasCorrectas.Font = new Font("Segoe UI", 11.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            lblRespuestasCorrectas.Location = new Point(110, 36);
             lblRespuestasCorrectas.Name = "lblRespuestasCorrectas";
-            lblRespuestasCorrectas.Size = new Size(118, 15);
+            lblRespuestasCorrectas.Size = new Size(148, 20);
             lblRespuestasCorrectas.TabIndex = 2;
             lblRespuestasCorrectas.Text = "Respuestas Correctas";
             // 
             // lblRespuestasUsuario
             // 
             lblRespuestasUsuario.AutoSize = true;
-            lblRespuestasUsuario.Location = new Point(203, 36);
+            lblRespuestasUsuario.Font = new Font("Segoe UI", 11.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            lblRespuestasUsuario.Location = new Point(101, 212);
             lblRespuestasUsuario.Name = "lblRespuestasUsuario";
-            lblRespuestasUsuario.Size = new Size(124, 15);
+            lblRespuestasUsuario.Size = new Size(157, 20);
             lblRespuestasUsuario.TabIndex = 3;
             lblRespuestasUsuario.Text = "Respuestas de Usuario";
             // 
@@ -81,18 +83,18 @@
             // 
             lstRespuestasCorrectas.FormattingEnabled = true;
             lstRespuestasCorrectas.ItemHeight = 15;
-            lstRespuestasCorrectas.Location = new Point(12, 80);
+            lstRespuestasCorrectas.Location = new Point(12, 70);
             lstRespuestasCorrectas.Name = "lstRespuestasCorrectas";
-            lstRespuestasCorrectas.Size = new Size(164, 139);
+            lstRespuestasCorrectas.Size = new Size(376, 139);
             lstRespuestasCorrectas.TabIndex = 4;
             // 
             // lstRespuestasUsuario
             // 
             lstRespuestasUsuario.FormattingEnabled = true;
             lstRespuestasUsuario.ItemHeight = 15;
-            lstRespuestasUsuario.Location = new Point(203, 80);
+            lstRespuestasUsuario.Location = new Point(12, 252);
             lstRespuestasUsuario.Name = "lstRespuestasUsuario";
-            lstRespuestasUsuario.Size = new Size(167, 139);
+            lstRespuestasUsuario.Size = new Size(376, 139);
             lstRespuestasUsuario.TabIndex = 5;
             // 
             // lblResultado
