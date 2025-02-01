@@ -30,7 +30,7 @@
         {
             btnAlta = new Button();
             btnBaja = new Button();
-            btnModificar = new Button();
+            btnModificarBaja = new Button();
             btnVolverAlMenu = new Button();
             SuspendLayout();
             // 
@@ -66,21 +66,21 @@
             btnBaja.UseVisualStyleBackColor = false;
             btnBaja.Click += btnBaja_Click;
             // 
-            // btnModificar
+            // btnModificarBaja
             // 
-            btnModificar.BackColor = Color.White;
-            btnModificar.FlatAppearance.BorderColor = Color.Black;
-            btnModificar.FlatAppearance.BorderSize = 0;
-            btnModificar.FlatAppearance.MouseOverBackColor = Color.FromArgb(224, 224, 224);
-            btnModificar.FlatStyle = FlatStyle.Flat;
-            btnModificar.Font = new Font("Segoe UI", 14.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            btnModificar.Location = new Point(458, 146);
-            btnModificar.Name = "btnModificar";
-            btnModificar.Size = new Size(150, 50);
-            btnModificar.TabIndex = 2;
-            btnModificar.Text = "Modificar";
-            btnModificar.UseVisualStyleBackColor = false;
-            btnModificar.Click += btnModificar_Click;
+            btnModificarBaja.BackColor = Color.White;
+            btnModificarBaja.FlatAppearance.BorderColor = Color.Black;
+            btnModificarBaja.FlatAppearance.BorderSize = 0;
+            btnModificarBaja.FlatAppearance.MouseOverBackColor = Color.FromArgb(224, 224, 224);
+            btnModificarBaja.FlatStyle = FlatStyle.Flat;
+            btnModificarBaja.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            btnModificarBaja.Location = new Point(458, 146);
+            btnModificarBaja.Name = "btnModificarBaja";
+            btnModificarBaja.Size = new Size(150, 50);
+            btnModificarBaja.TabIndex = 2;
+            btnModificarBaja.Text = "Modificar/Baja";
+            btnModificarBaja.UseVisualStyleBackColor = false;
+            btnModificarBaja.Click += btnModificarBaja_Click;
             // 
             // btnVolverAlMenu
             // 
@@ -104,7 +104,7 @@
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(739, 411);
             Controls.Add(btnVolverAlMenu);
-            Controls.Add(btnModificar);
+            Controls.Add(btnModificarBaja);
             Controls.Add(btnBaja);
             Controls.Add(btnAlta);
             FormBorderStyle = FormBorderStyle.None;
@@ -122,7 +122,7 @@
 
         private Button btnAlta;
         private Button btnBaja;
-        private Button btnModificar;
+        private Button btnModificarBaja;
         private Button btnVolverAlMenu;
     }
 }

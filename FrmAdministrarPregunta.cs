@@ -27,16 +27,16 @@
             FrmBajaPregunta frmBajaPregunta = new FrmBajaPregunta();
             frmBajaPregunta.ShowDialog();
         }
-
-        private void btnModificar_Click(object sender, EventArgs e)
+        private void btnModificarBaja_Click(object sender, EventArgs e)
         {
-            FrmModificarPregunta frmModificarPregunta = new FrmModificarPregunta();
-            frmModificarPregunta.ShowDialog();
+            FrmModificarBajaPregunta frmModificarBajaPregunta = new FrmModificarBajaPregunta();
+            frmModificarBajaPregunta.ShowDialog();
         }
 
         private void btnVolverAlMenu_Click(object sender, EventArgs e)
         {
             this.Close();
         }
+
     }
 }

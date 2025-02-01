@@ -3,7 +3,7 @@ using System.Xml;
 
 namespace TrabajoFinal_
 {
-    public partial class FrmModificarPregunta : Form
+    public partial class FrmModificarBajaPregunta : Form
     {
         const int MAX = 4;
         const string CARPETA = "files";
@@ -20,7 +20,7 @@ namespace TrabajoFinal_
 
         int i = 0;
 
-        public FrmModificarPregunta()
+        public FrmModificarBajaPregunta()
         {
             InitializeComponent();
         }
@@ -208,7 +208,7 @@ namespace TrabajoFinal_
         {
             try
             {
-                int idPreguntaModificada = preguntaSeleccionada.PreguntaId; // O utiliza: preguntaSeleccionada.PreguntaId
+                int idPreguntaModificada = preguntaSeleccionada.PreguntaId;
 
                 // Buscar la pregunta en la lista
                 Pregunta preguntaAmodificar = preguntas.FirstOrDefault(p => p.PreguntaId == idPreguntaModificada);
@@ -231,6 +231,7 @@ namespace TrabajoFinal_
                     File.WriteAllText(rutaArchivoPreguntas, json);
 
                     MessageBox.Show("La pregunta se ha modificado correctamente.");
+                    this.Close();
                 }
                 else
                 {
@@ -240,6 +241,48 @@ namespace TrabajoFinal_
             catch (Exception ex)
             {
                 MessageBox.Show("Ocurrió un error al modificar la pregunta: " + ex.Message);
+            }
+        }
+
+        private void btnEliminar_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                // Leer el contenido del archivo JSON
+                string json = File.ReadAllText(rutaArchivoPreguntas);
+
+                // Deserializar el JSON a una lista de objetos Pregunta
+                preguntas = JsonSerializer.Deserialize<List<Pregunta>>(json) ?? new List<Pregunta>();
+
+                // Obtener el identificador de la pregunta a eliminar.
+                // Por ejemplo, se puede obtener desde un TextBox o del item seleccionado en el ListBox.
+                int idPreguntaAEliminar = preguntaSeleccionada.PreguntaId; // Asegúrate de tener un control que contenga este ID
+
+                // Buscar la pregunta en la lista mediante su PreguntaId
+                Pregunta preguntaAEliminar = preguntas.FirstOrDefault(p => p.PreguntaId == idPreguntaAEliminar);
+
+                if (preguntaAEliminar != null)
+                {
+                    // Remover la pregunta de la lista
+                    preguntas.Remove(preguntaAEliminar);
+
+                    // Serializa la lista de preguntas al formato JSON
+                    json = JsonSerializer.Serialize(preguntas, new JsonSerializerOptions { WriteIndented = true });
+
+                    // Escribir la lista actualizada en el archivo
+                    File.WriteAllText(rutaArchivoPreguntas, json);
+
+                    MessageBox.Show("La pregunta se ha eliminado correctamente.");
+                    this.Close();
+                }
+                else
+                {
+                    MessageBox.Show("No se encontró la pregunta a eliminar.");
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Ocurrió un error al eliminar la pregunta: " + ex.Message);
             }
         }
     }

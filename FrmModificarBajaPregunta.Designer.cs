@@ -1,6 +1,6 @@
 ﻿namespace TrabajoFinal_
 {
-    partial class FrmModificarPregunta
+    partial class FrmModificarBajaPregunta
     {
         /// <summary>
         /// Required designer variable.
@@ -55,6 +55,7 @@
             label8 = new Label();
             cmbRespuestas = new ComboBox();
             alertaVacio = new ErrorProvider(components);
+            btnEliminar = new Button();
             ((System.ComponentModel.ISupportInitialize)alertaVacio).BeginInit();
             SuspendLayout();
             // 
@@ -72,7 +73,7 @@
             // btnCancelar
             // 
             btnCancelar.Font = new Font("Segoe UI", 14.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            btnCancelar.Location = new Point(693, 476);
+            btnCancelar.Location = new Point(687, 476);
             btnCancelar.Name = "btnCancelar";
             btnCancelar.Size = new Size(150, 50);
             btnCancelar.TabIndex = 1;
@@ -304,11 +305,24 @@
             // 
             alertaVacio.ContainerControl = this;
             // 
-            // FrmModificarPregunta
+            // btnEliminar
+            // 
+            btnEliminar.Font = new Font("Segoe UI", 14.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            btnEliminar.ForeColor = Color.Red;
+            btnEliminar.Location = new Point(850, 476);
+            btnEliminar.Name = "btnEliminar";
+            btnEliminar.Size = new Size(150, 50);
+            btnEliminar.TabIndex = 36;
+            btnEliminar.Text = "Eliminar";
+            btnEliminar.UseVisualStyleBackColor = true;
+            btnEliminar.Click += this.btnEliminar_Click;
+            // 
+            // FrmModificarBajaPregunta
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(1119, 533);
+            Controls.Add(btnEliminar);
             Controls.Add(cmbRespuestas);
             Controls.Add(txtCarrera);
             Controls.Add(label8);
@@ -335,7 +349,7 @@
             Controls.Add(btnCancelar);
             Controls.Add(btnModificar);
             FormBorderStyle = FormBorderStyle.None;
-            Name = "FrmModificarPregunta";
+            Name = "FrmModificarBajaPregunta";
             StartPosition = FormStartPosition.CenterScreen;
             Text = "ModificarPregunta";
             Load += FrmModificarPregunta_Load;
@@ -375,5 +389,6 @@
         private Label label8;
         private ComboBox cmbRespuestas;
         private ErrorProvider alertaVacio;
+        private Button btnEliminar;
     }
 }
