@@ -1,19 +1,24 @@
 ﻿using System.Text.Json;
+using System.Xml;
 
 namespace TrabajoFinal_
 {
     public partial class FrmModificarPregunta : Form
     {
+        const int MAX = 4;
         const string CARPETA = "files";
 
         string rutaArchivoPreguntas = Path.Combine(CARPETA, "Preguntas.json");
         string rutaArchivoCarreras = Path.Combine(CARPETA, "Carreras.json");
         string rutaArchivoAsignaturas = Path.Combine(CARPETA, "Asignaturas.json");
 
+        Pregunta preguntaSeleccionada = new Pregunta();
         private List<Pregunta> preguntas = new List<Pregunta>();
         private List<Carrera> carreras = new List<Carrera>();
         private List<Asignatura> asignaturas = new List<Asignatura>();
         private List<string> respuestas = new List<string>();
+
+        int i = 0;
 
         public FrmModificarPregunta()
         {
@@ -30,7 +35,7 @@ namespace TrabajoFinal_
             }
         }
 
-        private void btnVolver_Click(object sender, EventArgs e)
+        private void btnCancelar_Click(object sender, EventArgs e)
         {
             this.Close();
         }
@@ -56,11 +61,8 @@ namespace TrabajoFinal_
                     .Where(p => p.Carrera == carrera && p.Asignatura == asignatura)
                     .ToList();
 
-                // Agregar al ListBox
-                foreach (var pregunta in preguntasFiltradas)
-                {
-                    lstPreguntas.Items.Add($"ID: {pregunta.PreguntaId} - {pregunta.TxtPregunta}");
-                }
+                lstPreguntas.DataSource = preguntasFiltradas;
+                lstPreguntas.DisplayMember = "TxtPregunta";
             }
             catch (Exception ex)
             {
@@ -70,11 +72,11 @@ namespace TrabajoFinal_
 
         private void btnModificarRespuesta_Click(object sender, EventArgs e)
         {
-            {
+            /*{
                 try
                 {
                     // Validar que se haya seleccionado una respuesta en el ComboBox
-                    int IndicieElegido = cmbNumeroRespuesta.SelectedIndex;
+                    int IndicieElegido = cmbRespuestas.SelectedIndex;
                     if (IndicieElegido == -1)
                     {
                         MessageBox.Show("selecciona una respuesta para modificar.");
@@ -94,7 +96,7 @@ namespace TrabajoFinal_
                     preguntas = JsonSerializer.Deserialize<List<Pregunta>>(Json) ?? new List<Pregunta>();
 
                     // Actualizar el ComboBox para reflejar los cambios
-                    cmbNumeroRespuesta.Items[IndicieElegido] = NuevaRespuesta;
+                    cmbRespuestas.Items[IndicieElegido] = NuevaRespuesta;
 
                     // Guardar los cambios en el archivo JSON
                     string nuevoJson = JsonSerializer.Serialize(preguntas, new JsonSerializerOptions { WriteIndented = true });
@@ -106,69 +108,43 @@ namespace TrabajoFinal_
                 {
                     MessageBox.Show("Error al modificar la respuesta.", ex.Message);
                 }
-            }
+            }*/
         }
 
-        private void btnAceptar_Click(object sender, EventArgs e)
+        private void btnCargarRespuesta_Click(object sender, EventArgs e)
         {
-            try
+            bool error = false;
+
+            if (txtRespuesta.Text == "")
             {
-                /*
-                var pregunta = preguntas.FirstOrDefault(p => p.PreguntaId.ToString() == txtIDPregunta.Text);
-                if (pregunta == null)
-                {
-                    MessageBox.Show("No se encontró la pregunta con el ID proporcionado.");
-                    return;
-                }
-                pregunta.TxtPregunta = txtPregunta.Text;
-                pregunta.RespuestaCorrecta = int.Parse(txtRespuestaCorrecta.Text);
-                //pregunta.Asignatura = txtAsignatura.Text;
-                pregunta.Unidad = int.Parse(txtUnidad.Text);
-                pregunta.SubUnidad = int.Parse(txtSubUnidad.Text);
-                string Nuevojson = JsonSerializer.Serialize(preguntas, new JsonSerializerOptions { WriteIndented = true });
-                File.WriteAllText(rutaArchivoPreguntas, Nuevojson);
-                MessageBox.Show("Datos guardados correctamente en el archivo JSON.");
-                */
+                error = true;
             }
-            catch (Exception ex)
+
+            if (error)
             {
-                MessageBox.Show("Error al Modificar!", ex.Message);
+                alertaVacio.SetError(txtRespuesta, "Completar con una respuesta.");
+                return;
             }
-        }
-
-        private List<Carrera> CargarCareras()
-        {
-            string jsonCarreras = File.ReadAllText(rutaArchivoCarreras);
-            var carreras = JsonSerializer.Deserialize<List<Carrera>>(jsonCarreras);
-
-            return carreras;
-        }
-
-        private void CargarBancoPreguntas()
-        {
-            try
+            else
             {
-                string Json = File.ReadAllText(rutaArchivoPreguntas);
-
-                preguntas = JsonSerializer.Deserialize<List<Pregunta>>(Json) ?? new List<Pregunta>();
-
-                foreach (var pregunta in preguntas)
-                {
-                    /*
-                    if (pregunta.PreguntaId.ToString() == txtIDPregunta.Text)
-                    {
-                        txtPregunta.Text = pregunta.TxtPregunta;
-                        txtRespuestaCorrecta.Text = pregunta.RespuestaCorrecta.ToString();
-                        //txtAsignatura.Text = pregunta.Asignatura;
-                        txtUnidad.Text = pregunta.Unidad.ToString();
-                        txtSubUnidad.Text = pregunta.SubUnidad.ToString();
-                    }
-                    */
-                }
+                alertaVacio.Clear();
             }
-            catch (Exception ex)
+
+            // Da un maximo de respuestas.
+            if (i < MAX)
             {
-                MessageBox.Show("Error al cargar Json", ex.Message);
+                lblRespuestas.Text = "Respuesta #" + (i + 1);
+
+                respuestas.Add(txtRespuesta.Text);
+
+                i++;
+                cmbRespuestas.Items.Add(txtRespuesta.Text);
+                txtRespuesta.Text = "";
+            }
+            else
+            {
+                txtRespuesta.Text = "";
+                MessageBox.Show("Se ha cargado el máximo de respuestas.");
             }
         }
 
@@ -192,6 +168,14 @@ namespace TrabajoFinal_
             }
         }
 
+        private List<Carrera> CargarCareras()
+        {
+            string jsonCarreras = File.ReadAllText(rutaArchivoCarreras);
+            var carreras = JsonSerializer.Deserialize<List<Carrera>>(jsonCarreras);
+
+            return carreras;
+        }
+
         private List<Asignatura> CargarAsignaturas()
         {
             string jsonAsignaturas = File.ReadAllText(rutaArchivoAsignaturas);
@@ -202,18 +186,60 @@ namespace TrabajoFinal_
 
         private void lstPreguntas_SelectedIndexChanged(object sender, EventArgs e)
         {
-            // Verificar si hay una selección
-            if (lstPreguntas.SelectedIndex != -1)
+            // Verifica que se haya seleccionado algún elemento.
+            if (lstPreguntas.SelectedItem != null)
             {
-                // Obtener la pregunta seleccionada
-                Pregunta preguntaSeleccionada = (Pregunta)lstPreguntas.SelectedItem;
+                // Convierte el item seleccionado a la clase Pregunta.
+                preguntaSeleccionada = lstPreguntas.SelectedItem as Pregunta;
 
-                // Aquí puedes usar la pregunta completa
-                MessageBox.Show($"ID: {preguntaSeleccionada.PreguntaId}\n" +
-                                $"Texto: {preguntaSeleccionada.TxtPregunta}\n" +
-                                $"Carrera: {preguntaSeleccionada.Carrera}\n" +
-                                $"Asignatura: {preguntaSeleccionada.Asignatura}",
-                                "Pregunta Seleccionada");
+                if (preguntaSeleccionada != null)
+                {
+                    // Asigna los valores de las propiedades a los TextBox.
+                    txtPregunta.Text = preguntaSeleccionada.TxtPregunta;
+                    txtCarrera.Text = preguntaSeleccionada.Carrera;
+                    txtAsignatura.Text = preguntaSeleccionada.Asignatura;
+                    txtUnidad.Text = preguntaSeleccionada.Unidad.ToString();
+                    txtSubUnidad.Text = preguntaSeleccionada.SubUnidad.ToString();
+                }
+            }
+        }
+
+        private void btnModificar_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                int idPreguntaModificada = preguntaSeleccionada.PreguntaId; // O utiliza: preguntaSeleccionada.PreguntaId
+
+                // Buscar la pregunta en la lista
+                Pregunta preguntaAmodificar = preguntas.FirstOrDefault(p => p.PreguntaId == idPreguntaModificada);
+
+                if (preguntaAmodificar != null)
+                {
+                    // Actualizar los datos de la pregunta con los nuevos valores de los controles.
+                    preguntaAmodificar.TxtPregunta = txtPregunta.Text;
+                    preguntaAmodificar.ListaDeRespuestas = respuestas;
+                    preguntaAmodificar.RespuestaCorrecta = cmbRespuestas.SelectedIndex;
+                    preguntaAmodificar.Carrera = txtCarrera.Text;
+                    preguntaAmodificar.Asignatura = txtAsignatura.Text;
+                    preguntaAmodificar.Unidad = int.Parse(txtUnidad.Text);
+                    preguntaAmodificar.SubUnidad = int.Parse(txtSubUnidad.Text);
+
+                    // Serializa la lista de preguntas al formato JSON
+                    string json = JsonSerializer.Serialize(preguntas, new JsonSerializerOptions { WriteIndented = true });
+
+                    // Escribe el JSON en el archivo
+                    File.WriteAllText(rutaArchivoPreguntas, json);
+
+                    MessageBox.Show("La pregunta se ha modificado correctamente.");
+                }
+                else
+                {
+                    MessageBox.Show("No se encontró la pregunta a modificar.");
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Ocurrió un error al modificar la pregunta: " + ex.Message);
             }
         }
     }
