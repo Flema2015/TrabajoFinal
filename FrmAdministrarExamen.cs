@@ -57,6 +57,7 @@ namespace TrabajoFinal_
 
         private void btnGenerarExamen_Click(object sender, EventArgs e)
         {
+
             string nombreCarrera = "", nombreAsignatura = "";
             bool verificación = false;
 
@@ -65,6 +66,7 @@ namespace TrabajoFinal_
             {
                 nombreCarrera = cmbCarrera.Text;
                 nombreAsignatura = cmbAsignatura.Text;
+
                 if (verificación)
                 {
                     GenerarExamen(nombreCarrera, nombreAsignatura);
@@ -80,6 +82,7 @@ namespace TrabajoFinal_
 
         private void btnVerUltimoExamen_Click(object sender, EventArgs e)
         {
+            // abre el formulario 
             FrmExamenGenerado frmExamenGenerado = new FrmExamenGenerado();
             frmExamenGenerado.ShowDialog();
         }
@@ -102,15 +105,14 @@ namespace TrabajoFinal_
 
         private void GenerarExamen(string nombreCarrera, string nombreAsignatura)
         {
-            // Carrera carrera = cmbCarrera.SelectedItem as Carrera;
-            // Asignatura asignatura = cmbAsignatura.SelectedItem as Asignatura;
+            
             try
             {
                 if (File.Exists(rutaArchivoExamenes))
                 {
                     // Lee los exámenes existentes
                     string jsonExamenes = File.ReadAllText(rutaArchivoExamenes);
-                    //examenes = JsonSerializer.Deserialize<List<Examen>>(jsonExamenes) ?? new List<Examen>();
+                    
                 }
                 // Genera id de examen secuencial incremental
                 id = examenes.Any() ? examenes.Max(c => c.ExamenId) + 1 : 1;

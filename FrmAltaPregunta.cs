@@ -28,7 +28,7 @@ namespace TrabajoFinal_
             // Busca el último ID y le suma 1
             id = preguntas.Any() ? preguntas.Max(c => c.PreguntaId) + 1 : 1;
             lblPreguntaID.Text = "Pregunta ID " + id.ToString();
-            //CargarAsignaturas();
+            
         }
 
         private void FrmAltaPregunta_Load(object sender, EventArgs e)
@@ -72,7 +72,7 @@ namespace TrabajoFinal_
                 // Mostrar el editor como un formulario modal
                 var result = editor.ShowDialog();
 
-                // Si el usuario presionó "Aceptar", transferir el texto
+                // Si el usuario presionó aceptar, transferir el texto
                 if (result == DialogResult.OK)
                 {
                     txtPregunta.Text = editor.TextoEscrito;
@@ -94,7 +94,7 @@ namespace TrabajoFinal_
             Pregunta pregunta = new Pregunta();
             Carrera carrera = cmbCarrera.SelectedItem as Carrera;
             Asignatura asignatura = cmbAsignatura.SelectedItem as Asignatura;
-
+            
             pregunta.PreguntaId = id;
             pregunta.TxtPregunta = txtPregunta.Text;
             pregunta.ListaDeRespuestas = respuestas;
@@ -149,6 +149,8 @@ namespace TrabajoFinal_
 
             if (error)
             {
+                //alerta vacio = objeto de la clase errorProvider.
+                //Aparece un ícono rojo al lado del TextBox si está vacío.
                 alertaVacio.SetError(txtRespuesta, "Completar con una respuesta.");
                 return;
             }

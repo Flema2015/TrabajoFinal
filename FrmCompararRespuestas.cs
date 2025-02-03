@@ -48,9 +48,7 @@ namespace TrabajoFinal_
         {
             try
             {
-                /*string Json = File.ReadAllText(rutaArchivoCorrecciones);*/
-                //var correciones = JsonSerializer.Deserialize<List<Correcion>>(Json);
-
+                
                 var correccionEncontrada = correciones.FirstOrDefault(c => c.AlumnoDNI == dniBuscar);
                 return correccionEncontrada;
 
@@ -64,6 +62,7 @@ namespace TrabajoFinal_
         }
         private void cargarRespuestaUsuario()
         {
+
             List<int> RespuestasUs = correccion.Respuestas;
             int[] respuestasUsArray = RespuestasUs.ToArray();
             try
@@ -119,10 +118,7 @@ namespace TrabajoFinal_
                     i++;
 
                 }
-                /*foreach (var respuesta in preguntas)
-                {
-                    lstRespuestasCorrectas.Items.Add(respuesta.RespuestaCorrecta.ToString());
-                }*/
+                
                 lstRespuestasCorrectas.Items.Clear();
 
                 // Verificar que el tamaño del array y la lista de preguntas coincidan

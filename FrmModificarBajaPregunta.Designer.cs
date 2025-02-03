@@ -165,10 +165,10 @@
             // 
             // txtPregunta
             // 
-            txtPregunta.Font = new Font("Segoe UI", 14.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            txtPregunta.Location = new Point(683, 102);
+            txtPregunta.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            txtPregunta.Location = new Point(605, 105);
             txtPregunta.Name = "txtPregunta";
-            txtPregunta.Size = new Size(250, 33);
+            txtPregunta.Size = new Size(502, 29);
             txtPregunta.TabIndex = 12;
             // 
             // txtSubUnidad
@@ -315,7 +315,7 @@
             btnEliminar.TabIndex = 36;
             btnEliminar.Text = "Eliminar";
             btnEliminar.UseVisualStyleBackColor = true;
-            btnEliminar.Click += this.btnEliminar_Click;
+            btnEliminar.Click += btnEliminar_Click;
             // 
             // FrmModificarBajaPregunta
             // 

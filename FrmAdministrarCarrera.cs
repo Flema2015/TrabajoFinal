@@ -28,6 +28,7 @@ namespace TrabajoFinal_
 
             // Generar un ID automático e incremental
             int id = carreras.Any() ? carreras.Max(c => c.CarreraId) + 1 : 1;
+
             verificacion = validarCampos(nombre, duracion, descripcion);
 
             if (verificacion)

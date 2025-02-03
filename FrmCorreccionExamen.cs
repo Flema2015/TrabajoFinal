@@ -16,7 +16,6 @@ namespace TrabajoFinal_
             InitializeComponent();
 
         }
-
         private void btnVerDevolucion_Click(object sender, EventArgs e)
         {
             int DNIalumno = int .Parse(txtDniAlumno.Text);
@@ -25,7 +24,6 @@ namespace TrabajoFinal_
                 string Json = File.ReadAllText(rutaArchivoCorrecciones);
                 var correciones = JsonSerializer.Deserialize<List<Correccion>>(Json);
                 // Parsear el contenido como un objeto JObject
-
 
                 if (true)
                 {

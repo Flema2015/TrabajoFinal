@@ -5,6 +5,7 @@ namespace TrabajoFinal_
 {
     public partial class FrmModificarBajaPregunta : Form
     {
+
         const int MAX = 4;
         const string CARPETA = "files";
 
@@ -46,7 +47,11 @@ namespace TrabajoFinal_
             if (lstPreguntas.Items.Count > 0)
             {
                 // Borrar todo el contenido del ListBox
+                /*data source es una propiedad para establecer el origen de datos de un control
+                  permite enlazar colecciones de datos a controler visuales.*/
+                lstPreguntas.DataSource = null;
                 lstPreguntas.Items.Clear();
+
             }
 
             string carrera = cmbCarrera.Text;

@@ -16,7 +16,6 @@ namespace TrabajoFinal_
         public FrmAdministrarAsignatura()
         {
             InitializeComponent();
-
             CargarAsignaturas();
             CargarListaAsignaturas();
             CargarCmbUnidades();
@@ -24,6 +23,7 @@ namespace TrabajoFinal_
 
         private void FrmAdministrarAsignatura_Load(object sender, EventArgs e)
         {
+
             string jsonCarreras = File.ReadAllText(rutaArchivoCarreras);
             var carreras = JsonSerializer.Deserialize<List<Carrera>>(jsonCarreras);
 
@@ -51,7 +51,9 @@ namespace TrabajoFinal_
             Asignatura asignatura = new Asignatura();
 
             // Generar un ID automático e incremental
+            
             int id = asignaturas.Any() ? asignaturas.Max(c => c.AsignaturaId) + 1 : 1;
+            
 
             verificacion = validarCampos(nombre, unidades);
 

@@ -62,13 +62,11 @@ namespace TrabajoFinal_
             
             if (validacion)
             {
-                /*Carrera carrera = cmbCarrera.SelectedItem as Carrera;
-                cmbAsignatura.DataSource = asignaturas;
-                Asignatura asignatura = cmbAsignatura.SelectedItem as Asignatura;*/
                 
                 examenes = CargarExamenes();
                 // Obtener un ID aleatorio
                 Random random = new Random();
+                //se pasa carrera y asignatura, se desordena, se elige un id y toma el primer elemento.
                 idAleatorio = examenes
                                 .Where(e => e.Carrera == cmbCarrera.Text && e.Asignatura == cmbAsignatura.Text) // Filtrar
                                 .OrderBy(x => random.Next()) // Desordenar aleatoriamente
@@ -83,7 +81,7 @@ namespace TrabajoFinal_
                 examen.AlumnoApellido = txtApellido.Text;
                 DateTime fecha = DateTime.Now;
                 examen.Fecha = fecha;
-
+                //abre el formulario realizar examen.
                 using (FrmRealizarExamen frmRealizarExamen = new FrmRealizarExamen(examen))
                 {
                     frmRealizarExamen.ShowDialog();
