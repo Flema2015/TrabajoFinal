@@ -21,6 +21,8 @@ namespace TrabajoFinal_
             correccion = cargarCorrecion(correcciones,DNIalumno);
             cargarRespuestaUsuario();
             cargarRespuestaCorrectas();
+            correccionesCalificacion();
+            
         }
 
         private void btnVolver_Click(object sender, EventArgs e)
@@ -157,5 +159,11 @@ namespace TrabajoFinal_
                 MessageBox.Show("hubo un problema al cargar las respuestas Correctas.");
             }
         }
+        private void correccionesCalificacion()
+        {
+            float calificacion = correccion.Calificacion;
+            lblResultadoNum.Text = calificacion.ToString();
+        }
+        
     }
 }

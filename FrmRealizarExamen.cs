@@ -123,15 +123,12 @@ namespace TrabajoFinal_
 
         private void GuardarResultados(Examen examen)
         {
-            /*respuestasExamen.Add(examen.ExamenId.ToString());
-            respuestasExamen.Add(examen.AlumnoNombre);
-            respuestasExamen.Add(examen.AlumnoApellido);
-            respuestasExamen.Add(examen.AlumnoDNI.ToString());*/
 
             foreach (Control control in groupBox1.Controls)
             {
                 if (control is RadioButton radioButton && radioButton.Checked)
                 {
+                    //tabindex devuelve el valor del radiobutton elegido.
                     examen.Respuestas[0] = radioButton.TabIndex;
                 }
             }

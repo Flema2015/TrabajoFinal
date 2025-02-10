@@ -22,11 +22,7 @@
             }
         }
 
-        private void btnBaja_Click(object sender, EventArgs e)
-        {
-            FrmBajaPregunta frmBajaPregunta = new FrmBajaPregunta();
-            frmBajaPregunta.ShowDialog();
-        }
+   
         private void btnModificarBaja_Click(object sender, EventArgs e)
         {
             FrmModificarBajaPregunta frmModificarBajaPregunta = new FrmModificarBajaPregunta();

@@ -29,7 +29,6 @@
         private void InitializeComponent()
         {
             btnAlta = new Button();
-            btnBaja = new Button();
             btnModificarBaja = new Button();
             btnVolverAlMenu = new Button();
             SuspendLayout();
@@ -42,29 +41,13 @@
             btnAlta.FlatAppearance.MouseOverBackColor = Color.FromArgb(224, 224, 224);
             btnAlta.FlatStyle = FlatStyle.Flat;
             btnAlta.Font = new Font("Segoe UI", 9.75F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            btnAlta.Location = new Point(125, 146);
+            btnAlta.Location = new Point(184, 146);
             btnAlta.Name = "btnAlta";
             btnAlta.Size = new Size(150, 50);
             btnAlta.TabIndex = 0;
             btnAlta.Text = "Nueva pregunta";
             btnAlta.UseVisualStyleBackColor = false;
             btnAlta.Click += btnAlta_Click;
-            // 
-            // btnBaja
-            // 
-            btnBaja.BackColor = Color.White;
-            btnBaja.FlatAppearance.BorderColor = Color.Black;
-            btnBaja.FlatAppearance.BorderSize = 0;
-            btnBaja.FlatAppearance.MouseOverBackColor = Color.FromArgb(224, 224, 224);
-            btnBaja.FlatStyle = FlatStyle.Flat;
-            btnBaja.Font = new Font("Segoe UI", 14.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            btnBaja.Location = new Point(292, 146);
-            btnBaja.Name = "btnBaja";
-            btnBaja.Size = new Size(150, 50);
-            btnBaja.TabIndex = 1;
-            btnBaja.Text = "Baja";
-            btnBaja.UseVisualStyleBackColor = false;
-            btnBaja.Click += btnBaja_Click;
             // 
             // btnModificarBaja
             // 
@@ -74,7 +57,7 @@
             btnModificarBaja.FlatAppearance.MouseOverBackColor = Color.FromArgb(224, 224, 224);
             btnModificarBaja.FlatStyle = FlatStyle.Flat;
             btnModificarBaja.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            btnModificarBaja.Location = new Point(458, 146);
+            btnModificarBaja.Location = new Point(407, 146);
             btnModificarBaja.Name = "btnModificarBaja";
             btnModificarBaja.Size = new Size(150, 50);
             btnModificarBaja.TabIndex = 2;
@@ -90,7 +73,7 @@
             btnVolverAlMenu.FlatAppearance.MouseOverBackColor = Color.FromArgb(224, 224, 224);
             btnVolverAlMenu.FlatStyle = FlatStyle.Flat;
             btnVolverAlMenu.Font = new Font("Segoe UI", 14.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            btnVolverAlMenu.Location = new Point(292, 261);
+            btnVolverAlMenu.Location = new Point(294, 239);
             btnVolverAlMenu.Name = "btnVolverAlMenu";
             btnVolverAlMenu.Size = new Size(150, 50);
             btnVolverAlMenu.TabIndex = 3;
@@ -105,7 +88,6 @@
             ClientSize = new Size(739, 411);
             Controls.Add(btnVolverAlMenu);
             Controls.Add(btnModificarBaja);
-            Controls.Add(btnBaja);
             Controls.Add(btnAlta);
             FormBorderStyle = FormBorderStyle.None;
             MaximizeBox = false;
@@ -121,7 +103,6 @@
         #endregion
 
         private Button btnAlta;
-        private Button btnBaja;
         private Button btnModificarBaja;
         private Button btnVolverAlMenu;
     }

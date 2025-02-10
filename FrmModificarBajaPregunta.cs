@@ -75,46 +75,7 @@ namespace TrabajoFinal_
             }
         }
 
-        private void btnModificarRespuesta_Click(object sender, EventArgs e)
-        {
-            /*{
-                try
-                {
-                    // Validar que se haya seleccionado una respuesta en el ComboBox
-                    int IndicieElegido = cmbRespuestas.SelectedIndex;
-                    if (IndicieElegido == -1)
-                    {
-                        MessageBox.Show("selecciona una respuesta para modificar.");
-                        return;
-                    }
-
-                    // Validar que se haya ingresado una nueva respuesta
-                    string NuevaRespuesta = txtRespuesta.Text;
-                    if (string.IsNullOrEmpty(NuevaRespuesta))
-                    {
-                        MessageBox.Show("ingresa una nueva respuesta.");
-                        return;
-                    }
-
-                    // Leer el archivo JSON
-                    string Json = File.ReadAllText(rutaArchivoPreguntas);
-                    preguntas = JsonSerializer.Deserialize<List<Pregunta>>(Json) ?? new List<Pregunta>();
-
-                    // Actualizar el ComboBox para reflejar los cambios
-                    cmbRespuestas.Items[IndicieElegido] = NuevaRespuesta;
-
-                    // Guardar los cambios en el archivo JSON
-                    string nuevoJson = JsonSerializer.Serialize(preguntas, new JsonSerializerOptions { WriteIndented = true });
-                    File.WriteAllText(rutaArchivoPreguntas, nuevoJson);
-
-                    MessageBox.Show("Datos guardados correctamente en el archivo JSON.");
-                }
-                catch (Exception ex)
-                {
-                    MessageBox.Show("Error al modificar la respuesta.", ex.Message);
-                }
-            }*/
-        }
+     
 
         private void btnCargarRespuesta_Click(object sender, EventArgs e)
         {
