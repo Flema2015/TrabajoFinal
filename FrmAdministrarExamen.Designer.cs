@@ -101,12 +101,12 @@
             // 
             // btnVerUltimoExamen
             // 
-            btnVerUltimoExamen.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            btnVerUltimoExamen.Font = new Font("Segoe UI", 9.75F, FontStyle.Bold, GraphicsUnit.Point, 0);
             btnVerUltimoExamen.Location = new Point(303, 229);
             btnVerUltimoExamen.Name = "btnVerUltimoExamen";
             btnVerUltimoExamen.Size = new Size(150, 50);
             btnVerUltimoExamen.TabIndex = 4;
-            btnVerUltimoExamen.Text = "Último examen";
+            btnVerUltimoExamen.Text = "Últimos exámenes generados";
             btnVerUltimoExamen.UseVisualStyleBackColor = true;
             btnVerUltimoExamen.Click += btnVerUltimoExamen_Click;
             // 

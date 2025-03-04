@@ -21,6 +21,7 @@ namespace TrabajoFinal_
         public FrmAdministrarExamen()
         {
             InitializeComponent();
+            examenes = CargarExamen();
             cmbUnidades.Items.Add("Unidades 1 - 3");
             cmbUnidades.Items.Add("Unidades 4 - 6");
         }
@@ -105,14 +106,12 @@ namespace TrabajoFinal_
 
         private void GenerarExamen(string nombreCarrera, string nombreAsignatura)
         {
-            
             try
             {
                 if (File.Exists(rutaArchivoExamenes))
                 {
                     // Lee los exámenes existentes
                     string jsonExamenes = File.ReadAllText(rutaArchivoExamenes);
-                    
                 }
                 // Genera id de examen secuencial incremental
                 id = examenes.Any() ? examenes.Max(c => c.ExamenId) + 1 : 1;
@@ -177,6 +176,14 @@ namespace TrabajoFinal_
             {
                 MessageBox.Show("No se pudo generar el examen.");
             }
+        }
+
+        private List<Examen> CargarExamen()
+        {
+            string jsonExamenes = File.ReadAllText(rutaArchivoExamenes);
+            var examenes = JsonSerializer.Deserialize<List<Examen>>(jsonExamenes);
+
+            return examenes;
         }
 
         private List<Carrera> CargarCarreras()
